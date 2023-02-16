@@ -6,15 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    private array $data = [
-        'user_contact_status' => [
-            'Рабочий',
-            'Домашний',
-            'Дополнительный',
-            'Личный',
-            'Корпоративный',
-        ],
-    ];
     /**
      * Run the migrations.
      *
@@ -25,12 +16,6 @@ return new class extends Migration
         Schema::create('user_contact_status', function (Blueprint $table) {
             $table->string('text', 32)->comment('Статус контакта пользователя');
         });
-
-//        foreach ($this->data['user_contact_status'] as $status) {
-//            $dbStatus = new Status();
-//            $dbStatus->text = $status;
-//            $dbStatus->save();
-//        }
 
         Schema::create('users_phone_numbers', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id')->comment('users->id');
