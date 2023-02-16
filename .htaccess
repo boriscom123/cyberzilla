@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+    # Включить перенаправление
+    RewriteEngine on
+
+    # Перенаправить запросы на https
+#    RewriteCond %{ENV:HTTPS} !on
+#    RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Перенаправить запросы в папку public
+    RewriteCond %{REQUEST_URI} !/public
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    # Убрать / в конце запроса
+#    RewriteBase /
+#    RewriteCond %{HTTP_HOST} (.*)
+#    RewriteCond %{REQUEST_URI} /$ [NC]
+#    RewriteRule ^(.*)(/)$ $1 [L,R=301]
+</IfModule>
