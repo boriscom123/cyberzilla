@@ -83,7 +83,7 @@
                             <select v-model="this.users[this.view_user_id]['phones'][index]['is_confirmed']"
                                     class="phone-confirmation">
                                 <option value="1" selected>Подтвержден</option>
-                                <option value="2">Не подтвержден</option>
+                                <option value="0">Не подтвержден</option>
                             </select>
                             <div class="action-buttons">
                                 <button @click="change_user_phone_number(this.view_user_id, index)">Изменить</button>
@@ -104,7 +104,7 @@
                         </select>
                         <select v-model="this.new_phone_confirmation" class="phone-confirmation">
                             <option value="1">Подтвержден</option>
-                            <option value="2">Не подтвержден</option>
+                            <option value="0">Не подтвержден</option>
                         </select>
                         <div class="action-buttons">
                             <button @click="add_user_phone_number(this.view_user_id)">Добавить</button>
@@ -112,32 +112,35 @@
                     </div>
                 </div>
             </div>
-            <div v-if="this.show_payments" class="user-info-payments">
+            <div class="user-info-payments">
                 <h3>Платежи:</h3>
                 <div class="user-info-payments-content">
+                    <template v-if="Object.keys(this.users[this.view_user_id]['payments']).length > 0">
+                        <div class="item" v-for="(item, index) in this.users[this.view_user_id]['payments']">
+                            <div class="input-payment">
+                                <input v-model="this.users[this.view_user_id]['payments'][index]['payment_number']"
+                                       type="text" placeholder="№ платежа">
+                            </div>
+                            <select v-model="this.users[this.view_user_id]['payments'][index]['payment_status']" class="payment-status">
+                                <option value="1">В обработке</option>
+                                <option value="2" selected>Завершен</option>
+                            </select>
+                            <div class="action-buttons">
+                                <button @click="change_user_payment(index)">Изменить</button>
+                                <button @click="remove_user_payment(index)">Удалить</button>
+                            </div>
+                        </div>
+                    </template>
                     <div class="item">
                         <div class="input-payment">
-                            <input type="text" placeholder="№ платежа" value="6545 6545 6545 6545">
+                            <input v-model="this.new_payment_number" type="text" placeholder="№ платежа">
                         </div>
-                        <select class="payment-status">
-                            <option id="1">В обработке</option>
-                            <option id="2" selected>Завершен</option>
+                        <select v-model="this.new_payment_status" class="payment-status">
+                            <option value="1" selected>В обработке</option>
+                            <option value="2">Завершен</option>
                         </select>
                         <div class="action-buttons">
-                            <button>Изменить</button>
-                            <button>Удалить</button>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="input-payment">
-                            <input type="text" placeholder="№ платежа">
-                        </div>
-                        <select class="payment-status">
-                            <option id="1" selected>В обработке</option>
-                            <option id="2">Завершен</option>
-                        </select>
-                        <div class="action-buttons">
-                            <button>Добавить</button>
+                            <button @click="add_user_payment(this.view_user_id)">Добавить</button>
                         </div>
                     </div>
                 </div>
@@ -164,9 +167,11 @@ export default {
             },
             view_user_id: null,
             new_phone_number: '',
-            new_phone_status: '',
-            new_phone_confirmation: '',
-            show_payments: false,
+            new_phone_status: 1,
+            new_phone_confirmation: 0,
+            new_payment_number: '',
+            new_payment_status: 1,
+            new_payment_total: 0,
         };
     },
     mounted() {
@@ -300,6 +305,61 @@ export default {
                 number_id: number_id,
             };
             axios.post('/api/user/phone/remove', data)
+                .then(response => {
+                    if ('is_removed' in response.data) {
+                        if (response.data['is_removed']) {
+                            this.get_users();
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.log('error', error);
+                });
+        },
+        add_user_payment: function (user_id) {
+            let data = {
+                user_id: user_id,
+                payment_number: this.new_payment_number,
+                payment_status: this.new_payment_status,
+                payment_total: this.new_payment_total,
+            };
+            axios.post('/api/user/payment/add', data)
+                .then(response => {
+                    if ('is_added' in response.data) {
+                        if (response.data['is_added']) {
+                            this.new_payment_number = '';
+                            this.new_payment_status = 1;
+                            this.get_users();
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.log('error', error);
+                });
+        },
+        change_user_payment: function (payment_id) {
+            let data = {
+                user_id: this.view_user_id,
+                payment_id: payment_id,
+                data: this.users[this.view_user_id]['payments'][payment_id],
+            };
+            axios.post('/api/user/payment/change', data)
+                .then(response => {
+                    if ('is_changed' in response.data) {
+                        if (response.data['is_changed']) {
+                            this.get_users();
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.log('error', error);
+                });
+        },
+        remove_user_payment: function (payment_id) {
+            let data = {
+                payment_id: payment_id,
+            };
+            axios.post('/api/user/payment/remove', data)
                 .then(response => {
                     if ('is_removed' in response.data) {
                         if (response.data['is_removed']) {

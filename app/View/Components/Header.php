@@ -21,6 +21,7 @@ class Header extends Component
     {
         if(Auth::check()){
             $this->params['auth'] = true;
+            $this->params['user'] = Auth::user();
         } else {
             $this->params['auth'] = false;
         }

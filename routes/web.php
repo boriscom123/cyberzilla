@@ -38,3 +38,6 @@ Route::post('/api/user/name/change', [UsersController::class, 'changeUserName'])
 Route::post('/api/user/phone/add', [UsersController::class, 'addUserPhone']);
 Route::post('/api/user/phone/change', [UsersController::class, 'changeUserPhone']);
 Route::post('/api/user/phone/remove', [UsersController::class, 'removeUserPhone']);
+Route::post('/api/user/payment/add', [UsersController::class, 'addUserPayment']);
+Route::post('/api/user/payment/change', [UsersController::class, 'changeUserPayment']);
+Route::post('/api/user/payment/remove', [UsersController::class, 'removeUserPayment']);

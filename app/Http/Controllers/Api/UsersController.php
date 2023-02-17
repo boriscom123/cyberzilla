@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\UserContactStatus;
+use App\Models\UserPayments;
 use App\Models\UsersPhoneNumbers;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
@@ -29,6 +30,7 @@ class UsersController extends Controller
         if ($dbUsers) {
             $users = [];
             $userPhoneNumbers = [];
+            $userPayments = [];
             foreach ($dbUsers as $user) {
 
                 $dbUserPhones = UsersPhoneNumbers::query()->where('user_id', $user->id)->get();
@@ -42,11 +44,27 @@ class UsersController extends Controller
                         ];
                     }
                 }
+
+                $dbUserPayments = UserPayments::query()->where('user_id', $user->id)->get();
+                if ($dbUserPayments) {
+                    foreach ($dbUserPayments as $payment) {
+                        $userPayments[$payment->id] = [
+                            'id' => $payment->id,
+                            'payment_number' => $payment->payment_number,
+                            'payment_total' => $payment->payment_total,
+                            'payment_status' => $payment->payment_status,
+                            'created_at' => $payment->created_at,
+                            'updated_at' => $payment->updated_at,
+                        ];
+                    }
+                }
+
                 $users[$user->id] = [
                     'id' => $user->id,
                     'name' => $user->name,
                     'email' => $user->email,
                     'phones' => $userPhoneNumbers,
+                    'payments' => $userPayments,
                 ];
             }
             $response['users'] = $users;
@@ -214,4 +232,83 @@ class UsersController extends Controller
         return new JsonResponse($response);
     }
 
+    public function addUserPayment(Request $request): JsonResponse
+    {
+        $response = [
+            'status' => 200,
+            'is_added' => false,
+        ];
+
+        $userId = $request->get('user_id');
+        $payment_number = $request->get('payment_number');
+        $payment_status = $request->get('payment_status');
+        $payment_total = $request->get('payment_total');
+
+        /** @var User $dbUser */
+        $dbUser = User::query()->where('id', $userId)->first();
+
+        if ($dbUser) {
+            $dbPayment = new UserPayments();
+            $dbPayment->user_id = $dbUser->id;
+            $dbPayment->payment_number = $payment_number;
+            $dbPayment->payment_status = $payment_status;
+            $dbPayment->payment_total = $payment_total;
+            $dbPayment->save();
+            $response['is_added'] = true;
+        }
+
+        return new JsonResponse($response);
+    }
+
+    public function changeUserPayment(Request $request): JsonResponse
+    {
+        $response = [
+            'status' => 200,
+            'is_changed' => false,
+        ];
+
+        $userId = $request->get('user_id');
+        $payment_id = $request->get('payment_id');
+        $data = $request->get('data');
+
+        /** @var UserPayments $dbPayment */
+        $dbPayment = UserPayments::query()->where('id', $payment_id)->first();
+
+        if ($dbPayment) {
+            $dbPayment->payment_number = $data['payment_number'];
+            $dbPayment->payment_status = $data['payment_status'];
+            $dbPayment->payment_total = $data['payment_total'];
+
+            $dbPayment->save();
+            $response['is_changed'] = true;
+        }
+
+        return new JsonResponse($response);
+    }
+
+    public function removeUserPayment(Request $request): JsonResponse
+    {
+        $response = [
+            'status' => 200,
+            'is_removed' => false,
+        ];
+
+        $payment_id = $request->get('payment_id');
+
+        /** @var UserPayments $dbPhone */
+        $dbPayment = UserPayments::query()->where('id', $payment_id)->first();
+
+        if ($dbPayment) {
+            $dbPayment->delete();
+        }
+
+        /** @var UserPayments $dbPhone */
+        $dbPayment = UserPayments::query()->where('id', $payment_id)->first();
+
+        if (!$dbPayment) {
+            $response['is_removed'] = true;
+        }
+
+        return new JsonResponse($response);
+    }
 }

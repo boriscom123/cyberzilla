@@ -5,7 +5,9 @@
                 <a href="/" class="header-logo">CyberZilla</a>
                 @if ($params['auth'] === true)
                     <div class="user-info">
-                        <div class="user-name">Борис</div>
+                        @if (isset($params['user']))
+                            <div class="user-name">{{ $params['user']['name'] }}</div>
+                        @endif
                         <div class="user-name">|</div>
                         <div class="user-role">администратор</div>
                     </div>
