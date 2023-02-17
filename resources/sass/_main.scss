@@ -1,0 +1,491 @@
+.site-main {
+    padding: 10px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    height: calc(100% - 150px);
+    background-color: white;
+
+    > .container {
+
+        > .container-content {
+
+            > .title {
+                text-align: center;
+            }
+
+            > input[type=checkbox] {
+                display: none;
+
+                ~ .login-form {
+                    display: none;
+                }
+
+                ~ .login-form-label {
+                    display: none;
+                }
+
+                &:checked {
+                    ~ .login-form {
+                        display: flex;
+                    }
+
+                    ~ .login-form-label {
+                        display: flex;
+                    }
+
+                    ~ .registration-form {
+                        display: none;
+                    }
+
+                    ~ .registration-form-label {
+                        display: none;
+                    }
+                }
+            }
+
+            > .login-form, > .registration-form {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+
+                > .form-block {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+
+                    > label {
+                        font-size: 22px;
+                        font-weight: 500;
+                    }
+
+                    > .input {
+                        height: 50px;
+                        width: 100%;
+                        max-width: 320px;
+                        border-radius: 5px;
+                        overflow: hidden;
+                        border: 1px solid silver;
+
+                        > input {
+                            height: 100%;
+                            width: 100%;
+                            border: none;
+                            padding: 0 0 0 10px;
+                            font-size: 20px;
+                        }
+
+                        > input[type=submit] {
+                            font-size: 22px;
+                            font-weight: 500;
+                            background-color: silver;
+                            transition: $transition;
+                        }
+                    }
+                }
+
+                > .form-block-checkbox {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+
+                    > .input {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        > input[type=checkbox] {
+                            display: flex;
+                            height: 25px;
+                            width: 25px;
+
+                            appearance: auto;
+                        }
+                    }
+
+                    > label {
+                        font-size: 18px;
+                        font-weight: 400;
+                        border-bottom: 1px solid white;
+                        transition: $transition;
+
+                        &:hover {
+                            border-bottom: 1px solid silver;
+                        }
+                    }
+                }
+            }
+
+            > label {
+                display: flex;
+                max-width: max-content;
+                margin: 20px auto 0;
+                justify-content: center;
+                border-bottom: 1px solid white;
+                transition: $transition;
+
+                &:hover {
+                    border-bottom: 1px solid silver;
+                }
+            }
+
+            > .user-component {
+                > .title {
+                    display: flex;
+                    gap: 20px;
+                    padding: 0 0 20px 0;
+
+                    > h2 {
+                        margin: 0;
+                    }
+
+                    > .action-buttons {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        width: 100%;
+                        max-width: 300px;
+
+                        > button {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 5px;
+                            width: 100%;
+                            max-width: 140px;
+                            height: 100%;
+                            border: none;
+                            outline: none;
+
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+
+                        > .color-lightgreen {
+                            background-color: lightgreen;
+                        }
+                    }
+                }
+
+                > .users-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    > .user-nav, > .user {
+                        display: flex;
+                        align-items: center;
+                        height: 50px;
+                        padding: 5px 10px;
+                        border-radius: 5px;
+
+                        > .user-id {
+                            width: 100%;
+                            max-width: 30px;
+                        }
+
+                        > .user-name {
+                            width: 100%;
+                            max-width: 300px;
+                        }
+
+                        > .user-email {
+                            width: 100%;
+                            max-width: 300px;
+                        }
+
+                        > .user-action-buttons {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            width: 100%;
+                            max-width: 300px;
+
+                            > button, a {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                border-radius: 5px;
+                                width: 100%;
+                                max-width: 140px;
+                                height: 50px;
+                                border: none;
+                                outline: none;
+                                color: black;
+
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+
+                            > .color-lightgreen {
+                                background-color: lightgreen;
+                            }
+
+                            > .color-lightcoral {
+                                background-color: lightcoral;
+                            }
+                        }
+                    }
+
+                    > .user {
+                        cursor: pointer;
+                    }
+                }
+
+                > .new-user-fields {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    > input {
+                        width: 100%;
+                        max-width: 300px;
+                        height: 50px;
+                        padding: 0 0 0 10px;
+                        border-radius: 5px;
+                    }
+
+                    > input[type=submit] {
+                        background-color: olive;
+                        font-size: 1.5rem;
+                        color: white;
+                        border: none;
+                        outline: none;
+                    }
+
+                    > .error {
+                        border: 1px solid red;
+                    }
+
+                    > .correct {
+                        border: 1px solid green;
+                    }
+                }
+
+                > .user-info-block {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 50px;
+
+                    > .user-info-name {
+                        display: flex;
+                        gap: 20px;
+
+                        > h3 {
+                            width: 100%;
+                            max-width: 300px;
+                        }
+
+                        > .user-info-name-content {
+                            display: flex;
+                            flex-grow: 1;
+                            gap: 20px;
+
+                            > .input-name {
+                                height: 50px;
+                                width: 100%;
+                                max-width: 300px;
+
+                                > input {
+                                    height: 100%;
+                                    width: 100%;
+                                    padding: 0 0 0 10px;
+                                    border: 1px solid silver;
+                                    border-radius: 5px;
+                                }
+                            }
+
+                            > .action-buttons {
+                                height: 50px;
+                                width: 100%;
+                                max-width: 300px;
+                                display: flex;
+                                gap: 10px;
+
+                                > button {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-radius: 5px;
+                                    width: 100%;
+                                    max-width: 140px;
+                                    height: 100%;
+                                    border: none;
+                                    outline: none;
+
+                                    &:hover {
+                                        transform: scale(1.1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    > .user-info-phone {
+                        display: flex;
+                        gap: 20px;
+
+                        > h3 {
+                            width: 100%;
+                            max-width: 300px;
+                        }
+
+                        > .user-info-phone-content {
+                            display: flex;
+                            flex-direction: column;
+                            flex-grow: 1;
+                            gap: 20px;
+
+                            > .item {
+                                width: 100%;
+                                display: flex;
+                                gap: 20px;
+
+                                > .input-phone {
+                                    height: 50px;
+                                    width: 100%;
+                                    max-width: 300px;
+
+                                    > input {
+                                        height: 100%;
+                                        width: 100%;
+                                        padding: 0 0 0 10px;
+                                        border: 1px solid silver;
+                                        border-radius: 5px;
+                                    }
+                                }
+
+                                > .phone-status, > .phone-confirmation {
+                                    height: 50px;
+                                    width: 100%;
+                                    max-width: 140px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    font-size: 1rem;
+                                    padding: 0 0 0 10px;
+                                    border: 1px solid silver;
+                                    border-radius: 5px;
+                                }
+
+                                > .confirmed {
+                                    background-color: lightgreen;
+                                }
+
+                                > .not-confirmed {
+                                    background-color: red;
+                                }
+
+                                > .action-buttons {
+                                    height: 50px;
+                                    width: 100%;
+                                    max-width: 300px;
+                                    display: flex;
+                                    gap: 10px;
+
+                                    > button {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        border-radius: 5px;
+                                        width: 100%;
+                                        max-width: 140px;
+                                        height: 100%;
+                                        border: none;
+                                        outline: none;
+
+                                        &:hover {
+                                            transform: scale(1.1);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    > .user-info-payments {
+                        display: flex;
+                        gap: 20px;
+
+                        > h3 {
+                            width: 100%;
+                            max-width: 300px;
+                        }
+
+                        > .user-info-payments-content {
+                            display: flex;
+                            flex-direction: column;
+                            flex-grow: 1;
+                            gap: 20px;
+
+                            > .item {
+                                width: 100%;
+                                display: flex;
+                                gap: 20px;
+
+                                > .input-payment {
+                                    height: 50px;
+                                    width: 100%;
+                                    max-width: 300px;
+
+                                    > input {
+                                        height: 100%;
+                                        width: 100%;
+                                        padding: 0 0 0 10px;
+                                        border: 1px solid silver;
+                                        border-radius: 5px;
+                                    }
+                                }
+
+                                > .payment-status {
+                                    height: 50px;
+                                    width: 100%;
+                                    max-width: 140px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    font-size: 1rem;
+                                    padding: 0 0 0 10px;
+                                    border: 1px solid silver;
+                                    border-radius: 5px;
+                                }
+
+                                > .action-buttons {
+                                    height: 50px;
+                                    width: 100%;
+                                    max-width: 300px;
+                                    display: flex;
+                                    gap: 10px;
+
+                                    > button {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        border-radius: 5px;
+                                        width: 100%;
+                                        max-width: 140px;
+                                        height: 100%;
+                                        border: none;
+                                        outline: none;
+
+                                        &:hover {
+                                            transform: scale(1.1);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

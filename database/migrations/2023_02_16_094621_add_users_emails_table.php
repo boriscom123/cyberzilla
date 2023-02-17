@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users_emails', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('user_id')->comment('users->id');
             $table->string('email', 255)->comment('Email пользователя');
             $table->unsignedBigInteger('status_id')->default(1)->comment('Статус контакта пользователя');

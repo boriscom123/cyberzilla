@@ -14,10 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('payments_status', function (Blueprint $table) {
+            $table->id();
             $table->string('text', 32)->comment('Статус платежа пользователя');
         });
 
         Schema::create('users_payments', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('user_id')->comment('users->id');
             $table->timestamps();
             $table->string('payment_number', 36)->nullable()->comment('Номер платежа пользователя');
