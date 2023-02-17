@@ -20924,9 +20924,11 @@ __webpack_require__.r(__webpack_exports__);
       },
       view_user_id: null,
       new_phone_number: '',
-      new_phone_status: '',
-      new_phone_confirmation: '',
-      show_payments: false
+      new_phone_status: 1,
+      new_phone_confirmation: 0,
+      new_payment_number: '',
+      new_payment_status: 1,
+      new_payment_total: 0
     };
   },
   mounted: function mounted() {
@@ -21063,6 +21065,58 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log('error', error);
       });
+    },
+    add_user_payment: function add_user_payment(user_id) {
+      var _this8 = this;
+      var data = {
+        user_id: user_id,
+        payment_number: this.new_payment_number,
+        payment_status: this.new_payment_status,
+        payment_total: this.new_payment_total
+      };
+      axios.post('/api/user/payment/add', data).then(function (response) {
+        if ('is_added' in response.data) {
+          if (response.data['is_added']) {
+            _this8.new_payment_number = '';
+            _this8.new_payment_status = 1;
+            _this8.get_users();
+          }
+        }
+      })["catch"](function (error) {
+        console.log('error', error);
+      });
+    },
+    change_user_payment: function change_user_payment(payment_id) {
+      var _this9 = this;
+      var data = {
+        user_id: this.view_user_id,
+        payment_id: payment_id,
+        data: this.users[this.view_user_id]['payments'][payment_id]
+      };
+      axios.post('/api/user/payment/change', data).then(function (response) {
+        if ('is_changed' in response.data) {
+          if (response.data['is_changed']) {
+            _this9.get_users();
+          }
+        }
+      })["catch"](function (error) {
+        console.log('error', error);
+      });
+    },
+    remove_user_payment: function remove_user_payment(payment_id) {
+      var _this10 = this;
+      var data = {
+        payment_id: payment_id
+      };
+      axios.post('/api/user/payment/remove', data).then(function (response) {
+        if ('is_removed' in response.data) {
+          if (response.data['is_removed']) {
+            _this10.get_users();
+          }
+        }
+      })["catch"](function (error) {
+        console.log('error', error);
+      });
     }
   }
 });
@@ -21174,7 +21228,7 @@ var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   selected: ""
 }, "Подтвержден", -1 /* HOISTED */);
 var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-  value: "2"
+  value: "0"
 }, "Не подтвержден", -1 /* HOISTED */);
 var _hoisted_42 = [_hoisted_40, _hoisted_41];
 var _hoisted_43 = {
@@ -21194,18 +21248,57 @@ var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   value: "1"
 }, "Подтвержден", -1 /* HOISTED */);
 var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-  value: "2"
+  value: "0"
 }, "Не подтвержден", -1 /* HOISTED */);
 var _hoisted_56 = [_hoisted_54, _hoisted_55];
 var _hoisted_57 = {
   "class": "action-buttons"
 };
 var _hoisted_58 = {
-  key: 0,
   "class": "user-info-payments"
 };
-var _hoisted_59 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h3>Платежи:</h3><div class=\"user-info-payments-content\"><div class=\"item\"><div class=\"input-payment\"><input type=\"text\" placeholder=\"№ платежа\" value=\"6545 6545 6545 6545\"></div><select class=\"payment-status\"><option id=\"1\">В обработке</option><option id=\"2\" selected>Завершен</option></select><div class=\"action-buttons\"><button>Изменить</button><button>Удалить</button></div></div><div class=\"item\"><div class=\"input-payment\"><input type=\"text\" placeholder=\"№ платежа\"></div><select class=\"payment-status\"><option id=\"1\" selected>В обработке</option><option id=\"2\">Завершен</option></select><div class=\"action-buttons\"><button>Добавить</button></div></div></div>", 2);
-var _hoisted_61 = [_hoisted_59];
+var _hoisted_59 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Платежи:", -1 /* HOISTED */);
+var _hoisted_60 = {
+  "class": "user-info-payments-content"
+};
+var _hoisted_61 = {
+  "class": "item"
+};
+var _hoisted_62 = {
+  "class": "input-payment"
+};
+var _hoisted_63 = ["onUpdate:modelValue"];
+var _hoisted_64 = ["onUpdate:modelValue"];
+var _hoisted_65 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+  value: "1"
+}, "В обработке", -1 /* HOISTED */);
+var _hoisted_66 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+  value: "2",
+  selected: ""
+}, "Завершен", -1 /* HOISTED */);
+var _hoisted_67 = [_hoisted_65, _hoisted_66];
+var _hoisted_68 = {
+  "class": "action-buttons"
+};
+var _hoisted_69 = ["onClick"];
+var _hoisted_70 = ["onClick"];
+var _hoisted_71 = {
+  "class": "item"
+};
+var _hoisted_72 = {
+  "class": "input-payment"
+};
+var _hoisted_73 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+  value: "1",
+  selected: ""
+}, "В обработке", -1 /* HOISTED */);
+var _hoisted_74 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+  value: "2"
+}, "Завершен", -1 /* HOISTED */);
+var _hoisted_75 = [_hoisted_73, _hoisted_74];
+var _hoisted_76 = {
+  "class": "action-buttons"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [this.template === 'list' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
@@ -21333,7 +21426,45 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[13] || (_cache[13] = function ($event) {
       return $options.add_user_phone_number(_this.view_user_id);
     })
-  }, "Добавить")])])])]), this.show_payments ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_58, _hoisted_61)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+  }, "Добавить")])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_58, [_hoisted_59, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_60, [Object.keys(this.users[this.view_user_id]['payments']).length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    key: 0
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(this.users[this.view_user_id]['payments'], function (item, index) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_61, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_62, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+      "onUpdate:modelValue": function onUpdateModelValue($event) {
+        return _this.users[_this.view_user_id]['payments'][index]['payment_number'] = $event;
+      },
+      type: "text",
+      placeholder: "№ платежа"
+    }, null, 8 /* PROPS */, _hoisted_63), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _this.users[_this.view_user_id]['payments'][index]['payment_number']]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+      "onUpdate:modelValue": function onUpdateModelValue($event) {
+        return _this.users[_this.view_user_id]['payments'][index]['payment_status'] = $event;
+      },
+      "class": "payment-status"
+    }, _hoisted_67, 8 /* PROPS */, _hoisted_64), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, _this.users[_this.view_user_id]['payments'][index]['payment_status']]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_68, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      onClick: function onClick($event) {
+        return $options.change_user_payment(index);
+      }
+    }, "Изменить", 8 /* PROPS */, _hoisted_69), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      onClick: function onClick($event) {
+        return $options.remove_user_payment(index);
+      }
+    }, "Удалить", 8 /* PROPS */, _hoisted_70)])]);
+  }), 256 /* UNKEYED_FRAGMENT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_71, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_72, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[14] || (_cache[14] = function ($event) {
+      return _this.new_payment_number = $event;
+    }),
+    type: "text",
+    placeholder: "№ платежа"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, this.new_payment_number]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+    "onUpdate:modelValue": _cache[15] || (_cache[15] = function ($event) {
+      return _this.new_payment_status = $event;
+    }),
+    "class": "payment-status"
+  }, _hoisted_75, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, this.new_payment_status]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_76, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[16] || (_cache[16] = function ($event) {
+      return $options.add_user_payment(_this.view_user_id);
+    })
+  }, "Добавить")])])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
 }
 
 /***/ }),
