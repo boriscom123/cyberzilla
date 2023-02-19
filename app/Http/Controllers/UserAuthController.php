@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\UserOptions;
+use App\Models\UserRoles;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -31,6 +34,11 @@ class UserAuthController extends Controller
 
     public function login(Request $request)
     {
+        $response = [
+            'status' => 200,
+            'is_user_login' => false,
+        ];
+
         $request->validate([
             'email' => 'required|email',
             'password' => 'required|min:6',
@@ -40,11 +48,12 @@ class UserAuthController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials, $remember)) {
-            return Redirect('/admin');
+            $response['is_user_login'] = true;
         }
 
-        return redirect("/");
+        return new JsonResponse($response);
     }
+
 
     public function logout(Request $request) {
         Auth::logout();
@@ -54,6 +63,11 @@ class UserAuthController extends Controller
 
     public function registration(Request $request)
     {
+        $response = [
+            'status' => 200,
+            'is_user_registered' => false,
+        ];
+
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
@@ -66,10 +80,20 @@ class UserAuthController extends Controller
         if ($check) {
             $credentials = $request->only('email', 'password');
             if (Auth::attempt($credentials)) {
-                return Redirect('/admin');
+                $response['is_user_registered'] = true;
+                /** @var User $user */
+                $user = Auth::user();
+                /** @var UserRoles $userRoles */
+                $userRoles = UserRoles::query()->where('id', 2)->first();
+
+                $userOptions = new UserOptions();
+                $userOptions->user_id = $user->id;
+                $userOptions->user_role_id = $userRoles->id;
+                $userOptions->save();
             }
         }
-        return redirect('/');
+
+        return new JsonResponse($response);
     }
 
     public function createNewUser(array $data)

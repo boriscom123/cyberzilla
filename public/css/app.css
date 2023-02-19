@@ -10944,17 +10944,47 @@ label {
 .site-header > .fixed-header > .container > .header-container-content {
   display: flex;
   justify-content: space-between;
+  gap: 50px;
 }
 .site-header > .fixed-header > .container > .header-container-content > .header-logo {
   color: black;
   text-decoration: none;
   font-size: 2.5rem;
+  display: flex;
+  align-items: center;
 }
-.site-header > .fixed-header > .container > .header-container-content > .user-info {
+.site-header > .fixed-header > .container > .header-container-content > .navigation {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 10px;
+}
+.site-header > .fixed-header > .container > .header-container-content > .navigation > .user-info {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 1.5rem;
+}
+.site-header > .fixed-header > .container > .header-container-content > .navigation > .links {
+  display: flex;
+  gap: 20px;
+}
+.site-header > .fixed-header > .container > .header-container-content > .navigation > .links > a {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+}
+.site-header > .fixed-header > .container > .header-container-content > .navigation > .links > a:hover {
+  color: silver;
+  border: 1px solid silver;
+}
+.site-header > .fixed-header > .container > .header-container-content > .navigation > .links > .active {
+  color: silver;
+  border: 1px solid silver;
 }
 .site-header > .fixed-header > .container > .header-container-content > .header-navigation {
   display: flex;
@@ -10995,27 +11025,6 @@ label {
 .site-main > .container > .container-content > .title {
   text-align: center;
 }
-.site-main > .container > .container-content > input[type=checkbox] {
-  display: none;
-}
-.site-main > .container > .container-content > input[type=checkbox] ~ .login-form {
-  display: none;
-}
-.site-main > .container > .container-content > input[type=checkbox] ~ .login-form-label {
-  display: none;
-}
-.site-main > .container > .container-content > input[type=checkbox]:checked ~ .login-form {
-  display: flex;
-}
-.site-main > .container > .container-content > input[type=checkbox]:checked ~ .login-form-label {
-  display: flex;
-}
-.site-main > .container > .container-content > input[type=checkbox]:checked ~ .registration-form {
-  display: none;
-}
-.site-main > .container > .container-content > input[type=checkbox]:checked ~ .registration-form-label {
-  display: none;
-}
 .site-main > .container > .container-content > .login-form, .site-main > .container > .container-content > .registration-form {
   width: 100%;
   display: flex;
@@ -11054,6 +11063,16 @@ label {
   font-weight: 500;
   background-color: silver;
   transition: 0.3s;
+}
+.site-main > .container > .container-content > .login-form > .form-block > .input > input[type=submit]:hover, .site-main > .container > .container-content > .registration-form > .form-block > .input > input[type=submit]:hover {
+  background-color: olive;
+  color: white;
+}
+.site-main > .container > .container-content > .login-form > .form-block > .error, .site-main > .container > .container-content > .registration-form > .form-block > .error {
+  border: 1px solid red;
+}
+.site-main > .container > .container-content > .login-form > .form-block > .success, .site-main > .container > .container-content > .registration-form > .form-block > .success {
+  border: 1px solid olive;
 }
 .site-main > .container > .container-content > .login-form > .form-block-checkbox, .site-main > .container > .container-content > .registration-form > .form-block-checkbox {
   display: flex;

@@ -15,36 +15,6 @@
                 text-align: center;
             }
 
-            > input[type=checkbox] {
-                display: none;
-
-                ~ .login-form {
-                    display: none;
-                }
-
-                ~ .login-form-label {
-                    display: none;
-                }
-
-                &:checked {
-                    ~ .login-form {
-                        display: flex;
-                    }
-
-                    ~ .login-form-label {
-                        display: flex;
-                    }
-
-                    ~ .registration-form {
-                        display: none;
-                    }
-
-                    ~ .registration-form-label {
-                        display: none;
-                    }
-                }
-            }
-
             > .login-form, > .registration-form {
                 width: 100%;
                 display: flex;
@@ -85,7 +55,20 @@
                             font-weight: 500;
                             background-color: silver;
                             transition: $transition;
+
+                            &:hover {
+                                background-color: olive;
+                                color: white;
+                            }
                         }
+                    }
+
+                    > .error {
+                        border: 1px solid red;
+                    }
+
+                    > .success {
+                        border: 1px solid olive;
                     }
                 }
 

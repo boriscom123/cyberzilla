@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Api\UsersController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\RulesController;
 use App\Http\Controllers\UserAuthController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,7 @@ Route::controller(UserAuthController::class)->group(function () {
 });
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/rules', [RulesController::class, 'index'])->name('rules');
 
 
 Route::get('/api/users/get', [UsersController::class, 'getUsers']);

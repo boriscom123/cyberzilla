@@ -20,5 +20,8 @@
         "vue": "^3.2.37",
         "vue-loader": "^16.8.3",
         "vue-template-compiler": "^2.7.14"
+    },
+    "dependencies": {
+        "vue-toastification": "^2.0.0-rc.5"
     }
 }
