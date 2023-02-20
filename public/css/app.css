@@ -48,7 +48,7 @@
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
-  --bs-body-bg-rgb: 248, 250, 252;
+  --bs-body-bg-rgb: 249, 249, 253;
   --bs-font-sans-serif: "Nunito", sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
@@ -57,7 +57,7 @@
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
-  --bs-body-bg: #f8fafc;
+  --bs-body-bg: #F9F9FD;
   --bs-border-width: 1px;
   --bs-border-style: solid;
   --bs-border-color: #dee2e6;
@@ -614,7 +614,7 @@ progress {
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #f8fafc;
+  background-color: #F9F9FD;
   border: 1px solid var(--bs-border-color);
   border-radius: 0.375rem;
   max-width: 100%;
@@ -2013,7 +2013,7 @@ progress {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  background-color: #f8fafc;
+  background-color: #F9F9FD;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   -webkit-appearance: none;
@@ -2035,7 +2035,7 @@ progress {
 }
 .form-control:focus {
   color: #212529;
-  background-color: #f8fafc;
+  background-color: #F9F9FD;
   border-color: #86b7fe;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
@@ -2170,7 +2170,7 @@ textarea.form-control-lg {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  background-color: #f8fafc;
+  background-color: #F9F9FD;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
@@ -2252,7 +2252,7 @@ textarea.form-control-lg {
   height: 1em;
   margin-top: 0.25em;
   vertical-align: top;
-  background-color: #f8fafc;
+  background-color: #F9F9FD;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -2363,10 +2363,10 @@ textarea.form-control-lg {
   outline: 0;
 }
 .form-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 1px #F9F9FD, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .form-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 1px #F9F9FD, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .form-range::-moz-focus-outer {
   border: 0;
@@ -3685,8 +3685,8 @@ textarea.form-control-lg {
   --bs-nav-tabs-border-radius: 0.375rem;
   --bs-nav-tabs-link-hover-border-color: #e9ecef #e9ecef #dee2e6;
   --bs-nav-tabs-link-active-color: #495057;
-  --bs-nav-tabs-link-active-bg: #f8fafc;
-  --bs-nav-tabs-link-active-border-color: #dee2e6 #dee2e6 #f8fafc;
+  --bs-nav-tabs-link-active-bg: #F9F9FD;
+  --bs-nav-tabs-link-active-border-color: #dee2e6 #dee2e6 #F9F9FD;
   border-bottom: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
 }
 .nav-tabs .nav-link {
@@ -4370,7 +4370,7 @@ textarea.form-control-lg {
 
 .accordion {
   --bs-accordion-color: #212529;
-  --bs-accordion-bg: #f8fafc;
+  --bs-accordion-bg: #F9F9FD;
   --bs-accordion-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
   --bs-accordion-border-color: var(--bs-border-color);
   --bs-accordion-border-width: 1px;
@@ -10881,18 +10881,17 @@ textarea.form-control-lg {
 html {
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   scroll-behavior: smooth;
 }
 
 body {
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-}
-body > div {
-  height: 100%;
 }
 
 a {
@@ -10919,6 +10918,11 @@ select {
 
 label {
   cursor: pointer;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
 }
 
 .site-header {
@@ -11014,13 +11018,12 @@ label {
 }
 
 .site-main {
-  padding: 10px 0 0 0;
+  padding: 10px 0 10px 0;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   width: 100%;
-  height: calc(100% - 150px);
-  background-color: white;
+  min-height: calc(100% - 150px);
 }
 .site-main > .container > .container-content > .title {
   text-align: center;
@@ -11410,6 +11413,211 @@ label {
 }
 .site-main > .container > .container-content > .user-component > .user-info-block > .user-info-payments > .user-info-payments-content > .item > .action-buttons > button:hover {
   transform: scale(1.1);
+}
+.site-main > .container > .container-content > .component-user-roles > .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-user-roles > .title > h2, .site-main > .container > .container-content > .component-user-roles > .title > .h2 {
+  font-weight: 700;
+  padding: 20px 0;
+}
+.site-main > .container > .container-content > .component-user-roles > .title > .button-add {
+  height: 50px;
+  background-color: #0d6efd;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.site-main > .container > .container-content > .component-user-roles > .title > .button-add:hover {
+  background-color: #0257d5;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list {
+  background-color: white;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  border-radius: 5px;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav {
+  display: flex;
+  height: 50px;
+  border-top: 1px solid silver;
+  cursor: pointer;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav:hover {
+  background-color: #d3d3f0;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .number {
+  height: 100%;
+  width: 100%;
+  max-width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .name {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .rules {
+  height: 100%;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .rules > .rule-checkbox {
+  height: 25px;
+  width: 25px;
+  min-width: 25px;
+  border-radius: 5px;
+  border: 1px solid silver;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .rules > .rule-checkbox:hover {
+  background-color: #0d6efd;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .rules > .checked {
+  background-size: 75%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(/images/icons8-done.svg?2306376a63725e61064dd68500548caf);
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .rules > .checked:hover {
+  background-color: #d3d3f0;
+  background-size: 95%;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .buttons {
+  height: 100%;
+  width: 100%;
+  max-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .buttons > div {
+  height: 25px;
+  min-width: 25px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .buttons > div:hover {
+  transform: scale(1.2);
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .buttons > .icon-save {
+  background-image: url(/images/floppy-disk-regular.svg?34121a550ea73cfaa1eb371961db00fc);
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .buttons > .icon-delete {
+  background-image: url(/images/trash-can-regular.svg?84dcff211c5fd262e2ca1bef7eb76121);
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .buttons > .icon-eye {
+  background-image: url(/images/eye-regular.svg?8e200cae6bab22b036cf129419239879);
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav-title {
+  border-top: none;
+  cursor: unset;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav-title:hover {
+  background-color: white;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav-title > .number {
+  font-weight: 600;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav-title > .name {
+  font-weight: 600;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav-title > .rules > .rule-title {
+  font-weight: 600;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-new, .site-main > .container > .container-content > .component-user-roles > .roles-update {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  border-radius: 5px;
+  padding: 50px;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-new > .role-option, .site-main > .container > .container-content > .component-user-roles > .roles-update > .role-option {
+  display: flex;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-new > .role-option > .text, .site-main > .container > .container-content > .component-user-roles > .roles-update > .role-option > .text {
+  width: 30%;
+  display: flex;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-new > .role-option > .text > span, .site-main > .container > .container-content > .component-user-roles > .roles-update > .role-option > .text > span {
+  color: red;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-new > .role-option > .input, .site-main > .container > .container-content > .component-user-roles > .roles-update > .role-option > .input {
+  height: 50px;
+  overflow: hidden;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-new > .role-option > .input > input[type=text], .site-main > .container > .container-content > .component-user-roles > .roles-update > .role-option > .input > input[type=text] {
+  height: 100%;
+  padding: 0 0 0 20px;
+  outline: none;
+  width: 100%;
+  border: 1px solid silver;
+  border-radius: 5px;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-new > .role-option > .input > input[type=checkbox], .site-main > .container > .container-content > .component-user-roles > .roles-update > .role-option > .input > input[type=checkbox] {
+  height: 100%;
+  padding: 0 0 0 20px;
+  outline: none;
+  border: none;
+  width: 100%;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-new > .role-option > .input > input[type=checkbox], .site-main > .container > .container-content > .component-user-roles > .roles-update > .role-option > .input > input[type=checkbox] {
+  height: 25px;
+  width: 25px;
+  min-width: 25px;
+  border-radius: 5px;
+  border: 1px solid silver;
+  outline: none;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-new > .role-option > .input > input[type=checkbox]:hover, .site-main > .container > .container-content > .component-user-roles > .roles-update > .role-option > .input > input[type=checkbox]:hover {
+  background-color: #0d6efd;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-new > .role-option > .input > .checked, .site-main > .container > .container-content > .component-user-roles > .roles-update > .role-option > .input > .checked {
+  background-size: 75%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(/images/icons8-done.svg?2306376a63725e61064dd68500548caf);
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-new > .role-option > .input > .checked:hover, .site-main > .container > .container-content > .component-user-roles > .roles-update > .role-option > .input > .checked:hover {
+  background-color: #d3d3f0;
+  background-size: 95%;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-new > .role-button, .site-main > .container > .container-content > .component-user-roles > .roles-update > .role-button {
+  display: flex;
+  justify-content: flex-end;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-new > .role-button > div, .site-main > .container > .container-content > .component-user-roles > .roles-update > .role-button > div {
+  height: 50px;
+  background-color: #0d6efd;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-new > .role-button > div:hover, .site-main > .container > .container-content > .component-user-roles > .roles-update > .role-button > div:hover {
+  background-color: #0257d5;
 }
 
 .site-footer {

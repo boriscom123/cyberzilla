@@ -11,10 +11,9 @@
             <div class="container-content">
                 @if ($data['auth'] === true)
                     <div class="navigation">
-                        <a href="{{ route('admin') }}">Права пользователей</a>
-                        <a href="{{ route('admin') }}">Пользователи</a>
-                        <a href="{{ route('admin') }}">Платежи</a>
-
+                        <a href="{{ route('roles') }}">Права пользователей</a>
+                        <a href="{{ route('users') }}">Пользователи</a>
+                        <a href="{{ route('payments') }}">Платежи</a>
                     </div>
                 @else
                     <login-component app_env='{{ env('APP_ENV', 'local') }}'></login-component>

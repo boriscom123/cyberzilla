@@ -11,9 +11,9 @@
                             <div class="user-role">{{ $params['role']['name'] }}</div>
                         </div>
                         <div class="links">
-                            <a href="{{ route('rules') }}" @if ($params['active-navigation'] === 'rules') class="active" @endif>Права пользователей</a>
-                            <a href="{{ route('admin') }}">Пользователи</a>
-                            <a href="{{ route('admin') }}">Платежи</a>
+                            <a href="{{ route('roles') }}" @if ($params['active-navigation'] === 'roles') class="active" @endif>Права пользователей</a>
+                            <a href="{{ route('users') }}" @if ($params['active-navigation'] === 'users') class="active" @endif>Пользователи</a>
+                            <a href="{{ route('payments') }}" @if ($params['active-navigation'] === 'payments') class="active" @endif>Платежи</a>
                         </div>
                     </div>
 

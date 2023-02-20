@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\Api\UsersController;
+use App\Http\Controllers\Api\RolesAPIController;
+use App\Http\Controllers\Api\UsersAPIController;
+use App\Http\Controllers\Auth\PaymentsController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\RulesController;
+use App\Http\Controllers\RolesController;
 use App\Http\Controllers\UserAuthController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -29,17 +31,25 @@ Route::controller(UserAuthController::class)->group(function () {
     Route::post('/user/registration', 'registration')->name('user.registration');
 });
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
-Route::get('/rules', [RulesController::class, 'index'])->name('rules');
+Route::get('/users', [UsersController::class, 'index'])->name('users');
+Route::get('/roles', [RolesController::class, 'index'])->name('roles');
+Route::get('/payments', [PaymentsController::class, 'index'])->name('payments');
 
 
-Route::get('/api/users/get', [UsersController::class, 'getUsers']);
-Route::post('/api/user/add', [UsersController::class, 'addUser']);
-Route::post('/api/user/remove', [UsersController::class, 'removeUser']);
-Route::post('/api/user/name/change', [UsersController::class, 'changeUserName']);
-Route::post('/api/user/phone/add', [UsersController::class, 'addUserPhone']);
-Route::post('/api/user/phone/change', [UsersController::class, 'changeUserPhone']);
-Route::post('/api/user/phone/remove', [UsersController::class, 'removeUserPhone']);
-Route::post('/api/user/payment/add', [UsersController::class, 'addUserPayment']);
-Route::post('/api/user/payment/change', [UsersController::class, 'changeUserPayment']);
-Route::post('/api/user/payment/remove', [UsersController::class, 'removeUserPayment']);
+Route::get('/api/users/get', [UsersAPIController::class, 'getUsers']);
+Route::post('/api/user/add', [UsersAPIController::class, 'addUser']);
+Route::post('/api/user/remove', [UsersAPIController::class, 'removeUser']);
+Route::post('/api/user/name/change', [UsersAPIController::class, 'changeUserName']);
+Route::post('/api/user/phone/add', [UsersAPIController::class, 'addUserPhone']);
+Route::post('/api/user/phone/change', [UsersAPIController::class, 'changeUserPhone']);
+Route::post('/api/user/phone/remove', [UsersAPIController::class, 'removeUserPhone']);
+Route::post('/api/user/payment/add', [UsersAPIController::class, 'addUserPayment']);
+Route::post('/api/user/payment/change', [UsersAPIController::class, 'changeUserPayment']);
+Route::post('/api/user/payment/remove', [UsersAPIController::class, 'removeUserPayment']);
+
+Route::post('/api/roles/roles_list', [RolesAPIController::class, 'changeRoles']);
+Route::post('/api/roles/users_list', [RolesAPIController::class, 'changeUsers']);
+Route::post('/api/roles/payments_list', [RolesAPIController::class, 'changePayments']);
+Route::post('/api/roles/delete', [RolesAPIController::class, 'roleDelete']);
+Route::post('/api/roles/create', [RolesAPIController::class, 'roleCreate']);
+Route::post('/api/roles/update', [RolesAPIController::class, 'roleUpdate']);

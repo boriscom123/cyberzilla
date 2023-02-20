@@ -25,6 +25,8 @@ app.component('users-component', UsersComponent);
 import LoginComponent from "./components/LoginComponent.vue";
 app.component('login-component', LoginComponent);
 
+import RolesComponent from "./components/RolesComponent.vue";
+app.component('roles-component', RolesComponent);
 
 /**
  * The following block of code may be used to automatically register your

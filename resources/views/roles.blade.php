@@ -9,7 +9,9 @@
     <main class="site-main">
         <div class="container">
             <div class="container-content">
-                Вывод возможных ролей пользователей
+                @if ($data['auth'] === true)
+                    <roles-component app_env='{{ env('APP_ENV', 'local') }}' :roles='@json($data['roles'], JSON_UNESCAPED_UNICODE)'></roles-component>
+                @endif
             </div>
         </div>
     </main>
