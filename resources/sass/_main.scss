@@ -222,6 +222,43 @@
                             line-height: 100%;
                         }
 
+                        > .payment_number {
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            flex-grow: 1;
+                        }
+
+                        > .text-small {
+                            font-size: 0.9rem;
+                        }
+
+                        > .total {
+                            height: 100%;
+                            width: 100%;
+                            max-width: 150px;
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        > .status {
+                            height: 100%;
+                            width: 100%;
+                            max-width: 300px;
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        > .created-at, > .updated-at {
+                            height: 100%;
+                            width: 100%;
+                            max-width: 150px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            overflow: hidden;
+                        }
+
                         > .buttons {
                             height: 100%;
                             width: 100%;
@@ -271,7 +308,7 @@
                                             }
                 }
 
-                > .user-new, > .user-update, > .user-payment-new {
+                > .user-new, > .user-update, > .user-payment-new, > .user-payment-update {
                     display: flex;
                     flex-direction: column;
                     gap: 20px;
