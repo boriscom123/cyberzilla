@@ -10926,7 +10926,7 @@ label {
 }
 
 .site-header {
-  background-color: olive;
+  background-color: white;
   width: 100%;
   min-height: 100px;
   display: flex;
@@ -10940,7 +10940,7 @@ label {
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
-  background-color: olive;
+  background-color: white;
 }
 .site-header > .fixed-header:hover {
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
@@ -10983,12 +10983,12 @@ label {
   color: black;
 }
 .site-header > .fixed-header > .container > .header-container-content > .navigation > .links > a:hover {
-  color: silver;
-  border: 1px solid silver;
+  color: #0d6efd;
+  border: 1px solid #0d6efd;
 }
 .site-header > .fixed-header > .container > .header-container-content > .navigation > .links > .active {
-  color: silver;
-  border: 1px solid silver;
+  color: #0d6efd;
+  border: 1px solid #0d6efd;
 }
 .site-header > .fixed-header > .container > .header-container-content > .header-navigation {
   display: flex;
@@ -11006,7 +11006,7 @@ label {
   width: 100%;
 }
 .site-header > .fixed-header > .container > .header-container-content > .header-navigation > .nav-item > a {
-  color: white;
+  color: #0d6efd;
   cursor: pointer;
   text-decoration: none;
   font-size: 1.5rem;
@@ -11014,7 +11014,7 @@ label {
 .site-header > .fixed-header > .container > .header-container-content > .header-navigation > .nav-item > .nav-item-decoration {
   width: 0;
   height: 3px;
-  background-color: white;
+  background-color: #0d6efd;
 }
 
 .site-main {
@@ -11026,7 +11026,11 @@ label {
   min-height: calc(100% - 150px);
 }
 .site-main > .container > .container-content > .title {
-  text-align: center;
+  padding: 0 0 20px 0;
+}
+.site-main > .container > .container-content > .title > h2, .site-main > .container > .container-content > .title > .h2 {
+  font-weight: 700;
+  padding: 20px 0;
 }
 .site-main > .container > .container-content > .login-form, .site-main > .container > .container-content > .registration-form {
   width: 100%;
@@ -11117,302 +11121,189 @@ label {
 .site-main > .container > .container-content > label:hover {
   border-bottom: 1px solid silver;
 }
-.site-main > .container > .container-content > .user-component > .title {
+.site-main > .container > .container-content > .navigation {
   display: flex;
   gap: 20px;
-  padding: 0 0 20px 0;
 }
-.site-main > .container > .container-content > .user-component > .title > h2, .site-main > .container > .container-content > .user-component > .title > .h2 {
-  margin: 0;
-}
-.site-main > .container > .container-content > .user-component > .title > .action-buttons {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  max-width: 300px;
-}
-.site-main > .container > .container-content > .user-component > .title > .action-buttons > button {
+.site-main > .container > .container-content > .navigation > a {
+  height: 50px;
+  padding: 0 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
-  width: 100%;
-  max-width: 140px;
-  height: 100%;
-  border: none;
-  outline: none;
-}
-.site-main > .container > .container-content > .user-component > .title > .action-buttons > button:hover {
-  transform: scale(1.1);
-}
-.site-main > .container > .container-content > .user-component > .title > .action-buttons > .color-lightgreen {
-  background-color: lightgreen;
-}
-.site-main > .container > .container-content > .user-component > .users-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.site-main > .container > .container-content > .user-component > .users-list > .user-nav, .site-main > .container > .container-content > .user-component > .users-list > .user {
-  display: flex;
-  align-items: center;
-  height: 50px;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-.site-main > .container > .container-content > .user-component > .users-list > .user-nav > .user-id, .site-main > .container > .container-content > .user-component > .users-list > .user > .user-id {
-  width: 100%;
-  max-width: 30px;
-}
-.site-main > .container > .container-content > .user-component > .users-list > .user-nav > .user-name, .site-main > .container > .container-content > .user-component > .users-list > .user > .user-name {
-  width: 100%;
-  max-width: 300px;
-}
-.site-main > .container > .container-content > .user-component > .users-list > .user-nav > .user-email, .site-main > .container > .container-content > .user-component > .users-list > .user > .user-email {
-  width: 100%;
-  max-width: 300px;
-}
-.site-main > .container > .container-content > .user-component > .users-list > .user-nav > .user-action-buttons, .site-main > .container > .container-content > .user-component > .users-list > .user > .user-action-buttons {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  max-width: 300px;
-}
-.site-main > .container > .container-content > .user-component > .users-list > .user-nav > .user-action-buttons > button, .site-main > .container > .container-content > .user-component > .users-list > .user-nav > .user-action-buttons a, .site-main > .container > .container-content > .user-component > .users-list > .user > .user-action-buttons > button, .site-main > .container > .container-content > .user-component > .users-list > .user > .user-action-buttons a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  width: 100%;
-  max-width: 140px;
-  height: 50px;
-  border: none;
-  outline: none;
   color: black;
+  border: 1px solid black;
+  border-radius: 5px;
 }
-.site-main > .container > .container-content > .user-component > .users-list > .user-nav > .user-action-buttons > button:hover, .site-main > .container > .container-content > .user-component > .users-list > .user-nav > .user-action-buttons a:hover, .site-main > .container > .container-content > .user-component > .users-list > .user > .user-action-buttons > button:hover, .site-main > .container > .container-content > .user-component > .users-list > .user > .user-action-buttons a:hover {
-  transform: scale(1.1);
+.site-main > .container > .container-content > .navigation > a:hover {
+  color: #0d6efd;
+  border: 1px solid #0d6efd;
 }
-.site-main > .container > .container-content > .user-component > .users-list > .user-nav > .user-action-buttons > .color-lightgreen, .site-main > .container > .container-content > .user-component > .users-list > .user > .user-action-buttons > .color-lightgreen {
-  background-color: lightgreen;
+.site-main > .container > .container-content > .component-users > .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.site-main > .container > .container-content > .user-component > .users-list > .user-nav > .user-action-buttons > .color-lightcoral, .site-main > .container > .container-content > .user-component > .users-list > .user > .user-action-buttons > .color-lightcoral {
-  background-color: lightcoral;
+.site-main > .container > .container-content > .component-users > .title > h2, .site-main > .container > .container-content > .component-users > .title > .h2 {
+  font-weight: 700;
+  padding: 20px 0;
 }
-.site-main > .container > .container-content > .user-component > .users-list > .user {
+.site-main > .container > .container-content > .component-users > .title > .button-add {
+  height: 50px;
+  background-color: #0d6efd;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
   cursor: pointer;
 }
-.site-main > .container > .container-content > .user-component > .new-user-fields {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.site-main > .container > .container-content > .component-users > .title > .button-add:hover {
+  background-color: #0257d5;
 }
-.site-main > .container > .container-content > .user-component > .new-user-fields > input {
-  width: 100%;
-  max-width: 300px;
-  height: 50px;
-  padding: 0 0 0 10px;
+.site-main > .container > .container-content > .component-users > .users-list, .site-main > .container > .container-content > .component-users > .user-payments-list {
+  background-color: white;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
   border-radius: 5px;
 }
-.site-main > .container > .container-content > .user-component > .new-user-fields > input[type=submit] {
-  background-color: olive;
-  font-size: 1.5rem;
+.site-main > .container > .container-content > .component-users > .users-list > .nav, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav {
+  display: flex;
+  height: 50px;
+  border-top: 1px solid silver;
+  cursor: pointer;
+}
+.site-main > .container > .container-content > .component-users > .users-list > .nav:hover, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav:hover {
+  background-color: #d3d3f0;
+}
+.site-main > .container > .container-content > .component-users > .users-list > .nav > .number, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .number {
+  height: 100%;
+  width: 100%;
+  max-width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-users > .users-list > .nav > .name, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .name {
+  height: 100%;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-users > .users-list > .nav > .email, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .email {
+  height: 100%;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-users > .users-list > .nav > .role, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .role {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  line-height: 100%;
+}
+.site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons {
+  height: 100%;
+  width: 100%;
+  max-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > div, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > div {
+  height: 25px;
+  min-width: 25px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > div:hover, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > div:hover {
+  transform: scale(1.2);
+}
+.site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > .icon-save, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > .icon-save {
+  background-image: url(/images/floppy-disk-regular.svg?34121a550ea73cfaa1eb371961db00fc);
+}
+.site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > .icon-delete, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > .icon-delete {
+  background-image: url(/images/trash-can-regular.svg?84dcff211c5fd262e2ca1bef7eb76121);
+}
+.site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > .icon-eye, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > .icon-eye {
+  background-image: url(/images/eye-regular.svg?8e200cae6bab22b036cf129419239879);
+}
+.site-main > .container > .container-content > .component-users > .users-list > .nav-title, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title {
+  border-top: none;
+  cursor: unset;
+}
+.site-main > .container > .container-content > .component-users > .users-list > .nav-title:hover, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title:hover {
+  background-color: white;
+}
+.site-main > .container > .container-content > .component-users > .users-list > .nav-title > .number, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .name, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .email, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .role, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .number, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .name, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .email, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .role {
+  font-weight: 600;
+}
+.site-main > .container > .container-content > .component-users > .user-new, .site-main > .container > .container-content > .component-users > .user-update, .site-main > .container > .container-content > .component-users > .user-payment-new {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  border-radius: 5px;
+  padding: 50px;
+}
+.site-main > .container > .container-content > .component-users > .user-new > .user-option, .site-main > .container > .container-content > .component-users > .user-update > .user-option, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option {
+  display: flex;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-users > .user-new > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .text {
+  width: 30%;
+  display: flex;
+}
+.site-main > .container > .container-content > .component-users > .user-new > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .text > span {
+  color: red;
+}
+.site-main > .container > .container-content > .component-users > .user-new > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input {
+  height: 50px;
+  overflow: hidden;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-users > .user-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input > input[type=password] {
+  height: 100%;
+  padding: 0 0 0 20px;
+  outline: none;
+  width: 100%;
+  border: 1px solid silver;
+  border-radius: 5px;
+}
+.site-main > .container > .container-content > .component-users > .user-new > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input > select {
+  height: 100%;
+  padding: 0 0 0 20px;
+  outline: none;
+  width: 100%;
+  border: 1px solid silver;
+  border-radius: 5px;
+}
+.site-main > .container > .container-content > .component-users > .user-new > .user-button, .site-main > .container > .container-content > .component-users > .user-update > .user-button, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-button {
+  display: flex;
+  justify-content: flex-end;
+}
+.site-main > .container > .container-content > .component-users > .user-new > .user-button > div, .site-main > .container > .container-content > .component-users > .user-update > .user-button > div, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-button > div {
+  height: 50px;
+  background-color: #0d6efd;
+  border-radius: 5px;
   color: white;
-  border: none;
-  outline: none;
-}
-.site-main > .container > .container-content > .user-component > .new-user-fields > .error {
-  border: 1px solid red;
-}
-.site-main > .container > .container-content > .user-component > .new-user-fields > .correct {
-  border: 1px solid green;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-name {
-  display: flex;
-  gap: 20px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-name > h3, .site-main > .container > .container-content > .user-component > .user-info-block > .user-info-name > .h3 {
-  width: 100%;
-  max-width: 300px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-name > .user-info-name-content {
-  display: flex;
-  flex-grow: 1;
-  gap: 20px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-name > .user-info-name-content > .input-name {
-  height: 50px;
-  width: 100%;
-  max-width: 300px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-name > .user-info-name-content > .input-name > input {
-  height: 100%;
-  width: 100%;
-  padding: 0 0 0 10px;
-  border: 1px solid silver;
-  border-radius: 5px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-name > .user-info-name-content > .action-buttons {
-  height: 50px;
-  width: 100%;
-  max-width: 300px;
-  display: flex;
-  gap: 10px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-name > .user-info-name-content > .action-buttons > button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
-  width: 100%;
-  max-width: 140px;
-  height: 100%;
-  border: none;
-  outline: none;
+  padding: 0 10px;
+  cursor: pointer;
 }
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-name > .user-info-name-content > .action-buttons > button:hover {
-  transform: scale(1.1);
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-phone {
-  display: flex;
-  gap: 20px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-phone > h3, .site-main > .container > .container-content > .user-component > .user-info-block > .user-info-phone > .h3 {
-  width: 100%;
-  max-width: 300px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-phone > .user-info-phone-content {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  gap: 20px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-phone > .user-info-phone-content > .item {
-  width: 100%;
-  display: flex;
-  gap: 20px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-phone > .user-info-phone-content > .item > .input-phone {
-  height: 50px;
-  width: 100%;
-  max-width: 300px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-phone > .user-info-phone-content > .item > .input-phone > input {
-  height: 100%;
-  width: 100%;
-  padding: 0 0 0 10px;
-  border: 1px solid silver;
-  border-radius: 5px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-phone > .user-info-phone-content > .item > .phone-status, .site-main > .container > .container-content > .user-component > .user-info-block > .user-info-phone > .user-info-phone-content > .item > .phone-confirmation {
-  height: 50px;
-  width: 100%;
-  max-width: 140px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-  padding: 0 0 0 10px;
-  border: 1px solid silver;
-  border-radius: 5px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-phone > .user-info-phone-content > .item > .confirmed {
-  background-color: lightgreen;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-phone > .user-info-phone-content > .item > .not-confirmed {
-  background-color: red;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-phone > .user-info-phone-content > .item > .action-buttons {
-  height: 50px;
-  width: 100%;
-  max-width: 300px;
-  display: flex;
-  gap: 10px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-phone > .user-info-phone-content > .item > .action-buttons > button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  width: 100%;
-  max-width: 140px;
-  height: 100%;
-  border: none;
-  outline: none;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-phone > .user-info-phone-content > .item > .action-buttons > button:hover {
-  transform: scale(1.1);
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-payments {
-  display: flex;
-  gap: 20px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-payments > h3, .site-main > .container > .container-content > .user-component > .user-info-block > .user-info-payments > .h3 {
-  width: 100%;
-  max-width: 300px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-payments > .user-info-payments-content {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  gap: 20px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-payments > .user-info-payments-content > .item {
-  width: 100%;
-  display: flex;
-  gap: 20px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-payments > .user-info-payments-content > .item > .input-payment {
-  height: 50px;
-  width: 100%;
-  max-width: 300px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-payments > .user-info-payments-content > .item > .input-payment > input {
-  height: 100%;
-  width: 100%;
-  padding: 0 0 0 10px;
-  border: 1px solid silver;
-  border-radius: 5px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-payments > .user-info-payments-content > .item > .payment-status {
-  height: 50px;
-  width: 100%;
-  max-width: 140px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-  padding: 0 0 0 10px;
-  border: 1px solid silver;
-  border-radius: 5px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-payments > .user-info-payments-content > .item > .action-buttons {
-  height: 50px;
-  width: 100%;
-  max-width: 300px;
-  display: flex;
-  gap: 10px;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-payments > .user-info-payments-content > .item > .action-buttons > button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  width: 100%;
-  max-width: 140px;
-  height: 100%;
-  border: none;
-  outline: none;
-}
-.site-main > .container > .container-content > .user-component > .user-info-block > .user-info-payments > .user-info-payments-content > .item > .action-buttons > button:hover {
-  transform: scale(1.1);
+.site-main > .container > .container-content > .component-users > .user-new > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-update > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-button > div:hover {
+  background-color: #0257d5;
 }
 .site-main > .container > .container-content > .component-user-roles > .title {
   display: flex;
@@ -11622,12 +11513,13 @@ label {
 
 .site-footer {
   padding: 10px 0;
-  background-color: olive;
   width: 100%;
   min-height: 50px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  background: #45484d;
+  background: linear-gradient(135deg, #2d2f32 0%, #151617 100%);
 }
 .site-footer > .container > .container-content {
   display: flex;
@@ -11639,6 +11531,7 @@ label {
   display: flex;
   justify-content: center;
   gap: 5px;
+  color: silver;
 }
 .site-footer > .container > .container-content > .developer-info > a {
   color: silver;

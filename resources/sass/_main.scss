@@ -11,7 +11,12 @@
         > .container-content {
 
             > .title {
-                text-align: center;
+                padding: 0 0 20px 0;
+
+                > h2 {
+                    font-weight: 700;
+                    padding: 20px 0;
+                }
             }
 
             > .login-form, > .registration-form {
@@ -117,356 +122,443 @@
                 }
             }
 
-            > .user-component {
+            > .navigation {
+                display: flex;
+                gap: 20px;
+
+                > a {
+                    height: 50px;
+                    padding: 0 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: black;
+                    border: 1px solid black;
+                    border-radius: 5px;
+
+                    &:hover {
+                        color: $button-bg;
+                        border: 1px solid $button-bg;
+                    }
+                }
+            }
+
+            > .component-users {
+
                 > .title {
                     display: flex;
-                    gap: 20px;
-                    padding: 0 0 20px 0;
+                    justify-content: space-between;
+                    align-items: center;
 
                     > h2 {
-                        margin: 0;
+                        font-weight: 700;
+                        padding: 20px 0;
                     }
 
-                    > .action-buttons {
+                    > .button-add {
+                        height: 50px;
+                        background-color: $button-bg;
+                        border-radius: 5px;
+                        color: white;
                         display: flex;
+                        justify-content: center;
                         align-items: center;
-                        gap: 10px;
-                        width: 100%;
-                        max-width: 300px;
+                        padding: 0 10px;
+                        cursor: pointer;
 
-                        > button {
+                        &:hover {
+                            @include elHover($button-bg);
+                        }
+                    }
+
+                }
+
+                > .users-list, > .user-payments-list {
+                    background-color: white;
+                    box-shadow: $component-shadow;
+                    border-radius: 5px;
+
+                    > .nav {
+                        display: flex;
+                        height: 50px;
+                        border-top: 1px solid silver;
+                        cursor: pointer;
+
+                        &:hover {
+                            @include elHover($body-bg);
+                        }
+
+                        > .number {
+                            height: 100%;
+                            width: 100%;
+                            max-width: 50px;
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            border-radius: 5px;
-                            width: 100%;
-                            max-width: 140px;
+
+                        }
+
+                        > .name {
                             height: 100%;
-                            border: none;
-                            outline: none;
-
-                            &:hover {
-                                transform: scale(1.1);
-                            }
-                        }
-
-                        > .color-lightgreen {
-                            background-color: lightgreen;
-                        }
-                    }
-                }
-
-                > .users-list {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 10px;
-
-                    > .user-nav, > .user {
-                        display: flex;
-                        align-items: center;
-                        height: 50px;
-                        padding: 5px 10px;
-                        border-radius: 5px;
-
-                        > .user-id {
-                            width: 100%;
-                            max-width: 30px;
-                        }
-
-                        > .user-name {
                             width: 100%;
                             max-width: 300px;
-                        }
-
-                        > .user-email {
-                            width: 100%;
-                            max-width: 300px;
-                        }
-
-                        > .user-action-buttons {
                             display: flex;
                             align-items: center;
-                            gap: 10px;
+                        }
+
+                        > .email {
+                            height: 100%;
                             width: 100%;
                             max-width: 300px;
+                            display: flex;
+                            align-items: center;
+                        }
 
-                            > button, a {
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                border-radius: 5px;
-                                width: 100%;
-                                max-width: 140px;
-                                height: 50px;
-                                border: none;
-                                outline: none;
-                                color: black;
+                        > .role {
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            flex-grow: 1;
+                            line-height: 100%;
+                        }
+
+                        > .buttons {
+                            height: 100%;
+                            width: 100%;
+                            max-width: 150px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 10px;
+
+                            > div {
+                                height: 25px;
+                                min-width: 25px;
+                                background-size: contain;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                cursor: pointer;
 
                                 &:hover {
-                                    transform: scale(1.1);
+                                    transform: scale(1.2);
                                 }
                             }
 
-                            > .color-lightgreen {
-                                background-color: lightgreen;
+                            > .icon-save {
+                                background-image: url("../images/icons/floppy-disk-regular.svg");
                             }
 
-                            > .color-lightcoral {
-                                background-color: lightcoral;
+                            > .icon-delete {
+                                background-image: url("../images/icons/trash-can-regular.svg");
+                            }
+                            > .icon-eye {
+                                background-image: url("../images/icons/eye-regular.svg");
                             }
                         }
                     }
 
-                    > .user {
-                        cursor: pointer;
-                    }
+                    > .nav-title {
+                        border-top: none;
+                        cursor: unset;
+
+                        &:hover {
+                            background-color: white;
+                        }
+
+                        > .number, > .name, > .email, > .role {
+                            font-weight: 600;
+                        }
+                                            }
                 }
 
-                > .new-user-fields {
+                > .user-new, > .user-update, > .user-payment-new {
                     display: flex;
                     flex-direction: column;
-                    gap: 10px;
+                    gap: 20px;
+                    background-color: white;
+                    box-shadow: $component-shadow;
+                    border-radius: 5px;
+                    padding: 50px;
 
-                    > input {
-                        width: 100%;
-                        max-width: 300px;
-                        height: 50px;
-                        padding: 0 0 0 10px;
-                        border-radius: 5px;
+                    > .user-option {
+                        display: flex;
+                        align-items: center;
+
+                        > .text {
+                            width: 30%;
+                            display: flex;
+
+                            > span {
+                                color: red;
+                            }
+
+                        }
+
+                        > .input {
+                            height: 50px;
+                            overflow: hidden;
+                            flex-grow: 1;
+                            display: flex;
+                            align-items: center;
+
+                            > input[type=text], > input[type=password] {
+                                height: 100%;
+                                padding: 0 0 0 20px;
+                                outline: none;
+                                width: 100%;
+                                border: 1px solid silver;
+                                border-radius: 5px;
+                            }
+
+                            > select {
+                                height: 100%;
+                                padding: 0 0 0 20px;
+                                outline: none;
+                                width: 100%;
+                                border: 1px solid silver;
+                                border-radius: 5px;
+                            }
+                        }
                     }
 
-                    > input[type=submit] {
-                        background-color: olive;
-                        font-size: 1.5rem;
-                        color: white;
-                        border: none;
-                        outline: none;
+                    > .user-button {
+                        display: flex;
+                        justify-content: flex-end;
+
+                        > div {
+                            height: 50px;
+                            background-color: $button-bg;
+                            border-radius: 5px;
+                            color: white;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 0 10px;
+                            cursor: pointer;
+
+                            &:hover {
+                                @include elHover($button-bg);
+                            }
+                        }
                     }
 
-                    > .error {
-                        border: 1px solid red;
-                    }
-
-                    > .correct {
-                        border: 1px solid green;
-                    }
                 }
 
-                > .user-info-block {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 50px;
-
-                    > .user-info-name {
-                        display: flex;
-                        gap: 20px;
-
-                        > h3 {
-                            width: 100%;
-                            max-width: 300px;
-                        }
-
-                        > .user-info-name-content {
-                            display: flex;
-                            flex-grow: 1;
-                            gap: 20px;
-
-                            > .input-name {
-                                height: 50px;
-                                width: 100%;
-                                max-width: 300px;
-
-                                > input {
-                                    height: 100%;
-                                    width: 100%;
-                                    padding: 0 0 0 10px;
-                                    border: 1px solid silver;
-                                    border-radius: 5px;
-                                }
-                            }
-
-                            > .action-buttons {
-                                height: 50px;
-                                width: 100%;
-                                max-width: 300px;
-                                display: flex;
-                                gap: 10px;
-
-                                > button {
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                    border-radius: 5px;
-                                    width: 100%;
-                                    max-width: 140px;
-                                    height: 100%;
-                                    border: none;
-                                    outline: none;
-
-                                    &:hover {
-                                        transform: scale(1.1);
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    > .user-info-phone {
-                        display: flex;
-                        gap: 20px;
-
-                        > h3 {
-                            width: 100%;
-                            max-width: 300px;
-                        }
-
-                        > .user-info-phone-content {
-                            display: flex;
-                            flex-direction: column;
-                            flex-grow: 1;
-                            gap: 20px;
-
-                            > .item {
-                                width: 100%;
-                                display: flex;
-                                gap: 20px;
-
-                                > .input-phone {
-                                    height: 50px;
-                                    width: 100%;
-                                    max-width: 300px;
-
-                                    > input {
-                                        height: 100%;
-                                        width: 100%;
-                                        padding: 0 0 0 10px;
-                                        border: 1px solid silver;
-                                        border-radius: 5px;
-                                    }
-                                }
-
-                                > .phone-status, > .phone-confirmation {
-                                    height: 50px;
-                                    width: 100%;
-                                    max-width: 140px;
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                    font-size: 1rem;
-                                    padding: 0 0 0 10px;
-                                    border: 1px solid silver;
-                                    border-radius: 5px;
-                                }
-
-                                > .confirmed {
-                                    background-color: lightgreen;
-                                }
-
-                                > .not-confirmed {
-                                    background-color: red;
-                                }
-
-                                > .action-buttons {
-                                    height: 50px;
-                                    width: 100%;
-                                    max-width: 300px;
-                                    display: flex;
-                                    gap: 10px;
-
-                                    > button {
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                        border-radius: 5px;
-                                        width: 100%;
-                                        max-width: 140px;
-                                        height: 100%;
-                                        border: none;
-                                        outline: none;
-
-                                        &:hover {
-                                            transform: scale(1.1);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    > .user-info-payments {
-                        display: flex;
-                        gap: 20px;
-
-                        > h3 {
-                            width: 100%;
-                            max-width: 300px;
-                        }
-
-                        > .user-info-payments-content {
-                            display: flex;
-                            flex-direction: column;
-                            flex-grow: 1;
-                            gap: 20px;
-
-                            > .item {
-                                width: 100%;
-                                display: flex;
-                                gap: 20px;
-
-                                > .input-payment {
-                                    height: 50px;
-                                    width: 100%;
-                                    max-width: 300px;
-
-                                    > input {
-                                        height: 100%;
-                                        width: 100%;
-                                        padding: 0 0 0 10px;
-                                        border: 1px solid silver;
-                                        border-radius: 5px;
-                                    }
-                                }
-
-                                > .payment-status {
-                                    height: 50px;
-                                    width: 100%;
-                                    max-width: 140px;
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                    font-size: 1rem;
-                                    padding: 0 0 0 10px;
-                                    border: 1px solid silver;
-                                    border-radius: 5px;
-                                }
-
-                                > .action-buttons {
-                                    height: 50px;
-                                    width: 100%;
-                                    max-width: 300px;
-                                    display: flex;
-                                    gap: 10px;
-
-                                    > button {
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                        border-radius: 5px;
-                                        width: 100%;
-                                        max-width: 140px;
-                                        height: 100%;
-                                        border: none;
-                                        outline: none;
-
-                                        &:hover {
-                                            transform: scale(1.1);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                //> .user-info-block {
+                //    display: flex;
+                //    flex-direction: column;
+                //    gap: 50px;
+                //
+                //    > .user-info-name {
+                //        display: flex;
+                //        gap: 20px;
+                //
+                //        > h3 {
+                //            width: 100%;
+                //            max-width: 300px;
+                //        }
+                //
+                //        > .user-info-name-content {
+                //            display: flex;
+                //            flex-grow: 1;
+                //            gap: 20px;
+                //
+                //            > .input-name {
+                //                height: 50px;
+                //                width: 100%;
+                //                max-width: 300px;
+                //
+                //                > input {
+                //                    height: 100%;
+                //                    width: 100%;
+                //                    padding: 0 0 0 10px;
+                //                    border: 1px solid silver;
+                //                    border-radius: 5px;
+                //                }
+                //            }
+                //
+                //            > .action-buttons {
+                //                height: 50px;
+                //                width: 100%;
+                //                max-width: 300px;
+                //                display: flex;
+                //                gap: 10px;
+                //
+                //                > button {
+                //                    display: flex;
+                //                    justify-content: center;
+                //                    align-items: center;
+                //                    border-radius: 5px;
+                //                    width: 100%;
+                //                    max-width: 140px;
+                //                    height: 100%;
+                //                    border: none;
+                //                    outline: none;
+                //
+                //                    &:hover {
+                //                        transform: scale(1.1);
+                //                    }
+                //                }
+                //            }
+                //        }
+                //    }
+                //
+                //    > .user-info-phone {
+                //        display: flex;
+                //        gap: 20px;
+                //
+                //        > h3 {
+                //            width: 100%;
+                //            max-width: 300px;
+                //        }
+                //
+                //        > .user-info-phone-content {
+                //            display: flex;
+                //            flex-direction: column;
+                //            flex-grow: 1;
+                //            gap: 20px;
+                //
+                //            > .item {
+                //                width: 100%;
+                //                display: flex;
+                //                gap: 20px;
+                //
+                //                > .input-phone {
+                //                    height: 50px;
+                //                    width: 100%;
+                //                    max-width: 300px;
+                //
+                //                    > input {
+                //                        height: 100%;
+                //                        width: 100%;
+                //                        padding: 0 0 0 10px;
+                //                        border: 1px solid silver;
+                //                        border-radius: 5px;
+                //                    }
+                //                }
+                //
+                //                > .phone-status, > .phone-confirmation {
+                //                    height: 50px;
+                //                    width: 100%;
+                //                    max-width: 140px;
+                //                    display: flex;
+                //                    justify-content: center;
+                //                    align-items: center;
+                //                    font-size: 1rem;
+                //                    padding: 0 0 0 10px;
+                //                    border: 1px solid silver;
+                //                    border-radius: 5px;
+                //                }
+                //
+                //                > .confirmed {
+                //                    background-color: lightgreen;
+                //                }
+                //
+                //                > .not-confirmed {
+                //                    background-color: red;
+                //                }
+                //
+                //                > .action-buttons {
+                //                    height: 50px;
+                //                    width: 100%;
+                //                    max-width: 300px;
+                //                    display: flex;
+                //                    gap: 10px;
+                //
+                //                    > button {
+                //                        display: flex;
+                //                        justify-content: center;
+                //                        align-items: center;
+                //                        border-radius: 5px;
+                //                        width: 100%;
+                //                        max-width: 140px;
+                //                        height: 100%;
+                //                        border: none;
+                //                        outline: none;
+                //
+                //                        &:hover {
+                //                            transform: scale(1.1);
+                //                        }
+                //                    }
+                //                }
+                //            }
+                //        }
+                //    }
+                //
+                //    > .user-info-payments {
+                //        display: flex;
+                //        gap: 20px;
+                //
+                //        > h3 {
+                //            width: 100%;
+                //            max-width: 300px;
+                //        }
+                //
+                //        > .user-info-payments-content {
+                //            display: flex;
+                //            flex-direction: column;
+                //            flex-grow: 1;
+                //            gap: 20px;
+                //
+                //            > .item {
+                //                width: 100%;
+                //                display: flex;
+                //                gap: 20px;
+                //
+                //                > .input-payment {
+                //                    height: 50px;
+                //                    width: 100%;
+                //                    max-width: 300px;
+                //
+                //                    > input {
+                //                        height: 100%;
+                //                        width: 100%;
+                //                        padding: 0 0 0 10px;
+                //                        border: 1px solid silver;
+                //                        border-radius: 5px;
+                //                    }
+                //                }
+                //
+                //                > .payment-status {
+                //                    height: 50px;
+                //                    width: 100%;
+                //                    max-width: 140px;
+                //                    display: flex;
+                //                    justify-content: center;
+                //                    align-items: center;
+                //                    font-size: 1rem;
+                //                    padding: 0 0 0 10px;
+                //                    border: 1px solid silver;
+                //                    border-radius: 5px;
+                //                }
+                //
+                //                > .action-buttons {
+                //                    height: 50px;
+                //                    width: 100%;
+                //                    max-width: 300px;
+                //                    display: flex;
+                //                    gap: 10px;
+                //
+                //                    > button {
+                //                        display: flex;
+                //                        justify-content: center;
+                //                        align-items: center;
+                //                        border-radius: 5px;
+                //                        width: 100%;
+                //                        max-width: 140px;
+                //                        height: 100%;
+                //                        border: none;
+                //                        outline: none;
+                //
+                //                        &:hover {
+                //                            transform: scale(1.1);
+                //                        }
+                //                    }
+                //                }
+                //            }
+                //        }
+                //    }
+                //}
             }
 
             > .component-user-roles {

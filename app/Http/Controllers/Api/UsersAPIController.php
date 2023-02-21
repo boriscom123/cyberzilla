@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\UserContactStatus;
+use App\Models\UserOptions;
 use App\Models\UserPayments;
+use App\Models\UserRoles;
 use App\Models\UsersPhoneNumbers;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -77,11 +78,11 @@ class UsersAPIController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function addUser(Request $request): JsonResponse
+    public function userCreate(Request $request): JsonResponse
     {
         $response = [
             'status' => 200,
-            'is_added' => false,
+            'is_created' => false,
         ];
 
         $request->validate([
@@ -94,11 +95,9 @@ class UsersAPIController extends Controller
         $check = $this->createNewUser($data);
 
         if ($check) {
-            $credentials = $request->only('email', 'password');
-            if (Auth::attempt($credentials)) {
-                $response['message'] = 'Пользователь успешно добавлен';
-                $response['is_added'] = true;
-            }
+            $response['message'] = 'Пользователь успешно создан';
+            $response['is_created'] = true;
+            $response['user'] = $this->getUserData($check->id);
         }
 
         return new JsonResponse($response);
@@ -106,18 +105,87 @@ class UsersAPIController extends Controller
 
     public function createNewUser(array $data)
     {
-        return User::create([
+        $newUser = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password'])
         ]);
+
+        /** @var UserRoles $userRoles */
+        $userRoles = UserRoles::query()->where('id', $data['role'])->first();
+
+        $userOptions = new UserOptions();
+        $userOptions->user_id = $newUser->id;
+        $userOptions->user_role_id = $userRoles->id;
+        $userOptions->save();
+
+        return $newUser;
     }
 
-    public function removeUser(Request $request): JsonResponse
+    public function getUserData($user_id)
+    {
+        $result = [];
+
+        /** @var User $dbUsers */
+        $dbUser = User::query()->where('id', $user_id)->first();
+        if ($dbUser) {
+            $user = [];
+            $userPhoneNumbers = [];
+            $userPayments = [];
+            $userRole = '';
+            $dbUserPhones = UsersPhoneNumbers::query()->where('user_id', $dbUser->id)->get();
+            if ($dbUserPhones) {
+                foreach ($dbUserPhones as $number) {
+                    $userPhoneNumbers[$number->id] = [
+                        'id' => $number->id,
+                        'phone_number' => $number->phone_number,
+                        'status_id' => $number->status_id,
+                        'is_confirmed' => $number->is_confirmed,
+                    ];
+                }
+            }
+
+            $dbUserPayments = UserPayments::query()->where('user_id', $dbUser->id)->get();
+            if ($dbUserPayments) {
+                foreach ($dbUserPayments as $payment) {
+                    $userPayments[$payment->id] = [
+                        'id' => $payment->id,
+                        'payment_number' => $payment->payment_number,
+                        'payment_total' => $payment->payment_total,
+                        'payment_status' => $payment->payment_status,
+                        'created_at' => $payment->created_at,
+                        'updated_at' => $payment->updated_at,
+                    ];
+                }
+            }
+
+            $dbUserOptions = UserOptions::query()->where('user_id', $dbUser->id)->first();
+            if ($dbUserOptions) {
+                $dbUserRole = UserRoles::query()->where('id', $dbUserOptions->user_role_id)->first();
+                if ($dbUserRole) {
+                    $userRole = $dbUserRole->name;
+                }
+            }
+
+            $user = [
+                'id' => $dbUser->id,
+                'name' => $dbUser->name,
+                'email' => $dbUser->email,
+                'phones' => $userPhoneNumbers,
+                'payments' => $userPayments,
+                'role' => $userRole,
+            ];
+            $result = $user;
+        }
+
+        return $result;
+    }
+
+    public function userDelete(Request $request): JsonResponse
     {
         $response = [
             'status' => 200,
-            'is_removed' => false,
+            'is_deleted' => false,
         ];
 
         $userId = $request->only('user_id');
@@ -125,22 +193,27 @@ class UsersAPIController extends Controller
         $dbUser = User::query()->where('id', $userId)->first();
         $dbUser?->delete();
 
+        $dbUserOptions = UserOptions::query()->where('id', $userId)->first();
+        $dbUserOptions?->delete();
+
         $dbUser = User::query()->where('id', $userId)->first();
-        if (!$dbUser) {
-            $response['is_removed'] = true;
+        $dbUserOptions = UserOptions::query()->where('id', $userId)->first();
+        if (!$dbUser && !$dbUserOptions) {
+            $response['is_deleted'] = true;
         }
         return new JsonResponse($response);
     }
 
-    public function changeUserName(Request $request): JsonResponse
+    public function userUpdate(Request $request): JsonResponse
     {
         $response = [
             'status' => 200,
-            'is_changed' => false,
+            'is_updated' => false,
         ];
 
         $userId = $request->get('user_id');
         $userName = $request->get('name');
+        $roleId = $request->get('role_id');
 
         /** @var User $dbUser */
         $dbUser = User::query()->where('id', $userId)->first();
@@ -148,7 +221,15 @@ class UsersAPIController extends Controller
         if ($dbUser) {
             $dbUser->name = $userName;
             $dbUser->save();
-            $response['is_changed'] = true;
+
+            /** @var UserOptions $userOptions */
+            $userOptions = UserOptions::query()->where('user_id', $dbUser->id)->first();
+            if($userOptions) {
+                $userOptions->user_role_id = $roleId;
+                $userOptions->save();
+
+                $response['is_updated'] = true;
+            }
         }
         return new JsonResponse($response);
     }
@@ -232,11 +313,11 @@ class UsersAPIController extends Controller
         return new JsonResponse($response);
     }
 
-    public function addUserPayment(Request $request): JsonResponse
+    public function userPaymentCreate(Request $request): JsonResponse
     {
         $response = [
             'status' => 200,
-            'is_added' => false,
+            'is_created' => false,
         ];
 
         $userId = $request->get('user_id');
@@ -254,7 +335,15 @@ class UsersAPIController extends Controller
             $dbPayment->payment_status = $payment_status;
             $dbPayment->payment_total = $payment_total;
             $dbPayment->save();
-            $response['is_added'] = true;
+            $response['is_created'] = true;
+            $response['payment'] = [
+                'id' => $dbPayment->id,
+                'payment_number' => $dbPayment->payment_number,
+                'payment_status' => $dbPayment->payment_status,
+                'payment_total' => $dbPayment->payment_total,
+                'created_at' => $dbPayment->created_at,
+                'updated_at' => $dbPayment->updated_at,
+            ];
         }
 
         return new JsonResponse($response);

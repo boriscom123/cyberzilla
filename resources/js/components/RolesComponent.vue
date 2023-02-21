@@ -31,7 +31,6 @@
                 </div>
                 <div class="buttons">
                     <div @click="view_role(role.id)" class="icon-eye"></div>
-<!--                    <div class="icon-save"></div>-->
                     <div @click="delete_role(role.id)" class="icon-delete"></div>
                 </div>
             </div>
@@ -51,7 +50,8 @@
                     <p>Просмотр прав</p>
                 </div>
                 <div class="input">
-                    <input v-model="this.new_role.roles_list" v-bind:class="{ 'checked': this.new_role.roles_list }" type="checkbox">
+                    <input v-model="this.new_role.roles_list" v-bind:class="{ 'checked': this.new_role.roles_list }"
+                           type="checkbox">
                 </div>
             </div>
             <div class="role-option">
@@ -59,7 +59,8 @@
                     <p>Просмотр пользователей</p>
                 </div>
                 <div class="input">
-                    <input v-model="this.new_role.users_list" v-bind:class="{ 'checked': this.new_role.users_list }" type="checkbox">
+                    <input v-model="this.new_role.users_list" v-bind:class="{ 'checked': this.new_role.users_list }"
+                           type="checkbox">
                 </div>
             </div>
             <div class="role-option">
@@ -67,11 +68,12 @@
                     <p>Просмотр платежей</p>
                 </div>
                 <div class="input">
-                    <input v-model="this.new_role.payments_list" v-bind:class="{ 'checked': this.new_role.payments_list }" type="checkbox">
+                    <input v-model="this.new_role.payments_list"
+                           v-bind:class="{ 'checked': this.new_role.payments_list }" type="checkbox">
                 </div>
             </div>
             <div class="role-button">
-                <div @click="create_new_role()" >Добавить</div>
+                <div @click="create_new_role()">Добавить</div>
             </div>
         </div>
 
@@ -89,7 +91,8 @@
                     <p>Просмотр прав</p>
                 </div>
                 <div class="input">
-                    <input v-model="this.edit_role.roles_list" v-bind:class="{ 'checked': this.edit_role.roles_list }" type="checkbox">
+                    <input v-model="this.edit_role.roles_list" v-bind:class="{ 'checked': this.edit_role.roles_list }"
+                           type="checkbox">
                 </div>
             </div>
             <div class="role-option">
@@ -97,7 +100,8 @@
                     <p>Просмотр пользователей</p>
                 </div>
                 <div class="input">
-                    <input v-model="this.edit_role.users_list" v-bind:class="{ 'checked': this.edit_role.users_list }" type="checkbox">
+                    <input v-model="this.edit_role.users_list" v-bind:class="{ 'checked': this.edit_role.users_list }"
+                           type="checkbox">
                 </div>
             </div>
             <div class="role-option">
@@ -105,7 +109,8 @@
                     <p>Просмотр платежей</p>
                 </div>
                 <div class="input">
-                    <input v-model="this.edit_role.payments_list" v-bind:class="{ 'checked': this.edit_role.payments_list }" type="checkbox">
+                    <input v-model="this.edit_role.payments_list"
+                           v-bind:class="{ 'checked': this.edit_role.payments_list }" type="checkbox">
                 </div>
             </div>
             <div class="role-button">
@@ -241,10 +246,13 @@ export default {
                             this.toast.success("Успешно");
                             delete this.user_roles[id];
                         }
+                    }
+                    if ('message' in response.data) {
                         if (response.data['message']) {
                             this.toast.error(response.data['message']);
                         }
                     }
+
                 })
                 .catch(error => {
                     console.log('error', error);

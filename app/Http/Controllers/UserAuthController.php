@@ -84,7 +84,7 @@ class UserAuthController extends Controller
                 /** @var User $user */
                 $user = Auth::user();
                 /** @var UserRoles $userRoles */
-                $userRoles = UserRoles::query()->where('id', 2)->first();
+                $userRoles = UserRoles::query()->where('id', '>=', 1)->latest();
 
                 $userOptions = new UserOptions();
                 $userOptions->user_id = $user->id;

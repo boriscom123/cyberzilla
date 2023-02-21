@@ -37,13 +37,13 @@ Route::get('/payments', [PaymentsController::class, 'index'])->name('payments');
 
 
 Route::get('/api/users/get', [UsersAPIController::class, 'getUsers']);
-Route::post('/api/user/add', [UsersAPIController::class, 'addUser']);
-Route::post('/api/user/remove', [UsersAPIController::class, 'removeUser']);
-Route::post('/api/user/name/change', [UsersAPIController::class, 'changeUserName']);
+Route::post('/api/user/create', [UsersAPIController::class, 'userCreate']);
+Route::post('/api/user/delete', [UsersAPIController::class, 'userDelete']);
+Route::post('/api/user/update', [UsersAPIController::class, 'userUpdate']);
 Route::post('/api/user/phone/add', [UsersAPIController::class, 'addUserPhone']);
 Route::post('/api/user/phone/change', [UsersAPIController::class, 'changeUserPhone']);
 Route::post('/api/user/phone/remove', [UsersAPIController::class, 'removeUserPhone']);
-Route::post('/api/user/payment/add', [UsersAPIController::class, 'addUserPayment']);
+Route::post('/api/user/payment/create', [UsersAPIController::class, 'userPaymentCreate']);
 Route::post('/api/user/payment/change', [UsersAPIController::class, 'changeUserPayment']);
 Route::post('/api/user/payment/remove', [UsersAPIController::class, 'removeUserPayment']);
 

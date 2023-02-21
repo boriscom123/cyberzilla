@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\UserOptions;
 use App\Models\UserRoles;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -112,6 +113,11 @@ class RolesAPIController extends Controller
 
         /** @var UserRoles $dbRole */
         $dbRole = UserRoles::query()->where('id', $roleId)->first();
+        $dbUserOptions = UserOptions::query()->where('user_role_id', $roleId)->get();
+        if($dbUserOptions) {
+            $response['message'] = 'Невозможно удалить роль - Некоторые пользователи используют данную роль.';
+            return new JsonResponse($response);
+        }
         $dbRole?->delete();
 
         /** @var UserRoles $dbRole */

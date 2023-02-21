@@ -143,7 +143,7 @@ export default {
                 axios.post('/user/login', this.login)
                     .then(response => {
                         if (response.data['is_user_login']) {
-                            window.location.href = '/admin';
+                            window.location.href = '/';
                         } else {
                             this.toast.error("Введены неправильные данные");
                         }

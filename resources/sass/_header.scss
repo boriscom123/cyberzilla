@@ -1,5 +1,5 @@
 .site-header {
-    background-color: olive;
+    background-color: white;
     width: 100%;
     min-height: 100px;
     display: flex;
@@ -14,7 +14,7 @@
         box-shadow: $shadow;
         display: flex;
         align-items: center;
-        background-color: olive;
+        background-color: white;
 
         &:hover {
             box-shadow: $shadow-hover;
@@ -62,14 +62,14 @@
                             color: black;
 
                             &:hover {
-                                color: silver;
-                                border: 1px solid silver;
+                                color: $button-bg;
+                                border: 1px solid $button-bg;
                             }
                         }
 
                         > .active {
-                            color: silver;
-                            border: 1px solid silver;
+                            color: $button-bg;
+                            border: 1px solid $button-bg;
                         }
                     }
                 }
@@ -93,7 +93,7 @@
                         }
 
                         > a {
-                            color: white;
+                            color: $button-bg;
                             cursor: pointer;
                             text-decoration: none;
                             font-size: 1.5rem;
@@ -102,7 +102,7 @@
                         > .nav-item-decoration {
                             width: 0;
                             height: 3px;
-                            background-color: white;
+                            background-color: $button-bg;
                         }
                     }
                 }

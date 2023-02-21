@@ -10,6 +10,7 @@
         <div class="container">
             <div class="container-content">
                 @if ($data['auth'] === true)
+                    <div class="title"><h2>Перейдите в необходимый раздел</h2></div>
                     <div class="navigation">
                         <a href="{{ route('roles') }}">Права пользователей</a>
                         <a href="{{ route('users') }}">Пользователи</a>
