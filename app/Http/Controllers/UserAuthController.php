@@ -84,11 +84,11 @@ class UserAuthController extends Controller
                 /** @var User $user */
                 $user = Auth::user();
                 /** @var UserRoles $userRoles */
-                $userRoles = UserRoles::query()->where('id', '>=', 1)->latest();
+                $userRoles = UserRoles::query()->where('id', '>=', 1)->max('id');
 
                 $userOptions = new UserOptions();
                 $userOptions->user_id = $user->id;
-                $userOptions->user_role_id = $userRoles->id;
+                $userOptions->user_role_id = $userRoles;
                 $userOptions->save();
             }
         }
