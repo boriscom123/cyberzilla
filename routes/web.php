@@ -7,6 +7,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\UserAuthController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -40,9 +41,9 @@ Route::get('/api/users/get', [UsersAPIController::class, 'getUsers']);
 Route::post('/api/user/create', [UsersAPIController::class, 'userCreate']);
 Route::post('/api/user/delete', [UsersAPIController::class, 'userDelete']);
 Route::post('/api/user/update', [UsersAPIController::class, 'userUpdate']);
-Route::post('/api/user/phone/add', [UsersAPIController::class, 'addUserPhone']);
-Route::post('/api/user/phone/change', [UsersAPIController::class, 'changeUserPhone']);
-Route::post('/api/user/phone/remove', [UsersAPIController::class, 'removeUserPhone']);
+//Route::post('/api/user/phone/add', [UsersAPIController::class, 'addUserPhone']);
+//Route::post('/api/user/phone/change', [UsersAPIController::class, 'changeUserPhone']);
+//Route::post('/api/user/phone/remove', [UsersAPIController::class, 'removeUserPhone']);
 Route::post('/api/user/payment/create', [UsersAPIController::class, 'userPaymentCreate']);
 Route::post('/api/user/payment/update', [UsersAPIController::class, 'userPaymentUpdate']);
 Route::post('/api/user/payment/delete', [UsersAPIController::class, 'userPaymentDelete']);
@@ -53,3 +54,11 @@ Route::post('/api/roles/payments_list', [RolesAPIController::class, 'changePayme
 Route::post('/api/roles/delete', [RolesAPIController::class, 'roleDelete']);
 Route::post('/api/roles/create', [RolesAPIController::class, 'roleCreate']);
 Route::post('/api/roles/update', [RolesAPIController::class, 'roleUpdate']);
+
+
+
+Route::get('/clear-cache', function() {
+    $configCache = Artisan::call('config:cache');
+    $clearCache = Artisan::call('cache:clear');
+    $clearView = Artisan::call('view:clear');
+});

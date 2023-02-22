@@ -61,19 +61,19 @@
                             transition: $transition;
 
                             &:hover {
-                                background-color: olive;
+                                @include elHover(silver);
                                 color: white;
                             }
                         }
                     }
 
-                    > .error {
-                        border: 1px solid red;
-                    }
-
-                    > .success {
-                        border: 1px solid olive;
-                    }
+                    //> .error {
+                    //    border: 1px solid red;
+                    //}
+                    //
+                    //> .success {
+                    //    border: 1px solid olive;
+                    //}
                 }
 
                 > .form-block-checkbox {
@@ -828,6 +828,245 @@
                     }
 
                     > .role-button {
+                        display: flex;
+                        justify-content: flex-end;
+
+                        > div {
+                            height: 50px;
+                            background-color: $button-bg;
+                            border-radius: 5px;
+                            color: white;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 0 10px;
+                            cursor: pointer;
+
+                            &:hover {
+                                @include elHover($button-bg);
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            > .component-payments {
+
+                > .title {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    > h2 {
+                        font-weight: 700;
+                        padding: 20px 0;
+                    }
+
+                    > .button-add {
+                        height: 50px;
+                        background-color: $button-bg;
+                        border-radius: 5px;
+                        color: white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0 10px;
+                        cursor: pointer;
+
+                        &:hover {
+                            @include elHover($button-bg);
+                        }
+                    }
+
+                }
+
+                > .users-list, > .user-payments-list {
+                    background-color: white;
+                    box-shadow: $component-shadow;
+                    border-radius: 5px;
+
+                    > .nav {
+                        display: flex;
+                        height: 50px;
+                        border-top: 1px solid silver;
+                        cursor: pointer;
+
+                        &:hover {
+                            @include elHover($body-bg);
+                        }
+
+                        > .number {
+                            height: 100%;
+                            width: 100%;
+                            max-width: 50px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                        }
+
+                        > .name {
+                            height: 100%;
+                            width: 100%;
+                            max-width: 300px;
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        > .email {
+                            height: 100%;
+                            width: 100%;
+                            max-width: 300px;
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        > .role {
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            flex-grow: 1;
+                            line-height: 100%;
+                        }
+
+                        > .payment_number {
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            flex-grow: 1;
+                        }
+
+                        > .text-small {
+                            font-size: 0.9rem;
+                        }
+
+                        > .total {
+                            height: 100%;
+                            width: 100%;
+                            max-width: 150px;
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        > .status {
+                            height: 100%;
+                            width: 100%;
+                            max-width: 300px;
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        > .created-at, > .updated-at {
+                            height: 100%;
+                            width: 100%;
+                            max-width: 150px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            overflow: hidden;
+                        }
+
+                        > .buttons {
+                            height: 100%;
+                            width: 100%;
+                            max-width: 150px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 10px;
+
+                            > div {
+                                height: 25px;
+                                min-width: 25px;
+                                background-size: contain;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                cursor: pointer;
+
+                                &:hover {
+                                    transform: scale(1.2);
+                                }
+                            }
+
+                            > .icon-save {
+                                background-image: url("../images/icons/floppy-disk-regular.svg");
+                            }
+
+                            > .icon-delete {
+                                background-image: url("../images/icons/trash-can-regular.svg");
+                            }
+                            > .icon-eye {
+                                background-image: url("../images/icons/eye-regular.svg");
+                            }
+                        }
+                    }
+
+                    > .nav-title {
+                        border-top: none;
+                        cursor: unset;
+
+                        &:hover {
+                            background-color: white;
+                        }
+
+                        > .number, > .name, > .email, > .role {
+                            font-weight: 600;
+                        }
+                    }
+                }
+
+                > .user-new, > .user-update, > .user-payment-new, > .user-payment-update {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    background-color: white;
+                    box-shadow: $component-shadow;
+                    border-radius: 5px;
+                    padding: 50px;
+
+                    > .user-option {
+                        display: flex;
+                        align-items: center;
+
+                        > .text {
+                            width: 30%;
+                            display: flex;
+
+                            > span {
+                                color: red;
+                            }
+
+                        }
+
+                        > .input {
+                            height: 50px;
+                            overflow: hidden;
+                            flex-grow: 1;
+                            display: flex;
+                            align-items: center;
+
+                            > input[type=text], > input[type=password] {
+                                height: 100%;
+                                padding: 0 0 0 20px;
+                                outline: none;
+                                width: 100%;
+                                border: 1px solid silver;
+                                border-radius: 5px;
+                            }
+
+                            > select {
+                                height: 100%;
+                                padding: 0 0 0 20px;
+                                outline: none;
+                                width: 100%;
+                                border: 1px solid silver;
+                                border-radius: 5px;
+                            }
+                        }
+                    }
+
+                    > .user-button {
                         display: flex;
                         justify-content: flex-end;
 

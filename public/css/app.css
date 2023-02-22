@@ -11072,14 +11072,8 @@ label {
   transition: 0.3s;
 }
 .site-main > .container > .container-content > .login-form > .form-block > .input > input[type=submit]:hover, .site-main > .container > .container-content > .registration-form > .form-block > .input > input[type=submit]:hover {
-  background-color: olive;
+  background-color: #a7a7a7;
   color: white;
-}
-.site-main > .container > .container-content > .login-form > .form-block > .error, .site-main > .container > .container-content > .registration-form > .form-block > .error {
-  border: 1px solid red;
-}
-.site-main > .container > .container-content > .login-form > .form-block > .success, .site-main > .container > .container-content > .registration-form > .form-block > .success {
-  border: 1px solid olive;
 }
 .site-main > .container > .container-content > .login-form > .form-block-checkbox, .site-main > .container > .container-content > .registration-form > .form-block-checkbox {
   display: flex;
@@ -11540,6 +11534,204 @@ label {
   cursor: pointer;
 }
 .site-main > .container > .container-content > .component-user-roles > .roles-new > .role-button > div:hover, .site-main > .container > .container-content > .component-user-roles > .roles-update > .role-button > div:hover {
+  background-color: #0257d5;
+}
+.site-main > .container > .container-content > .component-payments > .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-payments > .title > h2, .site-main > .container > .container-content > .component-payments > .title > .h2 {
+  font-weight: 700;
+  padding: 20px 0;
+}
+.site-main > .container > .container-content > .component-payments > .title > .button-add {
+  height: 50px;
+  background-color: #0d6efd;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.site-main > .container > .container-content > .component-payments > .title > .button-add:hover {
+  background-color: #0257d5;
+}
+.site-main > .container > .container-content > .component-payments > .users-list, .site-main > .container > .container-content > .component-payments > .user-payments-list {
+  background-color: white;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  border-radius: 5px;
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav {
+  display: flex;
+  height: 50px;
+  border-top: 1px solid silver;
+  cursor: pointer;
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav:hover, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav:hover {
+  background-color: #d3d3f0;
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav > .number, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav > .number {
+  height: 100%;
+  width: 100%;
+  max-width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav > .name, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav > .name {
+  height: 100%;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav > .email, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav > .email {
+  height: 100%;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav > .role, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav > .role {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  line-height: 100%;
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav > .payment_number, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav > .payment_number {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav > .text-small, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav > .text-small {
+  font-size: 0.9rem;
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav > .total, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav > .total {
+  height: 100%;
+  width: 100%;
+  max-width: 150px;
+  display: flex;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav > .status, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav > .status {
+  height: 100%;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav > .created-at, .site-main > .container > .container-content > .component-payments > .users-list > .nav > .updated-at, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav > .created-at, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav > .updated-at {
+  height: 100%;
+  width: 100%;
+  max-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav > .buttons, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav > .buttons {
+  height: 100%;
+  width: 100%;
+  max-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav > .buttons > div, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav > .buttons > div {
+  height: 25px;
+  min-width: 25px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav > .buttons > div:hover, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav > .buttons > div:hover {
+  transform: scale(1.2);
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav > .buttons > .icon-save, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav > .buttons > .icon-save {
+  background-image: url(/images/floppy-disk-regular.svg?34121a550ea73cfaa1eb371961db00fc);
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav > .buttons > .icon-delete, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav > .buttons > .icon-delete {
+  background-image: url(/images/trash-can-regular.svg?84dcff211c5fd262e2ca1bef7eb76121);
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav > .buttons > .icon-eye, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav > .buttons > .icon-eye {
+  background-image: url(/images/eye-regular.svg?8e200cae6bab22b036cf129419239879);
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav-title, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav-title {
+  border-top: none;
+  cursor: unset;
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav-title:hover, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav-title:hover {
+  background-color: white;
+}
+.site-main > .container > .container-content > .component-payments > .users-list > .nav-title > .number, .site-main > .container > .container-content > .component-payments > .users-list > .nav-title > .name, .site-main > .container > .container-content > .component-payments > .users-list > .nav-title > .email, .site-main > .container > .container-content > .component-payments > .users-list > .nav-title > .role, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav-title > .number, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav-title > .name, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav-title > .email, .site-main > .container > .container-content > .component-payments > .user-payments-list > .nav-title > .role {
+  font-weight: 600;
+}
+.site-main > .container > .container-content > .component-payments > .user-new, .site-main > .container > .container-content > .component-payments > .user-update, .site-main > .container > .container-content > .component-payments > .user-payment-new, .site-main > .container > .container-content > .component-payments > .user-payment-update {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  border-radius: 5px;
+  padding: 50px;
+}
+.site-main > .container > .container-content > .component-payments > .user-new > .user-option, .site-main > .container > .container-content > .component-payments > .user-update > .user-option, .site-main > .container > .container-content > .component-payments > .user-payment-new > .user-option, .site-main > .container > .container-content > .component-payments > .user-payment-update > .user-option {
+  display: flex;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-payments > .user-new > .user-option > .text, .site-main > .container > .container-content > .component-payments > .user-update > .user-option > .text, .site-main > .container > .container-content > .component-payments > .user-payment-new > .user-option > .text, .site-main > .container > .container-content > .component-payments > .user-payment-update > .user-option > .text {
+  width: 30%;
+  display: flex;
+}
+.site-main > .container > .container-content > .component-payments > .user-new > .user-option > .text > span, .site-main > .container > .container-content > .component-payments > .user-update > .user-option > .text > span, .site-main > .container > .container-content > .component-payments > .user-payment-new > .user-option > .text > span, .site-main > .container > .container-content > .component-payments > .user-payment-update > .user-option > .text > span {
+  color: red;
+}
+.site-main > .container > .container-content > .component-payments > .user-new > .user-option > .input, .site-main > .container > .container-content > .component-payments > .user-update > .user-option > .input, .site-main > .container > .container-content > .component-payments > .user-payment-new > .user-option > .input, .site-main > .container > .container-content > .component-payments > .user-payment-update > .user-option > .input {
+  height: 50px;
+  overflow: hidden;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-payments > .user-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-payments > .user-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-payments > .user-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-payments > .user-update > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-payments > .user-payment-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-payments > .user-payment-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-payments > .user-payment-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-payments > .user-payment-update > .user-option > .input > input[type=password] {
+  height: 100%;
+  padding: 0 0 0 20px;
+  outline: none;
+  width: 100%;
+  border: 1px solid silver;
+  border-radius: 5px;
+}
+.site-main > .container > .container-content > .component-payments > .user-new > .user-option > .input > select, .site-main > .container > .container-content > .component-payments > .user-update > .user-option > .input > select, .site-main > .container > .container-content > .component-payments > .user-payment-new > .user-option > .input > select, .site-main > .container > .container-content > .component-payments > .user-payment-update > .user-option > .input > select {
+  height: 100%;
+  padding: 0 0 0 20px;
+  outline: none;
+  width: 100%;
+  border: 1px solid silver;
+  border-radius: 5px;
+}
+.site-main > .container > .container-content > .component-payments > .user-new > .user-button, .site-main > .container > .container-content > .component-payments > .user-update > .user-button, .site-main > .container > .container-content > .component-payments > .user-payment-new > .user-button, .site-main > .container > .container-content > .component-payments > .user-payment-update > .user-button {
+  display: flex;
+  justify-content: flex-end;
+}
+.site-main > .container > .container-content > .component-payments > .user-new > .user-button > div, .site-main > .container > .container-content > .component-payments > .user-update > .user-button > div, .site-main > .container > .container-content > .component-payments > .user-payment-new > .user-button > div, .site-main > .container > .container-content > .component-payments > .user-payment-update > .user-button > div {
+  height: 50px;
+  background-color: #0d6efd;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.site-main > .container > .container-content > .component-payments > .user-new > .user-button > div:hover, .site-main > .container > .container-content > .component-payments > .user-update > .user-button > div:hover, .site-main > .container > .container-content > .component-payments > .user-payment-new > .user-button > div:hover, .site-main > .container > .container-content > .component-payments > .user-payment-update > .user-button > div:hover {
   background-color: #0257d5;
 }
 

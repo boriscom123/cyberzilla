@@ -526,21 +526,20 @@ export default {
                     console.log('error', error);
                 });
         },
-        add_user_phone_number: function (user_id) {
+        user_phone_create: function (user_id) {
             let data = {
                 user_id: user_id,
                 phone: this.new_phone_number,
                 status: this.new_phone_status,
                 confirmation: this.new_phone_confirmation,
             };
-            axios.post('/api/user/phone/add', data)
+            axios.post('/api/user/phone/create', data)
                 .then(response => {
-                    if ('is_added' in response.data) {
-                        if (response.data['is_added']) {
+                    if ('is_created' in response.data) {
+                        if (response.data['is_created']) {
                             this.new_phone_number = '';
                             this.new_phone_status = '';
                             this.new_phone_confirmation = '';
-                            this.get_users();
                         }
                     }
                 })
@@ -548,17 +547,16 @@ export default {
                     console.log('error', error);
                 });
         },
-        change_user_phone_number: function (user_id, number_id) {
+        user_phone_number_update: function (user_id, number_id) {
             let data = {
                 user_id: user_id,
                 number_id: number_id,
                 data: this.users[this.view_user_id]['phones'][number_id],
             };
-            axios.post('/api/user/phone/change', data)
+            axios.post('/api/user/phone/update', data)
                 .then(response => {
-                    if ('is_changed' in response.data) {
-                        if (response.data['is_changed']) {
-                            this.get_users();
+                    if ('is_updated' in response.data) {
+                        if (response.data['is_updated']) {
                         }
                     }
                 })
@@ -566,15 +564,14 @@ export default {
                     console.log('error', error);
                 });
         },
-        remove_user_phone_number: function (user_id, number_id) {
+        user_phone_number_delete: function (user_id, number_id) {
             let data = {
                 number_id: number_id,
             };
-            axios.post('/api/user/phone/remove', data)
+            axios.post('/api/user/phone/delete', data)
                 .then(response => {
-                    if ('is_removed' in response.data) {
-                        if (response.data['is_removed']) {
-                            this.get_users();
+                    if ('is_deleted' in response.data) {
+                        if (response.data['is_deleted']) {
                         }
                     }
                 })
