@@ -12,3 +12,7 @@ GET /users/1
 POST /users
 DELETE /users
 GET /users/1/payments
+
+Просмотр результата:
+
+http://bprice.site/
