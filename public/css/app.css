@@ -10960,6 +10960,7 @@ label {
 .site-header > .fixed-header > .container > .header-container-content > .navigation {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   flex-grow: 1;
   gap: 10px;
 }
