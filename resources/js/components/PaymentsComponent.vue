@@ -185,7 +185,7 @@ export default {
                                 this.toast.success("Успешно");
                                 let userPayment = response.data['payment'];
                                 this.show_payments_list();
-                                this.payments_list[this.payment_info.id][userPayment.id] = userPayment;
+                                this.payments_list[this.payment_info.id] = userPayment;
                                 this.payment_info = {};
                             }
                         }

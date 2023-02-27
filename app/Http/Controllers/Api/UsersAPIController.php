@@ -234,85 +234,6 @@ class UsersAPIController extends Controller
         return new JsonResponse($response);
     }
 
-    public function addUserPhone(Request $request): JsonResponse
-    {
-        $response = [
-            'status' => 200,
-            'is_added' => false,
-        ];
-
-        $userId = $request->get('user_id');
-        $phone = $request->get('phone');
-        $status = $request->get('status');
-        $confirmation = $request->get('confirmation');
-
-        /** @var User $dbUser */
-        $dbUser = User::query()->where('id', $userId)->first();
-
-        if ($dbUser) {
-            $dbPhone = new UsersPhoneNumbers();
-            $dbPhone->user_id = $dbUser->id;
-            $dbPhone->phone_number = $phone;
-            $dbPhone->status_id = $status;
-            $dbPhone->is_confirmed = $confirmation;
-            $dbPhone->save();
-            $response['is_added'] = true;
-        }
-
-        return new JsonResponse($response);
-    }
-
-    public function changeUserPhone(Request $request): JsonResponse
-    {
-        $response = [
-            'status' => 200,
-            'is_changed' => false,
-        ];
-
-        $userId = $request->get('user_id');
-        $numberId = $request->get('number_id');
-        $data = $request->get('data');
-
-        /** @var UsersPhoneNumbers $dbPhone */
-        $dbPhone = UsersPhoneNumbers::query()->where('id', $numberId)->first();
-
-        if ($dbPhone) {
-            $dbPhone->phone_number = $data['phone_number'];
-            $dbPhone->status_id = $data['status_id'];
-            $dbPhone->is_confirmed = $data['is_confirmed'];
-            $dbPhone->save();
-            $response['is_changed'] = true;
-        }
-
-        return new JsonResponse($response);
-    }
-
-    public function removeUserPhone(Request $request): JsonResponse
-    {
-        $response = [
-            'status' => 200,
-            'is_removed' => false,
-        ];
-
-        $numberId = $request->get('number_id');
-
-        /** @var UsersPhoneNumbers $dbPhone */
-        $dbPhone = UsersPhoneNumbers::query()->where('id', $numberId)->first();
-
-        if ($dbPhone) {
-            $dbPhone->delete();
-        }
-
-        /** @var UsersPhoneNumbers $dbPhone */
-        $dbPhone = UsersPhoneNumbers::query()->where('id', $numberId)->first();
-
-        if (!$dbPhone) {
-            $response['is_removed'] = true;
-        }
-
-        return new JsonResponse($response);
-    }
-
     public function userPaymentCreate(Request $request): JsonResponse
     {
         $response = [
@@ -371,14 +292,7 @@ class UsersAPIController extends Controller
 
             $dbPayment->save();
             $response['is_updated'] = true;
-            $response['payment'] = [
-                'id' => $dbPayment->id,
-                'payment_number' => $dbPayment->payment_number,
-                'payment_status' => $dbPayment->payment_status,
-                'payment_total' => $dbPayment->payment_total,
-                'created_at' => $dbPayment->created_at,
-                'updated_at' => $dbPayment->updated_at,
-            ];
+            $response['payment'] = $dbPayment;
         }
 
         return new JsonResponse($response);

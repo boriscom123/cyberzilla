@@ -35,14 +35,10 @@ Route::get('/users', [UsersController::class, 'index'])->name('users');
 Route::get('/roles', [RolesController::class, 'index'])->name('roles');
 Route::get('/payments', [PaymentsController::class, 'index'])->name('payments');
 
-
 Route::get('/api/users/get', [UsersAPIController::class, 'getUsers']);
 Route::post('/api/user/create', [UsersAPIController::class, 'userCreate']);
 Route::post('/api/user/delete', [UsersAPIController::class, 'userDelete']);
 Route::post('/api/user/update', [UsersAPIController::class, 'userUpdate']);
-//Route::post('/api/user/phone/add', [UsersAPIController::class, 'addUserPhone']);
-//Route::post('/api/user/phone/change', [UsersAPIController::class, 'changeUserPhone']);
-//Route::post('/api/user/phone/remove', [UsersAPIController::class, 'removeUserPhone']);
 Route::post('/api/user/payment/create', [UsersAPIController::class, 'userPaymentCreate']);
 Route::post('/api/user/payment/update', [UsersAPIController::class, 'userPaymentUpdate']);
 Route::post('/api/user/payment/delete', [UsersAPIController::class, 'userPaymentDelete']);
@@ -54,8 +50,6 @@ Route::post('/api/roles/delete', [RolesAPIController::class, 'roleDelete']);
 Route::post('/api/roles/create', [RolesAPIController::class, 'roleCreate']);
 Route::post('/api/roles/update', [RolesAPIController::class, 'roleUpdate']);
 Route::post('/api/roles/set_default', [RolesAPIController::class, 'roleSetDefault']);
-
-
 
 Route::get('/clear-cache', function() {
     $configCache = Artisan::call('config:cache');
