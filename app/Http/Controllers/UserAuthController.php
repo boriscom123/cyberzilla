@@ -83,12 +83,12 @@ class UserAuthController extends Controller
                 $response['is_user_registered'] = true;
                 /** @var User $user */
                 $user = Auth::user();
-                /** @var UserRoles $userRoles */
-                $userRoles = UserRoles::query()->where('id', '>=', 1)->max('id');
+                /** @var UserRoles $userDefaultRole */
+                $userDefaultRole = UserRoles::query()->where('is_default', true)->first();
 
                 $userOptions = new UserOptions();
                 $userOptions->user_id = $user->id;
-                $userOptions->user_role_id = $userRoles;
+                $userOptions->user_role_id = $userDefaultRole->id;
                 $userOptions->save();
             }
         }
