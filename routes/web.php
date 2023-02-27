@@ -54,6 +54,7 @@ Route::post('/api/roles/payments_list', [RolesAPIController::class, 'changePayme
 Route::post('/api/roles/delete', [RolesAPIController::class, 'roleDelete']);
 Route::post('/api/roles/create', [RolesAPIController::class, 'roleCreate']);
 Route::post('/api/roles/update', [RolesAPIController::class, 'roleUpdate']);
+Route::post('/api/roles/set_default', [RolesAPIController::class, 'roleSetDefault']);
 
 
 

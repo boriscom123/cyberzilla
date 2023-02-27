@@ -25,6 +25,7 @@ class ReloadBasicDataSeeder extends Seeder
         'roles' => [
             [
                 'name' => 'Супер-Пупер Глобальный Повелитель Данных',
+                'is_default' => false,
                 'roles_list' => true,
                 'roles_view' => true,
                 'roles_add' => true,
@@ -43,6 +44,7 @@ class ReloadBasicDataSeeder extends Seeder
             ],
             [
                 'name' => 'Администратор',
+                'is_default' => false,
                 'roles_list' => true,
                 'roles_view' => true,
                 'roles_add' => true,
@@ -61,6 +63,7 @@ class ReloadBasicDataSeeder extends Seeder
             ],
             [
                 'name' => 'Клиент',
+                'is_default' => true,
                 'roles_list' => false,
                 'roles_view' => false,
                 'roles_add' => false,

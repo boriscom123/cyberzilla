@@ -53,13 +53,7 @@ class RolesController extends Controller
         $dbRoles = UserRoles::all();
         if ($dbRoles) {
             foreach ($dbRoles as $role) {
-                $result[$role->id] = [
-                    'id' => $role->id,
-                    'name' => $role->name,
-                    'roles_list' => $role->roles_list,
-                    'users_list' => $role->users_list,
-                    'payments_list' => $role->payments_list,
-                ];
+                $result[$role->id] = $role;
             }
         }
 

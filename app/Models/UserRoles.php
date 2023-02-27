@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property integer $id
  * @property integer $name
+ * @property boolean $is_default
  * @property boolean $roles_list
  * @property boolean $roles_view
  * @property boolean $roles_add
@@ -36,7 +37,7 @@ class UserRoles extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'name', 'is_default',
         'roles_list', 'roles_view', 'roles_add', 'roles_edit', 'roles_delete',
         'users_list', 'users_view', 'users_add', 'users_edit', 'users_delete',
         'payments_list', 'payments_view', 'payments_add', 'payments_edit', 'payments_delete',

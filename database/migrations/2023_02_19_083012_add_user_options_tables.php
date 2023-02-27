@@ -22,6 +22,7 @@ return new class extends Migration
         Schema::create('user_roles', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255)->comment('Наименование роли');
+            $table->boolean('is_default')->default(false)->comment('Роль по умолчанию для новых пользователей');
 
             $table->boolean('roles_list')->default(false)->comment('Просмотр списка ролей (прав доступа) пользователей');
             $table->boolean('roles_view')->default(false)->comment('Просмотр роли (прав доступа)');
