@@ -1,73 +1,78 @@
 <template>
-
-    <h1 v-if="this.show_form === 'login'" class="title">Вход</h1>
-    <form v-if="this.show_form === 'login'" class="login-form" method="POST" action="/user/login">
-        <div class="form-block">
-            <label for="login-form-email" class="text">Введите email</label>
-            <div class="input"
-                 v-bind:class="{ 'success': this.login.is_email_valid, 'error': this.login.is_email_valid === false }">
-                <input v-model="this.login.email" type="email" placeholder="email@email.ru" id="login-form-email"
-                       name="email">
-            </div>
+    <div class="component-login">
+        <div class="title">
+            <h2 v-if="this.show_form === 'login'">Вход</h2>
+            <h2 v-if="this.show_form === 'registration'">Регистрация</h2>
         </div>
-        <div class="form-block">
-            <label for="login-form-password" class="text">Введите пароль</label>
-            <div class="input"
-                 v-bind:class="{ 'success': this.login.is_password_valid, 'error': this.login.is_password_valid === false }">
-                <input v-model="this.login.password" type="password" placeholder="Пароль" id="login-form-password"
-                       name="password">
-            </div>
-        </div>
-        <div class="form-block-checkbox">
-            <div class="input">
-                <input v-model="this.login.remember" type="checkbox" id="login-form-remember" name="remember">
-            </div>
-            <label for="login-form-remember" class="text">Запомнить меня</label>
-        </div>
-        <div class="form-block">
-            <div class="input">
-                <input @click.prevent="user_login_check()" type="submit" value="Войти">
-            </div>
-        </div>
-    </form>
-    <label v-if="this.show_form === 'login'" @click="this.show_registration()" class="login-form-label"
-           for="user-login-switch">Зарегистрироваться</label>
-
-    <h1 v-if="this.show_form === 'registration'" class="title">Регистрация</h1>
-    <form v-if="this.show_form === 'registration'" class="registration-form" method="POST" action="/user/registration">
-        <div class="form-block">
-            <label for="registration-form-name" class="text">Введите Имя</label>
-            <div class="input"
-                 v-bind:class="{ 'success': this.registration.is_name_valid, 'error': this.registration.is_name_valid === false }">
-                <input v-model="this.registration.name" type="text" placeholder="Имя" id="registration-form-name"
-                       name="name">
-            </div>
-        </div>
-        <div class="form-block">
-            <label for="registration-form-email" class="text">Введите email</label>
-            <div class="input"
-                 v-bind:class="{ 'success': this.registration.is_email_valid, 'error': this.registration.is_email_valid === false }">
-                <input v-model="this.registration.email" type="email" placeholder="email@mail.ru"
-                       id="registration-form-email" name="email">
-            </div>
-        </div>
-        <div class="form-block">
-            <label for="registration-form-password" class="text">Введите пароль</label>
-            <div class="input"
-                 v-bind:class="{ 'success': this.registration.is_email_valid, 'error': this.registration.is_email_valid === false }">
-                <input v-model="this.registration.password" type="password" placeholder="password"
-                       id="registration-form-password" name="password">
-            </div>
-        </div>
-        <div class="form-block">
-            <div class="input">
-                <input @click.prevent="user_registration_check()" type="submit" value="Зарегистрироваться">
-            </div>
-        </div>
-    </form>
-    <label v-if="this.show_form === 'registration'" @click="this.show_login()" class="registration-form-label"
-           for="user-login-switch">Уже зарегистрированы?</label>
-
+        <template v-if="this.show_form === 'login'" >
+            <form class="login-form" method="POST" action="/auth/login">
+                <div class="form-block">
+                    <label for="login-form-email" class="text">Введите email</label>
+                    <div class="input"
+                         v-bind:class="{ 'success': this.login.is_email_valid, 'error': this.login.is_email_valid === false }">
+                        <input v-model="this.login.email" type="email" placeholder="email@email.ru" id="login-form-email"
+                               name="email">
+                    </div>
+                </div>
+                <div class="form-block">
+                    <label for="login-form-password" class="text">Введите пароль</label>
+                    <div class="input"
+                         v-bind:class="{ 'success': this.login.is_password_valid, 'error': this.login.is_password_valid === false }">
+                        <input v-model="this.login.password" type="password" placeholder="Пароль" id="login-form-password"
+                               name="password">
+                    </div>
+                </div>
+                <div class="form-block-checkbox">
+                    <div class="input">
+                        <input v-model="this.login.remember" type="checkbox" id="login-form-remember" name="remember">
+                    </div>
+                    <label for="login-form-remember" class="text">Запомнить меня</label>
+                </div>
+                <div class="form-block">
+                    <div class="input">
+                        <input @click.prevent="user_login_check()" type="submit" value="Войти">
+                    </div>
+                </div>
+            </form>
+            <label @click="this.show_registration()" class="login-form-label"
+                   for="user-login-switch">Зарегистрироваться</label>
+        </template>
+        <template v-if="this.show_form === 'registration'" >
+            <form class="registration-form" method="POST" action="/auth/registration">
+                <div class="form-block">
+                    <label for="registration-form-name" class="text">Введите Имя</label>
+                    <div class="input"
+                         v-bind:class="{ 'success': this.registration.is_name_valid, 'error': this.registration.is_name_valid === false }">
+                        <input v-model="this.registration.name" type="text" placeholder="Имя" id="registration-form-name"
+                               name="name">
+                    </div>
+                </div>
+                <div class="form-block">
+                    <label for="registration-form-email" class="text">Введите email</label>
+                    <div class="input"
+                         v-bind:class="{ 'success': this.registration.is_email_valid, 'error': this.registration.is_email_valid === false }">
+                        <input v-model="this.registration.email" type="email" placeholder="email@mail.ru"
+                               id="registration-form-email" name="email">
+                    </div>
+                </div>
+                <div class="form-block">
+                    <label for="registration-form-password" class="text">Введите пароль</label>
+                    <div class="input"
+                         v-bind:class="{ 'success': this.registration.is_email_valid, 'error': this.registration.is_email_valid === false }">
+                        <input v-model="this.registration.password" type="password" placeholder="password"
+                               id="registration-form-password" name="password">
+                    </div>
+                </div>
+                <div class="form-block">
+                    <div class="input">
+                        <input @click.prevent="user_registration_check()" type="submit" value="Зарегистрироваться">
+                    </div>
+                </div>
+            </form>
+            <label @click="this.show_login()" class="registration-form-label"
+                   for="user-login-switch">Уже зарегистрированы?</label>
+        </template>
+    </div>
 </template>
 
 <script>
@@ -143,13 +148,23 @@ export default {
             }
             if (this.login.is_email_valid && this.login.is_password_valid) {
                 this.toast.info("Проверяем введенные данные", {timeout: 10000});
-                axios.post('/user/login', this.login)
+                axios.post('/auth/login', this.login)
                     .then(response => {
-                        if (response.data['is_user_login']) {
-                            window.location.href = '/';
+                        if ('is_user_login' in response.data) {
+                            if (response.data['is_user_login']) {
+                                if ('user' in response.data) {
+                                    let user = response.data['user'];
+                                    window.location.href = '/user/' + user.id;
+                                }
+                            }
                         } else {
                             this.toast.error("Введены неправильные данные");
                         }
+                        // if (response.data['is_user_login']) {
+                        //     window.location.href = '/user/';
+                        // } else {
+                        //     this.toast.error("Введены неправильные данные");
+                        // }
                     })
                     .catch(error => {
                         this.toast.error("error", error);
@@ -194,11 +209,19 @@ export default {
             }
             if (this.registration.is_name_valid && this.registration.is_email_valid && this.registration.is_password_valid) {
                 this.toast.info("Проверяем введенные данные", {timeout: 10000});
-                axios.post('/user/registration', this.registration)
+                axios.post('/auth/registration', this.registration)
                     .then(response => {
-                        if (response.data['is_user_registered']) {
-                            window.location.href = '/';
+                        if ('is_user_registered' in response.data) {
+                            if (response.data['is_user_registered']) {
+                                if ('user' in response.data) {
+                                    let user = response.data['user'];
+                                    window.location.href = '/user/' + user.id;
+                                }
+                            }
                         }
+                        // if (response.data['is_user_registered']) {
+                        //     window.location.href = '/';
+                        // }
                         if ('message' in response.data) {
                             this.toast.error(response.data['message']);
                         }

@@ -35,7 +35,7 @@
                 <div class="header-navigation">
                     <div class="nav-item">
                         @if ($data['auth'] === true)
-                            <a href="{{ route('user.logout') }}">Выход</a>
+                            <a href="{{ route('auth.logout') }}">Выход</a>
                         @endif
                         <div class="nav-item-decoration"></div>
                     </div>

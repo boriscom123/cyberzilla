@@ -6,6 +6,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\UserAuthController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -24,13 +25,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', IndexController::class)->name('index');
 
 Route::controller(UserAuthController::class)->group(function () {
-    Route::get('/user/login', 'login');
-    Route::post('/user/login', 'login')->name('user.login');
-    Route::get('/user/logout', 'logout')->name('user.logout');
-    Route::get('/user/registration', 'registration');
-    Route::post('/user/registration', 'registration')->name('user.registration');
+    Route::get('/auth/login', 'login');
+    Route::post('/auth/login', 'login')->name('auth.login');
+    Route::get('/auth/logout', 'logout')->name('auth.logout');
+    Route::get('/auth/registration', 'registration');
+    Route::post('/auth/registration', 'registration')->name('auth.registration');
 });
 
+Route::get('/user/{id}', UserController::class)->name('user');
 Route::get('/users', [UsersController::class, 'index'])->name('users');
 Route::get('/roles', [RolesController::class, 'index'])->name('roles');
 Route::get('/payments', [PaymentsController::class, 'index'])->name('payments');

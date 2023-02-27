@@ -49,7 +49,9 @@ class UserAuthController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials, $remember)) {
+            $user = Auth::user();
             $response['is_user_login'] = true;
+            $response['user'] = $user;
         }
 
         return new JsonResponse($response);
@@ -98,6 +100,7 @@ class UserAuthController extends Controller
                 $userOptions->user_id = $user->id;
                 $userOptions->user_role_id = $userDefaultRole->id;
                 $userOptions->save();
+                $response['user'] = $user;
             }
         }
 
