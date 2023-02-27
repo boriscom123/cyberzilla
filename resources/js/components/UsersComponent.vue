@@ -331,6 +331,8 @@ export default {
     name: "UsersComponent",
     props: [
         'app_env',
+        'user',
+        'user_options',
         'users',
         'roles',
         'payments_status',

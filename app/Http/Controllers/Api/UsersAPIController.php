@@ -193,11 +193,11 @@ class UsersAPIController extends Controller
         $dbUser = User::query()->where('id', $userId)->first();
         $dbUser?->delete();
 
-        $dbUserOptions = UserOptions::query()->where('id', $userId)->first();
+        $dbUserOptions = UserOptions::query()->where('user_id', $userId)->first();
         $dbUserOptions?->delete();
 
         $dbUser = User::query()->where('id', $userId)->first();
-        $dbUserOptions = UserOptions::query()->where('id', $userId)->first();
+        $dbUserOptions = UserOptions::query()->where('user_id', $userId)->first();
         if (!$dbUser && !$dbUserOptions) {
             $response['is_deleted'] = true;
         }

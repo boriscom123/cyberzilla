@@ -12,6 +12,8 @@
                 @if ($data['auth'] === true)
                     <payments-component
                         app_env='{{ env('APP_ENV', 'local') }}'
+                        :user='@json($data['user'], JSON_UNESCAPED_UNICODE)'
+                        :user_options='@json($data['user-options'], JSON_UNESCAPED_UNICODE)'
                         :payments='@json($data['payments'], JSON_UNESCAPED_UNICODE)'
                         :payments_status='@json($data['payments_status'], JSON_UNESCAPED_UNICODE)'
                         :users='@json($data['users'], JSON_UNESCAPED_UNICODE)'

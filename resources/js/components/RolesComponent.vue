@@ -155,6 +155,8 @@ export default {
     name: "RolesComponent",
     props: [
         'app_env',
+        'user',
+        'user_options',
         'roles',
     ],
     data: function () {
@@ -197,87 +199,107 @@ export default {
             this.toast.error("My toast error");
         },
         set_default_role: function (id) {
-            this.toast.info("Назначаем роль по умолчанию для новых пользователей с ID: " + id);
-            let data = {
-                role_id: id,
-            };
-            axios.post('/api/roles/set_default', data)
-                .then(response => {
-                    if ('is_changed' in response.data) {
-                        if (response.data['is_changed']) {
-                            this.toast.success("Успешно");
+            if (this.user_options['user_role_id'] >= id) {
+                this.toast.error('Нет доступа для изменения прав данной роли');
+                this.toast.info("Для возможности изменения данной роли необходимы права выше уровнем чем изменяемая роль");
+            } else {
+                this.toast.info("Назначаем роль по умолчанию для новых пользователей с id: " + id);
+                let data = {
+                    role_id: id,
+                };
+                axios.post('/api/roles/set_default', data)
+                    .then(response => {
+                        if ('is_changed' in response.data) {
+                            if (response.data['is_changed']) {
+                                this.toast.success("Успешно");
+                            }
                         }
-                    }
-                    if ('roles' in response.data) {
-                        this.user_roles = response.data['roles'];
-                    }
-                })
-                .catch(error => {
-                    console.log('error', error);
-                });
+                        if ('roles' in response.data) {
+                            this.user_roles = response.data['roles'];
+                        }
+                    })
+                    .catch(error => {
+                        console.log('error', error);
+                    });
+            }
         },
         change_roles_list: function (id) {
-            this.toast.info("Изменяем права доступа к просмотру ролей у роли с id " + id);
-            let data = {
-                role_id: id,
-            };
-            axios.post('/api/roles/roles_list', data)
-                .then(response => {
-                    if ('is_changed' in response.data) {
-                        if (response.data['is_changed']) {
-                            this.toast.success("Успешно");
-                            this.user_roles[id]['roles_list'] = this.user_roles[id]['roles_list'] !== true;
+            if (this.user_options['user_role_id'] >= id) {
+                this.toast.error('Нет доступа для изменения прав данной роли');
+                this.toast.info("Для возможности изменения данной роли необходимы права выше уровнем чем изменяемая роль");
+            } else {
+                this.toast.info("Изменяем права доступа к просмотру ролей у роли с id " + id);
+                let data = {
+                    role_id: id,
+                };
+                axios.post('/api/roles/roles_list', data)
+                    .then(response => {
+                        if ('is_changed' in response.data) {
+                            if (response.data['is_changed']) {
+                                this.toast.success("Успешно");
+                                this.user_roles[id] = response.data['role'];
+                            }
+                            if (response.data['message']) {
+                                this.toast.error(response.data['message']);
+                            }
                         }
-                        if (response.data['message']) {
-                            this.toast.error(response.data['message']);
-                        }
-                    }
-                })
-                .catch(error => {
-                    console.log('error', error);
-                });
+                    })
+                    .catch(error => {
+                        console.log('error', error);
+                    });
+            }
         },
-        change_users_list: function (id,) {
-            this.toast.info("Изменяем права доступа к просмотру пользователей у роли с id " + id);
-            let data = {
-                role_id: id,
-            };
-            axios.post('/api/roles/users_list', data)
-                .then(response => {
-                    if ('is_changed' in response.data) {
-                        if (response.data['is_changed']) {
-                            this.toast.success("Успешно");
-                            this.user_roles[id]['users_list'] = this.user_roles[id]['users_list'] !== true;
+        change_users_list: function (id) {
+            if (this.user_options['user_role_id'] >= id) {
+                this.toast.error('Нет доступа для изменения прав данной роли');
+                this.toast.info("Для возможности изменения данной роли необходимы права выше уровнем чем изменяемая роль");
+            } else {
+                this.toast.info("Изменяем права доступа к просмотру пользователей у роли с id " + id);
+                let data = {
+                    role_id: id,
+                };
+                axios.post('/api/roles/users_list', data)
+                    .then(response => {
+                        if ('is_changed' in response.data) {
+                            if (response.data['is_changed']) {
+                                this.toast.success("Успешно");
+                                this.user_roles[id] = response.data['role'];
+                            }
+                            if (response.data['message']) {
+                                this.toast.error(response.data['message']);
+                            }
                         }
-                        if (response.data['message']) {
-                            this.toast.error(response.data['message']);
-                        }
-                    }
-                })
-                .catch(error => {
-                    console.log('error', error);
-                });
+                    })
+                    .catch(error => {
+                        console.log('error', error);
+                    });
+            }
         },
         change_payments_list: function (id) {
-            this.toast.info("Изменяем права доступа к просмотру платежей у роли с id " + id);
-            let data = {
-                role_id: id,
-            };
-            axios.post('/api/roles/payments_list', data)
-                .then(response => {
-                    if ('is_changed' in response.data) {
-                        if (response.data['is_changed']) {
-                            this.toast.success("Успешно");
-                            this.user_roles[id]['payments_list'] = this.user_roles[id]['payments_list'] !== true;
+            if (this.user_options['user_role_id'] >= id) {
+                this.toast.error('Нет доступа для изменения прав данной роли');
+                this.toast.info("Для возможности изменения данной роли необходимы права выше уровнем чем изменяемая роль");
+            } else {
+                this.toast.info("Изменяем права доступа к просмотру платежей у роли с id " + id);
+                let data = {
+                    role_id: id,
+                };
+                axios.post('/api/roles/payments_list', data)
+                    .then(response => {
+                        if ('is_changed' in response.data) {
+                            if (response.data['is_changed']) {
+                                this.toast.success("Успешно");
+                                this.user_roles[id] = response.data['role'];
+                            }
+                            if (response.data['message']) {
+                                this.toast.error(response.data['message']);
+                            }
                         }
-                        if (response.data['message']) {
-                            this.toast.error(response.data['message']);
-                        }
-                    }
-                })
-                .catch(error => {
-                    console.log('error', error);
-                });
+                    })
+                    .catch(error => {
+                        console.log('error', error);
+                    });
+            }
         },
         delete_role: function (id) {
             this.toast.info("Удаляем роль с id " + id);

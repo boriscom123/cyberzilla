@@ -11,6 +11,8 @@
             <div class="container-content">
                 <users-component
                     app_env='{{ env('APP_ENV', 'local') }}'
+                    :user='@json($data['user'], JSON_UNESCAPED_UNICODE)'
+                    :user_options='@json($data['user-options'], JSON_UNESCAPED_UNICODE)'
                     :users='@json($data['users'], JSON_UNESCAPED_UNICODE)'
                     :roles='@json($data['roles'], JSON_UNESCAPED_UNICODE)'
                     :payments_status='@json($data['payments_status'], JSON_UNESCAPED_UNICODE)'

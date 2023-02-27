@@ -10,7 +10,12 @@
         <div class="container">
             <div class="container-content">
                 @if ($data['auth'] === true)
-                    <roles-component app_env='{{ env('APP_ENV', 'local') }}' :roles='@json($data['roles'], JSON_UNESCAPED_UNICODE)'></roles-component>
+                    <roles-component
+                        app_env='{{ env('APP_ENV', 'local') }}'
+                        :user='@json($data['user'], JSON_UNESCAPED_UNICODE)'
+                        :user_options='@json($data['user-options'], JSON_UNESCAPED_UNICODE)'
+                        :roles='@json($data['roles'], JSON_UNESCAPED_UNICODE)'
+                    ></roles-component>
                 @endif
             </div>
         </div>

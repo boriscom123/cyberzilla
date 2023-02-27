@@ -36,10 +36,11 @@ class RolesController extends Controller
         $is_approved = false;
 
         $this->data['user-options'] = UserOptions::query()->where('user_id', $this->data['user']->id)->first();
-        $this->data['user-role'] = UserRoles::query()->where('id', $this->data['user-options']->user_role_id)->first();
-
-        if ($this->data['user-role']->roles_list) {
-            $is_approved = true;
+        if ($this->data['user-options']) {
+            $this->data['user-role'] = UserRoles::query()->where('id', $this->data['user-options']->user_role_id)->first();
+            if ($this->data['user-role']->roles_list) {
+                $is_approved = true;
+            }
         }
 
         return $is_approved;

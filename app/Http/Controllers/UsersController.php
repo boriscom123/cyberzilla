@@ -44,15 +44,11 @@ class UsersController extends Controller
         $is_approved = false;
 
         $this->data['user-options'] = UserOptions::query()->where('user_id', $this->data['user']->id)->first();
-        if (!$this->data['user-options']) {
-            $this->addRoleToUser($this->data['user']->id);
-            $this->data['user-options'] = UserOptions::query()->where('user_id', $this->data['user']->id)->first();
-        }
-        $this->data['user-role'] = UserRoles::query()->where('id', $this->data['user-options']->user_role_id)->first();
-
-
-        if ($this->data['user-role']->users_list) {
-            $is_approved = true;
+        if ($this->data['user-options']) {
+            $this->data['user-role'] = UserRoles::query()->where('id', $this->data['user-options']->user_role_id)->first();
+            if ($this->data['user-role']->users_list) {
+                $is_approved = true;
+            }
         }
 
         return $is_approved;
@@ -129,7 +125,7 @@ class UsersController extends Controller
         $dbRoles = UserRoles::query()->get();
         if ($dbRoles) {
             $roles = [];
-            foreach ($dbRoles as $role){
+            foreach ($dbRoles as $role) {
                 $roles[$role->id] = [
                     'id' => $role->id,
                     'name' => $role->name,
@@ -141,19 +137,6 @@ class UsersController extends Controller
         return $result;
     }
 
-    public function addRoleToUser($user_id)
-    {
-        /** @var User $user */
-        $user = User::query()->where('id', $user_id)->first();
-        /** @var UserRoles $userRoles */
-        $userRoles = UserRoles::query()->where('id', '>=', 1)->latest();
-
-        $userOptions = new UserOptions();
-        $userOptions->user_id = $user->id;
-        $userOptions->user_role_id = $user->id;
-        $userOptions->save();
-    }
-
     public function reloadPaymentsStatus(): array
     {
         $result = [];
@@ -162,7 +145,7 @@ class UsersController extends Controller
         $dbPaymentStatus = PaymentsStatus::query()->get();
         if ($dbPaymentStatus) {
             $status_list = [];
-            foreach ($dbPaymentStatus as $status){
+            foreach ($dbPaymentStatus as $status) {
                 $status_list[$status->id] = [
                     'id' => $status->id,
                     'name' => $status->text,

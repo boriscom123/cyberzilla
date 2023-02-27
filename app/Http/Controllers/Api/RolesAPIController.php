@@ -33,6 +33,7 @@ class RolesAPIController extends Controller
             $dbRole->roles_list = !(bool)$dbRole->roles_list;
             $dbRole->save();
             $response['is_changed'] = true;
+            $response['role'] = $dbRole;
         }
 
         return new JsonResponse($response);
@@ -61,6 +62,7 @@ class RolesAPIController extends Controller
             $dbRole->users_list = !(bool)$dbRole->users_list;
             $dbRole->save();
             $response['is_changed'] = true;
+            $response['role'] = $dbRole;
         }
 
         return new JsonResponse($response);
@@ -89,6 +91,7 @@ class RolesAPIController extends Controller
             $dbRole->payments_list = !(bool)$dbRole->payments_list;
             $dbRole->save();
             $response['is_changed'] = true;
+            $response['role'] = $dbRole;
         }
 
         return new JsonResponse($response);

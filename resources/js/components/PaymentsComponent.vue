@@ -100,6 +100,8 @@ export default {
     name: "PaymentsComponent",
     props: [
         'app_env',
+        'user',
+        'user_options',
         'payments',
         'payments_status',
         'users',
