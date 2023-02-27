@@ -11382,6 +11382,34 @@ label {
   align-items: center;
   flex-grow: 1;
 }
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .default {
+  height: 100%;
+  width: 100%;
+  max-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .default > .default-checkbox {
+  height: 25px;
+  width: 25px;
+  min-width: 25px;
+  border-radius: 5px;
+  border: 1px solid silver;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .default > .default-checkbox:hover {
+  background-color: #0d6efd;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .default > .checked {
+  background-size: 75%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(/images/icons8-done.svg?2306376a63725e61064dd68500548caf);
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .default > .checked:hover {
+  background-color: #d3d3f0;
+  background-size: 95%;
+}
 .site-main > .container > .container-content > .component-user-roles > .roles-list > .nav > .rules {
   height: 100%;
   width: 100%;
@@ -11450,6 +11478,9 @@ label {
   font-weight: 600;
 }
 .site-main > .container > .container-content > .component-user-roles > .roles-list > .nav-title > .name {
+  font-weight: 600;
+}
+.site-main > .container > .container-content > .component-user-roles > .roles-list > .nav-title > .default {
   font-weight: 600;
 }
 .site-main > .container > .container-content > .component-user-roles > .roles-list > .nav-title > .rules > .rule-title {
