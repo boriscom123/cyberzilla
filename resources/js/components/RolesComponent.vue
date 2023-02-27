@@ -226,7 +226,7 @@ export default {
                     if ('is_changed' in response.data) {
                         if (response.data['is_changed']) {
                             this.toast.success("Успешно");
-                            this.user_roles[id]['roles_list'] = true;
+                            this.user_roles[id]['roles_list'] = this.user_roles[id]['roles_list'] !== true;
                         }
                         if (response.data['message']) {
                             this.toast.error(response.data['message']);
@@ -247,7 +247,7 @@ export default {
                     if ('is_changed' in response.data) {
                         if (response.data['is_changed']) {
                             this.toast.success("Успешно");
-                            this.user_roles[id]['users_list'] = true;
+                            this.user_roles[id]['users_list'] = this.user_roles[id]['users_list'] !== true;
                         }
                         if (response.data['message']) {
                             this.toast.error(response.data['message']);
@@ -268,7 +268,7 @@ export default {
                     if ('is_changed' in response.data) {
                         if (response.data['is_changed']) {
                             this.toast.success("Успешно");
-                            this.user_roles[id]['payments_list'] = true;
+                            this.user_roles[id]['payments_list'] = this.user_roles[id]['payments_list'] !== true;
                         }
                         if (response.data['message']) {
                             this.toast.error(response.data['message']);

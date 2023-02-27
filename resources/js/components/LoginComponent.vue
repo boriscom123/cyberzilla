@@ -149,7 +149,7 @@ export default {
                         }
                     })
                     .catch(error => {
-                        this.toast.error("error");
+                        this.toast.error("error", error);
                     });
             }
         },
@@ -195,12 +195,13 @@ export default {
                     .then(response => {
                         if (response.data['is_user_registered']) {
                             window.location.href = '/';
-                        } else {
-                            this.toast.error("Введены неправильные данные");
+                        }
+                        if ('message' in response.data) {
+                            this.toast.error(response.data['message']);
                         }
                     })
                     .catch(error => {
-                        this.toast.error("error");
+                        this.toast.error("error", error);
                     });
             }
         },

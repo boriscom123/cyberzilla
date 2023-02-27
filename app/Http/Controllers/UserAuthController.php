@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\UserOptions;
 use App\Models\UserRoles;
+use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -55,7 +56,8 @@ class UserAuthController extends Controller
     }
 
 
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         Auth::logout();
         Session::flush();
         return Redirect('/');
@@ -68,16 +70,22 @@ class UserAuthController extends Controller
             'is_user_registered' => false,
         ];
 
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
-        ]);
+        try {
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required|email|unique:users',
+                'password' => 'required|min:6',
+            ]);
+        } catch (Exception $e) {
+            $response['message'] = $e->getMessage();
+            return new JsonResponse($response);
+        }
 
         $data = $request->all();
-        $check = $this->createNewUser($data);
 
-        if ($check) {
+        $createUser = $this->createNewUser($data);
+
+        if ($createUser) {
             $credentials = $request->only('email', 'password');
             if (Auth::attempt($credentials)) {
                 $response['is_user_registered'] = true;

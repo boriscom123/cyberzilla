@@ -11,9 +11,9 @@ use Illuminate\Http\Request;
 class Header extends Component
 {
     /**
-     * @var array $params - Данные компонента
+     * @var array $data - Данные компонента
      */
-    public array $params;
+    public array $data;
 
     /**
      * Create a new component instance.
@@ -23,12 +23,12 @@ class Header extends Component
     public function __construct(Request $request)
     {
         if (Auth::check()) {
-            $this->params['auth'] = true;
-            $this->params['user'] = Auth::user();
-            $this->getUserData();
-            $this->params['active-navigation'] = $this->getActiveNavigation($request);
+            $this->data['auth'] = true;
+            $this->data['user'] = Auth::user();
+            $this->data['user-role'] = $this->getUserRole();
+            $this->data['active-navigation'] = $this->getActiveNavigation($request);
         } else {
-            $this->params['auth'] = false;
+            $this->data['auth'] = false;
         }
     }
 
@@ -39,16 +39,17 @@ class Header extends Component
      */
     public function render()
     {
-        return view('components.header');
+        return view('components.header', ['data' => $this->data]);
     }
 
-    public function getUserData()
+    public function getUserRole(): UserRoles
     {
         /** @var UserOptions $userOptions */
-        $userOptions = UserOptions::query()->where('user_id', $this->params['user']->id)->first();
+        $userOptions = UserOptions::query()->where('user_id', $this->data['user']->id)->first();
         /** @var UserRoles $userRoles */
         $userRoles = UserRoles::query()->where('id', $userOptions->user_role_id)->first();
-        $this->params['role'] = $userRoles;
+
+        return $userRoles;
     }
 
     public function getActiveNavigation(Request $request): string

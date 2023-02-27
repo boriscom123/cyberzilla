@@ -2,13 +2,12 @@
 
 use App\Http\Controllers\Api\RolesAPIController;
 use App\Http\Controllers\Api\UsersAPIController;
-use App\Http\Controllers\Auth\PaymentsController;
-use App\Http\Controllers\UsersController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\UserAuthController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*

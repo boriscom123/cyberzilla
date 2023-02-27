@@ -3,24 +3,38 @@
         <div class="container">
             <div class="header-container-content">
                 <a href="/" class="header-logo">CyberZilla</a>
-                @if ($params['auth'] === true)
+                @if ($data['auth'] === true)
                     <div class="navigation">
                         <div class="user-info">
-                            <div class="user-name">{{ $params['user']['name'] }}</div>
+                            <div class="user-name">{{ $data['user']['name'] }}</div>
                             <div class="user-name">|</div>
-                            <div class="user-role">{{ $params['role']['name'] }}</div>
+                            <div class="user-role">{{ $data['user-role']['name'] }}</div>
                         </div>
-                        <div class="links">
-                            <a href="{{ route('roles') }}" @if ($params['active-navigation'] === 'roles') class="active" @endif>Права пользователей</a>
-                            <a href="{{ route('users') }}" @if ($params['active-navigation'] === 'users') class="active" @endif>Пользователи</a>
-                            <a href="{{ route('payments') }}" @if ($params['active-navigation'] === 'payments') class="active" @endif>Платежи</a>
-                        </div>
+                        @if ($data['user-role']->roles_list || $data['user-role']->users_list || $data['user-role']->payments_list)
+
+                            <div class="links">
+                                @if ($data['user-role']->roles_list == true)
+                                    <a href="{{ route('roles') }}"
+                                       @if ($data['active-navigation'] === 'roles') class="active" @endif>Права
+                                        пользователей</a>
+                                @endif
+                                @if ($data['user-role']->users_list == true)
+                                    <a href="{{ route('users') }}"
+                                       @if ($data['active-navigation'] === 'users') class="active" @endif>Пользователи</a>
+                                @endif
+                                @if ($data['user-role']->payments_list == true)
+                                    <a href="{{ route('payments') }}"
+                                       @if ($data['active-navigation'] === 'payments') class="active" @endif>Платежи</a>
+                                @endif
+                            </div>
+
+                        @endif
                     </div>
 
                 @endif
                 <div class="header-navigation">
                     <div class="nav-item">
-                        @if ($params['auth'] === true)
+                        @if ($data['auth'] === true)
                             <a href="{{ route('user.logout') }}">Выход</a>
                         @endif
                         <div class="nav-item-decoration"></div>

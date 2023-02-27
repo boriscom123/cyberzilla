@@ -10,12 +10,21 @@
         <div class="container">
             <div class="container-content">
                 @if ($data['auth'] === true)
-                    <div class="title"><h2>Перейдите в необходимый раздел</h2></div>
-                    <div class="navigation">
-                        <a href="{{ route('roles') }}">Права пользователей</a>
-                        <a href="{{ route('users') }}">Пользователи</a>
-                        <a href="{{ route('payments') }}">Платежи</a>
-                    </div>
+                    @if ($data['user-role']->roles_list || $data['user-role']->users_list || $data['user-role']->payments_list)
+                        <div class="title"><h2>Перейдите в необходимый раздел</h2></div>
+
+                        <div class="navigation">
+                            @if ($data['user-role']->roles_list == true)
+                                <a href="{{ route('roles') }}">Права пользователей</a>
+                            @endif
+                            @if ($data['user-role']->users_list == true)
+                                <a href="{{ route('users') }}">Пользователи</a>
+                            @endif
+                            @if ($data['user-role']->payments_list == true)
+                                <a href="{{ route('payments') }}">Платежи</a>
+                            @endif
+                        </div>
+                    @endif
                 @else
                     <login-component app_env='{{ env('APP_ENV', 'local') }}'></login-component>
                 @endif
