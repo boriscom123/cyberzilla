@@ -2,7 +2,7 @@
     <div class="component-payments">
         <div v-if="this.template === 'list'" class="title">
             <h2>Список платежей</h2>
-            <div @click="show_payments_list()" class="button-add">Закрыть</div>
+            <div v-if="this.template === 'info'" @click="show_payments_list()" class="button-add">Закрыть</div>
         </div>
         <div v-if="this.template === 'list'" class="user-payments-list">
             <template v-if="Object.keys(this.payments_list).length > 0">
@@ -121,13 +121,18 @@ export default {
         return {toast}
     },
     mounted() {
-        console.log('PaymentsComponent');
-        if (this.app_env === 'local') {
-            this.show_console = true;
-        }
+        this.show_console = this.app_env === 'local';
+
         this.payments_list = this.payments;
         this.payment_statuses = this.payments_status;
         this.users_list = this.users;
+
+        if (this.show_console) {
+            console.log('PaymentsComponent');
+            console.log('payments_list', this.payments_list);
+            console.log('payment_statuses', this.payment_statuses);
+            console.log('users_list', this.users_list);
+        }
     },
     methods: {
         show_payments_list: function () {

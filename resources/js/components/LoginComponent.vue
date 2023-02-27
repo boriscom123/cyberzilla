@@ -105,8 +105,11 @@ export default {
         return {toast}
     },
     mounted() {
-        if (this.app_env === 'local') {
-            this.show_console = true;
+        this.show_console = this.app_env === 'local';
+
+        if (this.show_console) {
+            console.log('LoginComponent');
+            console.log('show_console', this.show_console);
         }
     },
     methods: {

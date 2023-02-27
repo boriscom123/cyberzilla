@@ -11,36 +11,31 @@ use Illuminate\Support\Facades\Auth;
 
 class IndexController extends Controller
 {
+    public array $data = [];
+
     public function __invoke(Request $request)
     {
-        $data = [
+        $this->data = [
             "title" => "Главная страница",
             "description" => "Описание главной страницы",
             "auth" => false,
         ];
 
-
         if (Auth::check()) {
-            $data['auth'] = true;
-            /** @var User $user */
-            $user = Auth::user();
-            $data['user-name'] = $user->name;
-            $data['user-role'] = $this->getUserRole($user);
+            $this->data['auth'] = true;
+            $this->data['user'] = Auth::user();
+            $this->data['user-name'] = $this->data['user']->name;
+            $this->getUserRole();
         } else {
-            $data['user-name'] = 'Гость';
+            $this->data['user-name'] = 'Гость';
         }
 
-
-        return view('index', ['data' => $data]);
+        return view('index', ['data' => $this->data]);
     }
 
-    public function getUserRole($user)
+    public function getUserRole()
     {
-        /** @var UserOptions $userOptions */
-        $userOptions = UserOptions::query()->where('user_id', $user->id)->first();
-        /** @var UserRoles $userRoles */
-        $userRoles = UserRoles::query()->where('id', $userOptions->user_role_id)->first();
-
-        return $userRoles;
+        $this->data['user-options'] = UserOptions::query()->where('user_id', $this->data['user']->id)->first();
+        $this->data['user-role'] = UserRoles::query()->where('id', $this->data['user-options']->user_role_id)->first();
     }
 }

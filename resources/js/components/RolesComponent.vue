@@ -186,11 +186,14 @@ export default {
         return {toast}
     },
     mounted() {
-        console.log('RolesComponent');
-        if (this.app_env === 'local') {
-            this.show_console = true;
-        }
+        this.show_console = this.app_env === 'local';
+
         this.user_roles = this.roles;
+
+        if (this.show_console) {
+            console.log('RolesComponent');
+            console.log('user_roles', this.user_roles);
+        }
     },
     methods: {
         showToast: function () {

@@ -106,101 +106,6 @@
             <div class="user-button">
                 <div @click="update_user()">Обновить</div>
             </div>
-
-            <!--            <div class="user-info-name">-->
-            <!--                <h3>Имя:</h3>-->
-            <!--                <div class="user-info-name-content">-->
-            <!--                    <div class="input-name">-->
-            <!--                        <input v-model="this.users[this.view_user_id]['name']" type="text">-->
-            <!--                    </div>-->
-            <!--                    <div class="action-buttons">-->
-            <!--                        <button @click="change_user_name(this.view_user_id)">Изменить</button>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!--            <div class="user-info-phone">-->
-            <!--                <h3>Телефоны:</h3>-->
-            <!--                <div class="user-info-phone-content">-->
-            <!--                    <template v-if="Object.keys(this.users[this.view_user_id]['phones']).length > 0">-->
-            <!--                        <div class="item" v-for="(item, index) in this.users[this.view_user_id]['phones']">-->
-            <!--                            <div class="input-phone">-->
-            <!--                                <input v-model="this.users[this.view_user_id]['phones'][index]['phone_number']"-->
-            <!--                                       type="text" placeholder="Телефон">-->
-            <!--                            </div>-->
-            <!--                            <select v-model="this.users[this.view_user_id]['phones'][index]['status_id']"-->
-            <!--                                    class="phone-status">-->
-            <!--                                <option value="1" selected>Рабочий</option>-->
-            <!--                                <option value="2">Домашний</option>-->
-            <!--                                <option value="3">Дополнительный</option>-->
-            <!--                                <option value="4">Личный</option>-->
-            <!--                                <option value="5">Корпоративный</option>-->
-            <!--                            </select>-->
-            <!--                            <select v-model="this.users[this.view_user_id]['phones'][index]['is_confirmed']"-->
-            <!--                                    class="phone-confirmation">-->
-            <!--                                <option value="1" selected>Подтвержден</option>-->
-            <!--                                <option value="0">Не подтвержден</option>-->
-            <!--                            </select>-->
-            <!--                            <div class="action-buttons">-->
-            <!--                                <button @click="change_user_phone_number(this.view_user_id, index)">Изменить</button>-->
-            <!--                                <button @click="remove_user_phone_number(this.view_user_id, index)">Удалить</button>-->
-            <!--                            </div>-->
-            <!--                        </div>-->
-            <!--                    </template>-->
-            <!--                    <div class="item">-->
-            <!--                        <div class="input-phone">-->
-            <!--                            <input v-model="this.new_phone_number" type="text" placeholder="Телефон">-->
-            <!--                        </div>-->
-            <!--                        <select v-model="this.new_phone_status" class="phone-status">-->
-            <!--                            <option value="1" selected>Рабочий</option>-->
-            <!--                            <option value="2">Домашний</option>-->
-            <!--                            <option value="3">Дополнительный</option>-->
-            <!--                            <option value="3">Личный</option>-->
-            <!--                            <option value="5">Корпоративный</option>-->
-            <!--                        </select>-->
-            <!--                        <select v-model="this.new_phone_confirmation" class="phone-confirmation">-->
-            <!--                            <option value="1">Подтвержден</option>-->
-            <!--                            <option value="0">Не подтвержден</option>-->
-            <!--                        </select>-->
-            <!--                        <div class="action-buttons">-->
-            <!--                            <button @click="add_user_phone_number(this.view_user_id)">Добавить</button>-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!--            <div class="user-info-payments">-->
-            <!--                <h3>Платежи:</h3>-->
-            <!--                <div class="user-info-payments-content">-->
-            <!--                    <template v-if="Object.keys(this.users[this.view_user_id]['payments']).length > 0">-->
-            <!--                        <div class="item" v-for="(item, index) in this.users[this.view_user_id]['payments']">-->
-            <!--                            <div class="input-payment">-->
-            <!--                                <input v-model="this.users[this.view_user_id]['payments'][index]['payment_number']"-->
-            <!--                                       type="text" placeholder="№ платежа">-->
-            <!--                            </div>-->
-            <!--                            <select v-model="this.users[this.view_user_id]['payments'][index]['payment_status']"-->
-            <!--                                    class="payment-status">-->
-            <!--                                <option value="1">В обработке</option>-->
-            <!--                                <option value="2" selected>Завершен</option>-->
-            <!--                            </select>-->
-            <!--                            <div class="action-buttons">-->
-            <!--                                <button @click="change_user_payment(index)">Изменить</button>-->
-            <!--                                <button @click="remove_user_payment(index)">Удалить</button>-->
-            <!--                            </div>-->
-            <!--                        </div>-->
-            <!--                    </template>-->
-            <!--                    <div class="item">-->
-            <!--                        <div class="input-payment">-->
-            <!--                            <input v-model="this.new_payment_number" type="text" placeholder="№ платежа">-->
-            <!--                        </div>-->
-            <!--                        <select v-model="this.new_payment_status" class="payment-status">-->
-            <!--                            <option value="1" selected>В обработке</option>-->
-            <!--                            <option value="2">Завершен</option>-->
-            <!--                        </select>-->
-            <!--                        <div class="action-buttons">-->
-            <!--                            <button @click="add_user_payment(this.view_user_id)">Добавить</button>-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
         </div>
         <div v-if="this.template === 'user_info'" class="title">
             <h2>Платежи пользователя</h2>
@@ -382,13 +287,18 @@ export default {
         return {toast}
     },
     mounted() {
-        console.log('UsersComponent');
-        if (this.app_env === 'local') {
-            this.show_console = true;
-        }
+        this.show_console = this.app_env === 'local';
+
         this.users_list = this.users;
         this.roles_list = this.roles;
         this.payment_statuses = this.payments_status;
+
+        if (this.show_console) {
+            console.log('UsersComponent');
+            console.log('users_list', this.users_list);
+            console.log('roles_list', this.roles_list);
+            console.log('payment_statuses', this.payment_statuses);
+        }
     },
     methods: {
         get_users: function () {
