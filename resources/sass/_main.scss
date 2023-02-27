@@ -10,110 +10,6 @@
 
         > .container-content {
 
-            > .title {
-                padding: 0 0 20px 0;
-
-                > h2 {
-                    font-weight: 700;
-                    padding: 20px 0;
-                }
-            }
-
-            > .login-form, > .registration-form {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-
-                > .form-block {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 10px;
-
-                    > label {
-                        font-size: 22px;
-                        font-weight: 500;
-                    }
-
-                    > .input {
-                        height: 50px;
-                        width: 100%;
-                        max-width: 320px;
-                        border-radius: 5px;
-                        overflow: hidden;
-                        border: 1px solid silver;
-
-                        > input {
-                            height: 100%;
-                            width: 100%;
-                            border: none;
-                            padding: 0 0 0 10px;
-                            font-size: 20px;
-                        }
-
-                        > input[type=submit] {
-                            font-size: 22px;
-                            font-weight: 500;
-                            background-color: silver;
-                            transition: $transition;
-
-                            &:hover {
-                                @include elHover(silver);
-                                color: white;
-                            }
-                        }
-                    }
-                }
-
-                > .form-block-checkbox {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 20px;
-
-                    > .input {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-
-                        > input[type=checkbox] {
-                            display: flex;
-                            height: 25px;
-                            width: 25px;
-
-                            appearance: auto;
-                        }
-                    }
-
-                    > label {
-                        font-size: 18px;
-                        font-weight: 400;
-                        border-bottom: 1px solid white;
-                        transition: $transition;
-
-                        &:hover {
-                            border-bottom: 1px solid silver;
-                        }
-                    }
-                }
-            }
-
-            > label {
-                display: flex;
-                max-width: max-content;
-                margin: 20px auto 0;
-                justify-content: center;
-                border-bottom: 1px solid white;
-                transition: $transition;
-
-                &:hover {
-                    border-bottom: 1px solid silver;
-                }
-            }
-
             > .navigation {
                 display: flex;
                 gap: 20px;
@@ -135,7 +31,7 @@
                 }
             }
 
-            > .component-user, > .component-users {
+            > .component-login, > .component-user, > .component-users {
 
                 > .title {
                     display: flex;
@@ -163,6 +59,101 @@
                         }
                     }
 
+                }
+
+                > .login-form, > .registration-form {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 20px;
+
+                    > .form-block {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 10px;
+
+                        > label {
+                            font-size: 22px;
+                            font-weight: 500;
+                        }
+
+                        > .input {
+                            height: 50px;
+                            width: 100%;
+                            max-width: 320px;
+                            border-radius: 5px;
+                            overflow: hidden;
+                            border: 1px solid silver;
+
+                            > input {
+                                height: 100%;
+                                width: 100%;
+                                border: none;
+                                padding: 0 0 0 10px;
+                                font-size: 20px;
+                            }
+
+                            > input[type=submit] {
+                                font-size: 22px;
+                                font-weight: 500;
+                                background-color: silver;
+                                transition: $transition;
+
+                                &:hover {
+                                    @include elHover(silver);
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+
+                    > .form-block-checkbox {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 20px;
+
+                        > .input {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            > input[type=checkbox] {
+                                display: flex;
+                                height: 25px;
+                                width: 25px;
+
+                                appearance: auto;
+                            }
+                        }
+
+                        > label {
+                            font-size: 18px;
+                            font-weight: 400;
+                            border-bottom: 1px solid white;
+                            transition: $transition;
+
+                            &:hover {
+                                border-bottom: 1px solid silver;
+                            }
+                        }
+                    }
+                }
+
+                > label {
+                    display: flex;
+                    max-width: max-content;
+                    margin: 20px auto 0;
+                    justify-content: center;
+                    border-bottom: 1px solid white;
+                    transition: $transition;
+
+                    &:hover {
+                        border-bottom: 1px solid silver;
+                    }
                 }
 
                 > .users-list, > .user-payments-list {

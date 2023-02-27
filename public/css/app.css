@@ -11026,96 +11026,6 @@ label {
   width: 100%;
   min-height: calc(100% - 150px);
 }
-.site-main > .container > .container-content > .title {
-  padding: 0 0 20px 0;
-}
-.site-main > .container > .container-content > .title > h2, .site-main > .container > .container-content > .title > .h2 {
-  font-weight: 700;
-  padding: 20px 0;
-}
-.site-main > .container > .container-content > .login-form, .site-main > .container > .container-content > .registration-form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-.site-main > .container > .container-content > .login-form > .form-block, .site-main > .container > .container-content > .registration-form > .form-block {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-.site-main > .container > .container-content > .login-form > .form-block > label, .site-main > .container > .container-content > .registration-form > .form-block > label {
-  font-size: 22px;
-  font-weight: 500;
-}
-.site-main > .container > .container-content > .login-form > .form-block > .input, .site-main > .container > .container-content > .registration-form > .form-block > .input {
-  height: 50px;
-  width: 100%;
-  max-width: 320px;
-  border-radius: 5px;
-  overflow: hidden;
-  border: 1px solid silver;
-}
-.site-main > .container > .container-content > .login-form > .form-block > .input > input, .site-main > .container > .container-content > .registration-form > .form-block > .input > input {
-  height: 100%;
-  width: 100%;
-  border: none;
-  padding: 0 0 0 10px;
-  font-size: 20px;
-}
-.site-main > .container > .container-content > .login-form > .form-block > .input > input[type=submit], .site-main > .container > .container-content > .registration-form > .form-block > .input > input[type=submit] {
-  font-size: 22px;
-  font-weight: 500;
-  background-color: silver;
-  transition: 0.3s;
-}
-.site-main > .container > .container-content > .login-form > .form-block > .input > input[type=submit]:hover, .site-main > .container > .container-content > .registration-form > .form-block > .input > input[type=submit]:hover {
-  background-color: #a7a7a7;
-  color: white;
-}
-.site-main > .container > .container-content > .login-form > .form-block-checkbox, .site-main > .container > .container-content > .registration-form > .form-block-checkbox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-.site-main > .container > .container-content > .login-form > .form-block-checkbox > .input, .site-main > .container > .container-content > .registration-form > .form-block-checkbox > .input {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.site-main > .container > .container-content > .login-form > .form-block-checkbox > .input > input[type=checkbox], .site-main > .container > .container-content > .registration-form > .form-block-checkbox > .input > input[type=checkbox] {
-  display: flex;
-  height: 25px;
-  width: 25px;
-  -webkit-appearance: auto;
-     -moz-appearance: auto;
-          appearance: auto;
-}
-.site-main > .container > .container-content > .login-form > .form-block-checkbox > label, .site-main > .container > .container-content > .registration-form > .form-block-checkbox > label {
-  font-size: 18px;
-  font-weight: 400;
-  border-bottom: 1px solid white;
-  transition: 0.3s;
-}
-.site-main > .container > .container-content > .login-form > .form-block-checkbox > label:hover, .site-main > .container > .container-content > .registration-form > .form-block-checkbox > label:hover {
-  border-bottom: 1px solid silver;
-}
-.site-main > .container > .container-content > label {
-  display: flex;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  margin: 20px auto 0;
-  justify-content: center;
-  border-bottom: 1px solid white;
-  transition: 0.3s;
-}
-.site-main > .container > .container-content > label:hover {
-  border-bottom: 1px solid silver;
-}
 .site-main > .container > .container-content > .navigation {
   display: flex;
   gap: 20px;
@@ -11134,16 +11044,16 @@ label {
   color: #0d6efd;
   border: 1px solid #0d6efd;
 }
-.site-main > .container > .container-content > .component-user > .title, .site-main > .container > .container-content > .component-users > .title {
+.site-main > .container > .container-content > .component-login > .title, .site-main > .container > .container-content > .component-user > .title, .site-main > .container > .container-content > .component-users > .title {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.site-main > .container > .container-content > .component-user > .title > h2, .site-main > .container > .container-content > .component-user > .title > .h2, .site-main > .container > .container-content > .component-users > .title > h2, .site-main > .container > .container-content > .component-users > .title > .h2 {
+.site-main > .container > .container-content > .component-login > .title > h2, .site-main > .container > .container-content > .component-login > .title > .h2, .site-main > .container > .container-content > .component-user > .title > h2, .site-main > .container > .container-content > .component-user > .title > .h2, .site-main > .container > .container-content > .component-users > .title > h2, .site-main > .container > .container-content > .component-users > .title > .h2 {
   font-weight: 700;
   padding: 20px 0;
 }
-.site-main > .container > .container-content > .component-user > .title > .button-add, .site-main > .container > .container-content > .component-users > .title > .button-add {
+.site-main > .container > .container-content > .component-login > .title > .button-add, .site-main > .container > .container-content > .component-user > .title > .button-add, .site-main > .container > .container-content > .component-users > .title > .button-add {
   height: 50px;
   background-color: #0d6efd;
   border-radius: 5px;
@@ -11154,24 +11064,107 @@ label {
   padding: 0 10px;
   cursor: pointer;
 }
-.site-main > .container > .container-content > .component-user > .title > .button-add:hover, .site-main > .container > .container-content > .component-users > .title > .button-add:hover {
+.site-main > .container > .container-content > .component-login > .title > .button-add:hover, .site-main > .container > .container-content > .component-user > .title > .button-add:hover, .site-main > .container > .container-content > .component-users > .title > .button-add:hover {
   background-color: #0257d5;
 }
-.site-main > .container > .container-content > .component-user > .users-list, .site-main > .container > .container-content > .component-user > .user-payments-list, .site-main > .container > .container-content > .component-users > .users-list, .site-main > .container > .container-content > .component-users > .user-payments-list {
+.site-main > .container > .container-content > .component-login > .login-form, .site-main > .container > .container-content > .component-login > .registration-form, .site-main > .container > .container-content > .component-user > .login-form, .site-main > .container > .container-content > .component-user > .registration-form, .site-main > .container > .container-content > .component-users > .login-form, .site-main > .container > .container-content > .component-users > .registration-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.site-main > .container > .container-content > .component-login > .login-form > .form-block, .site-main > .container > .container-content > .component-login > .registration-form > .form-block, .site-main > .container > .container-content > .component-user > .login-form > .form-block, .site-main > .container > .container-content > .component-user > .registration-form > .form-block, .site-main > .container > .container-content > .component-users > .login-form > .form-block, .site-main > .container > .container-content > .component-users > .registration-form > .form-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.site-main > .container > .container-content > .component-login > .login-form > .form-block > label, .site-main > .container > .container-content > .component-login > .registration-form > .form-block > label, .site-main > .container > .container-content > .component-user > .login-form > .form-block > label, .site-main > .container > .container-content > .component-user > .registration-form > .form-block > label, .site-main > .container > .container-content > .component-users > .login-form > .form-block > label, .site-main > .container > .container-content > .component-users > .registration-form > .form-block > label {
+  font-size: 22px;
+  font-weight: 500;
+}
+.site-main > .container > .container-content > .component-login > .login-form > .form-block > .input, .site-main > .container > .container-content > .component-login > .registration-form > .form-block > .input, .site-main > .container > .container-content > .component-user > .login-form > .form-block > .input, .site-main > .container > .container-content > .component-user > .registration-form > .form-block > .input, .site-main > .container > .container-content > .component-users > .login-form > .form-block > .input, .site-main > .container > .container-content > .component-users > .registration-form > .form-block > .input {
+  height: 50px;
+  width: 100%;
+  max-width: 320px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid silver;
+}
+.site-main > .container > .container-content > .component-login > .login-form > .form-block > .input > input, .site-main > .container > .container-content > .component-login > .registration-form > .form-block > .input > input, .site-main > .container > .container-content > .component-user > .login-form > .form-block > .input > input, .site-main > .container > .container-content > .component-user > .registration-form > .form-block > .input > input, .site-main > .container > .container-content > .component-users > .login-form > .form-block > .input > input, .site-main > .container > .container-content > .component-users > .registration-form > .form-block > .input > input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  padding: 0 0 0 10px;
+  font-size: 20px;
+}
+.site-main > .container > .container-content > .component-login > .login-form > .form-block > .input > input[type=submit], .site-main > .container > .container-content > .component-login > .registration-form > .form-block > .input > input[type=submit], .site-main > .container > .container-content > .component-user > .login-form > .form-block > .input > input[type=submit], .site-main > .container > .container-content > .component-user > .registration-form > .form-block > .input > input[type=submit], .site-main > .container > .container-content > .component-users > .login-form > .form-block > .input > input[type=submit], .site-main > .container > .container-content > .component-users > .registration-form > .form-block > .input > input[type=submit] {
+  font-size: 22px;
+  font-weight: 500;
+  background-color: silver;
+  transition: 0.3s;
+}
+.site-main > .container > .container-content > .component-login > .login-form > .form-block > .input > input[type=submit]:hover, .site-main > .container > .container-content > .component-login > .registration-form > .form-block > .input > input[type=submit]:hover, .site-main > .container > .container-content > .component-user > .login-form > .form-block > .input > input[type=submit]:hover, .site-main > .container > .container-content > .component-user > .registration-form > .form-block > .input > input[type=submit]:hover, .site-main > .container > .container-content > .component-users > .login-form > .form-block > .input > input[type=submit]:hover, .site-main > .container > .container-content > .component-users > .registration-form > .form-block > .input > input[type=submit]:hover {
+  background-color: #a7a7a7;
+  color: white;
+}
+.site-main > .container > .container-content > .component-login > .login-form > .form-block-checkbox, .site-main > .container > .container-content > .component-login > .registration-form > .form-block-checkbox, .site-main > .container > .container-content > .component-user > .login-form > .form-block-checkbox, .site-main > .container > .container-content > .component-user > .registration-form > .form-block-checkbox, .site-main > .container > .container-content > .component-users > .login-form > .form-block-checkbox, .site-main > .container > .container-content > .component-users > .registration-form > .form-block-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.site-main > .container > .container-content > .component-login > .login-form > .form-block-checkbox > .input, .site-main > .container > .container-content > .component-login > .registration-form > .form-block-checkbox > .input, .site-main > .container > .container-content > .component-user > .login-form > .form-block-checkbox > .input, .site-main > .container > .container-content > .component-user > .registration-form > .form-block-checkbox > .input, .site-main > .container > .container-content > .component-users > .login-form > .form-block-checkbox > .input, .site-main > .container > .container-content > .component-users > .registration-form > .form-block-checkbox > .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.site-main > .container > .container-content > .component-login > .login-form > .form-block-checkbox > .input > input[type=checkbox], .site-main > .container > .container-content > .component-login > .registration-form > .form-block-checkbox > .input > input[type=checkbox], .site-main > .container > .container-content > .component-user > .login-form > .form-block-checkbox > .input > input[type=checkbox], .site-main > .container > .container-content > .component-user > .registration-form > .form-block-checkbox > .input > input[type=checkbox], .site-main > .container > .container-content > .component-users > .login-form > .form-block-checkbox > .input > input[type=checkbox], .site-main > .container > .container-content > .component-users > .registration-form > .form-block-checkbox > .input > input[type=checkbox] {
+  display: flex;
+  height: 25px;
+  width: 25px;
+  -webkit-appearance: auto;
+     -moz-appearance: auto;
+          appearance: auto;
+}
+.site-main > .container > .container-content > .component-login > .login-form > .form-block-checkbox > label, .site-main > .container > .container-content > .component-login > .registration-form > .form-block-checkbox > label, .site-main > .container > .container-content > .component-user > .login-form > .form-block-checkbox > label, .site-main > .container > .container-content > .component-user > .registration-form > .form-block-checkbox > label, .site-main > .container > .container-content > .component-users > .login-form > .form-block-checkbox > label, .site-main > .container > .container-content > .component-users > .registration-form > .form-block-checkbox > label {
+  font-size: 18px;
+  font-weight: 400;
+  border-bottom: 1px solid white;
+  transition: 0.3s;
+}
+.site-main > .container > .container-content > .component-login > .login-form > .form-block-checkbox > label:hover, .site-main > .container > .container-content > .component-login > .registration-form > .form-block-checkbox > label:hover, .site-main > .container > .container-content > .component-user > .login-form > .form-block-checkbox > label:hover, .site-main > .container > .container-content > .component-user > .registration-form > .form-block-checkbox > label:hover, .site-main > .container > .container-content > .component-users > .login-form > .form-block-checkbox > label:hover, .site-main > .container > .container-content > .component-users > .registration-form > .form-block-checkbox > label:hover {
+  border-bottom: 1px solid silver;
+}
+.site-main > .container > .container-content > .component-login > label, .site-main > .container > .container-content > .component-user > label, .site-main > .container > .container-content > .component-users > label {
+  display: flex;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  margin: 20px auto 0;
+  justify-content: center;
+  border-bottom: 1px solid white;
+  transition: 0.3s;
+}
+.site-main > .container > .container-content > .component-login > label:hover, .site-main > .container > .container-content > .component-user > label:hover, .site-main > .container > .container-content > .component-users > label:hover {
+  border-bottom: 1px solid silver;
+}
+.site-main > .container > .container-content > .component-login > .users-list, .site-main > .container > .container-content > .component-login > .user-payments-list, .site-main > .container > .container-content > .component-user > .users-list, .site-main > .container > .container-content > .component-user > .user-payments-list, .site-main > .container > .container-content > .component-users > .users-list, .site-main > .container > .container-content > .component-users > .user-payments-list {
   background-color: white;
   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
   border-radius: 5px;
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav, .site-main > .container > .container-content > .component-users > .users-list > .nav, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav {
+.site-main > .container > .container-content > .component-login > .users-list > .nav, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav, .site-main > .container > .container-content > .component-user > .users-list > .nav, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav, .site-main > .container > .container-content > .component-users > .users-list > .nav, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav {
   display: flex;
   height: 50px;
   border-top: 1px solid silver;
   cursor: pointer;
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav:hover, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav:hover, .site-main > .container > .container-content > .component-users > .users-list > .nav:hover, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav:hover {
+.site-main > .container > .container-content > .component-login > .users-list > .nav:hover, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav:hover, .site-main > .container > .container-content > .component-user > .users-list > .nav:hover, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav:hover, .site-main > .container > .container-content > .component-users > .users-list > .nav:hover, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav:hover {
   background-color: #d3d3f0;
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav > .number, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .number, .site-main > .container > .container-content > .component-users > .users-list > .nav > .number, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .number {
+.site-main > .container > .container-content > .component-login > .users-list > .nav > .number, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav > .number, .site-main > .container > .container-content > .component-user > .users-list > .nav > .number, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .number, .site-main > .container > .container-content > .component-users > .users-list > .nav > .number, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .number {
   height: 100%;
   width: 100%;
   max-width: 50px;
@@ -11179,51 +11172,51 @@ label {
   justify-content: center;
   align-items: center;
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav > .name, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .name, .site-main > .container > .container-content > .component-users > .users-list > .nav > .name, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .name {
+.site-main > .container > .container-content > .component-login > .users-list > .nav > .name, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav > .name, .site-main > .container > .container-content > .component-user > .users-list > .nav > .name, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .name, .site-main > .container > .container-content > .component-users > .users-list > .nav > .name, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .name {
   height: 100%;
   width: 100%;
   max-width: 300px;
   display: flex;
   align-items: center;
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav > .email, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .email, .site-main > .container > .container-content > .component-users > .users-list > .nav > .email, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .email {
+.site-main > .container > .container-content > .component-login > .users-list > .nav > .email, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav > .email, .site-main > .container > .container-content > .component-user > .users-list > .nav > .email, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .email, .site-main > .container > .container-content > .component-users > .users-list > .nav > .email, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .email {
   height: 100%;
   width: 100%;
   max-width: 300px;
   display: flex;
   align-items: center;
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav > .role, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .role, .site-main > .container > .container-content > .component-users > .users-list > .nav > .role, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .role {
+.site-main > .container > .container-content > .component-login > .users-list > .nav > .role, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav > .role, .site-main > .container > .container-content > .component-user > .users-list > .nav > .role, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .role, .site-main > .container > .container-content > .component-users > .users-list > .nav > .role, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .role {
   height: 100%;
   display: flex;
   align-items: center;
   flex-grow: 1;
   line-height: 100%;
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav > .payment_number, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .payment_number, .site-main > .container > .container-content > .component-users > .users-list > .nav > .payment_number, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .payment_number {
+.site-main > .container > .container-content > .component-login > .users-list > .nav > .payment_number, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav > .payment_number, .site-main > .container > .container-content > .component-user > .users-list > .nav > .payment_number, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .payment_number, .site-main > .container > .container-content > .component-users > .users-list > .nav > .payment_number, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .payment_number {
   height: 100%;
   display: flex;
   align-items: center;
   flex-grow: 1;
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav > .text-small, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .text-small, .site-main > .container > .container-content > .component-users > .users-list > .nav > .text-small, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .text-small {
+.site-main > .container > .container-content > .component-login > .users-list > .nav > .text-small, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav > .text-small, .site-main > .container > .container-content > .component-user > .users-list > .nav > .text-small, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .text-small, .site-main > .container > .container-content > .component-users > .users-list > .nav > .text-small, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .text-small {
   font-size: 0.9rem;
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav > .total, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .total, .site-main > .container > .container-content > .component-users > .users-list > .nav > .total, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .total {
+.site-main > .container > .container-content > .component-login > .users-list > .nav > .total, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav > .total, .site-main > .container > .container-content > .component-user > .users-list > .nav > .total, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .total, .site-main > .container > .container-content > .component-users > .users-list > .nav > .total, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .total {
   height: 100%;
   width: 100%;
   max-width: 150px;
   display: flex;
   align-items: center;
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav > .status, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .status, .site-main > .container > .container-content > .component-users > .users-list > .nav > .status, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .status {
+.site-main > .container > .container-content > .component-login > .users-list > .nav > .status, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav > .status, .site-main > .container > .container-content > .component-user > .users-list > .nav > .status, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .status, .site-main > .container > .container-content > .component-users > .users-list > .nav > .status, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .status {
   height: 100%;
   width: 100%;
   max-width: 300px;
   display: flex;
   align-items: center;
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav > .created-at, .site-main > .container > .container-content > .component-user > .users-list > .nav > .updated-at, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .created-at, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .updated-at, .site-main > .container > .container-content > .component-users > .users-list > .nav > .created-at, .site-main > .container > .container-content > .component-users > .users-list > .nav > .updated-at, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .created-at, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .updated-at {
+.site-main > .container > .container-content > .component-login > .users-list > .nav > .created-at, .site-main > .container > .container-content > .component-login > .users-list > .nav > .updated-at, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav > .created-at, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav > .updated-at, .site-main > .container > .container-content > .component-user > .users-list > .nav > .created-at, .site-main > .container > .container-content > .component-user > .users-list > .nav > .updated-at, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .created-at, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .updated-at, .site-main > .container > .container-content > .component-users > .users-list > .nav > .created-at, .site-main > .container > .container-content > .component-users > .users-list > .nav > .updated-at, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .created-at, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .updated-at {
   height: 100%;
   width: 100%;
   max-width: 150px;
@@ -11232,7 +11225,7 @@ label {
   justify-content: center;
   overflow: hidden;
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons {
+.site-main > .container > .container-content > .component-login > .users-list > .nav > .buttons, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav > .buttons, .site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons {
   height: 100%;
   width: 100%;
   max-width: 150px;
@@ -11241,7 +11234,7 @@ label {
   align-items: center;
   gap: 10px;
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons > div, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons > div, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > div, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > div {
+.site-main > .container > .container-content > .component-login > .users-list > .nav > .buttons > div, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav > .buttons > div, .site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons > div, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons > div, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > div, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > div {
   height: 25px;
   min-width: 25px;
   background-size: contain;
@@ -11249,29 +11242,29 @@ label {
   background-repeat: no-repeat;
   cursor: pointer;
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons > div:hover, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons > div:hover, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > div:hover, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > div:hover {
+.site-main > .container > .container-content > .component-login > .users-list > .nav > .buttons > div:hover, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav > .buttons > div:hover, .site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons > div:hover, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons > div:hover, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > div:hover, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > div:hover {
   transform: scale(1.2);
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons > .icon-save, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons > .icon-save, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > .icon-save, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > .icon-save {
+.site-main > .container > .container-content > .component-login > .users-list > .nav > .buttons > .icon-save, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav > .buttons > .icon-save, .site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons > .icon-save, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons > .icon-save, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > .icon-save, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > .icon-save {
   background-image: url(/images/floppy-disk-regular.svg?34121a550ea73cfaa1eb371961db00fc);
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons > .icon-delete, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons > .icon-delete, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > .icon-delete, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > .icon-delete {
+.site-main > .container > .container-content > .component-login > .users-list > .nav > .buttons > .icon-delete, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav > .buttons > .icon-delete, .site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons > .icon-delete, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons > .icon-delete, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > .icon-delete, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > .icon-delete {
   background-image: url(/images/trash-can-regular.svg?84dcff211c5fd262e2ca1bef7eb76121);
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons > .icon-eye, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons > .icon-eye, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > .icon-eye, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > .icon-eye {
+.site-main > .container > .container-content > .component-login > .users-list > .nav > .buttons > .icon-eye, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav > .buttons > .icon-eye, .site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons > .icon-eye, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons > .icon-eye, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > .icon-eye, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > .icon-eye {
   background-image: url(/images/eye-regular.svg?8e200cae6bab22b036cf129419239879);
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav-title, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title, .site-main > .container > .container-content > .component-users > .users-list > .nav-title, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title {
+.site-main > .container > .container-content > .component-login > .users-list > .nav-title, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav-title, .site-main > .container > .container-content > .component-user > .users-list > .nav-title, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title, .site-main > .container > .container-content > .component-users > .users-list > .nav-title, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title {
   border-top: none;
   cursor: unset;
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav-title:hover, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title:hover, .site-main > .container > .container-content > .component-users > .users-list > .nav-title:hover, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title:hover {
+.site-main > .container > .container-content > .component-login > .users-list > .nav-title:hover, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav-title:hover, .site-main > .container > .container-content > .component-user > .users-list > .nav-title:hover, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title:hover, .site-main > .container > .container-content > .component-users > .users-list > .nav-title:hover, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title:hover {
   background-color: white;
 }
-.site-main > .container > .container-content > .component-user > .users-list > .nav-title > .number, .site-main > .container > .container-content > .component-user > .users-list > .nav-title > .name, .site-main > .container > .container-content > .component-user > .users-list > .nav-title > .email, .site-main > .container > .container-content > .component-user > .users-list > .nav-title > .role, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title > .number, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title > .name, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title > .email, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title > .role, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .number, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .name, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .email, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .role, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .number, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .name, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .email, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .role {
+.site-main > .container > .container-content > .component-login > .users-list > .nav-title > .number, .site-main > .container > .container-content > .component-login > .users-list > .nav-title > .name, .site-main > .container > .container-content > .component-login > .users-list > .nav-title > .email, .site-main > .container > .container-content > .component-login > .users-list > .nav-title > .role, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav-title > .number, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav-title > .name, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav-title > .email, .site-main > .container > .container-content > .component-login > .user-payments-list > .nav-title > .role, .site-main > .container > .container-content > .component-user > .users-list > .nav-title > .number, .site-main > .container > .container-content > .component-user > .users-list > .nav-title > .name, .site-main > .container > .container-content > .component-user > .users-list > .nav-title > .email, .site-main > .container > .container-content > .component-user > .users-list > .nav-title > .role, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title > .number, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title > .name, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title > .email, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title > .role, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .number, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .name, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .email, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .role, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .number, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .name, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .email, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .role {
   font-weight: 600;
 }
-.site-main > .container > .container-content > .component-user > .user-new, .site-main > .container > .container-content > .component-user > .user-update, .site-main > .container > .container-content > .component-user > .user-payment-new, .site-main > .container > .container-content > .component-user > .user-payment-update, .site-main > .container > .container-content > .component-users > .user-new, .site-main > .container > .container-content > .component-users > .user-update, .site-main > .container > .container-content > .component-users > .user-payment-new, .site-main > .container > .container-content > .component-users > .user-payment-update {
+.site-main > .container > .container-content > .component-login > .user-new, .site-main > .container > .container-content > .component-login > .user-update, .site-main > .container > .container-content > .component-login > .user-payment-new, .site-main > .container > .container-content > .component-login > .user-payment-update, .site-main > .container > .container-content > .component-user > .user-new, .site-main > .container > .container-content > .component-user > .user-update, .site-main > .container > .container-content > .component-user > .user-payment-new, .site-main > .container > .container-content > .component-user > .user-payment-update, .site-main > .container > .container-content > .component-users > .user-new, .site-main > .container > .container-content > .component-users > .user-update, .site-main > .container > .container-content > .component-users > .user-payment-new, .site-main > .container > .container-content > .component-users > .user-payment-update {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -11280,25 +11273,25 @@ label {
   border-radius: 5px;
   padding: 50px;
 }
-.site-main > .container > .container-content > .component-user > .user-new > .user-option, .site-main > .container > .container-content > .component-user > .user-update > .user-option, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option, .site-main > .container > .container-content > .component-users > .user-new > .user-option, .site-main > .container > .container-content > .component-users > .user-update > .user-option, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option {
+.site-main > .container > .container-content > .component-login > .user-new > .user-option, .site-main > .container > .container-content > .component-login > .user-update > .user-option, .site-main > .container > .container-content > .component-login > .user-payment-new > .user-option, .site-main > .container > .container-content > .component-login > .user-payment-update > .user-option, .site-main > .container > .container-content > .component-user > .user-new > .user-option, .site-main > .container > .container-content > .component-user > .user-update > .user-option, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option, .site-main > .container > .container-content > .component-users > .user-new > .user-option, .site-main > .container > .container-content > .component-users > .user-update > .user-option, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option {
   display: flex;
   align-items: center;
 }
-.site-main > .container > .container-content > .component-user > .user-new > .user-option > .text, .site-main > .container > .container-content > .component-user > .user-update > .user-option > .text, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .text, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-new > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .text {
+.site-main > .container > .container-content > .component-login > .user-new > .user-option > .text, .site-main > .container > .container-content > .component-login > .user-update > .user-option > .text, .site-main > .container > .container-content > .component-login > .user-payment-new > .user-option > .text, .site-main > .container > .container-content > .component-login > .user-payment-update > .user-option > .text, .site-main > .container > .container-content > .component-user > .user-new > .user-option > .text, .site-main > .container > .container-content > .component-user > .user-update > .user-option > .text, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .text, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-new > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .text {
   width: 30%;
   display: flex;
 }
-.site-main > .container > .container-content > .component-user > .user-new > .user-option > .text > span, .site-main > .container > .container-content > .component-user > .user-update > .user-option > .text > span, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .text > span, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-new > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .text > span {
+.site-main > .container > .container-content > .component-login > .user-new > .user-option > .text > span, .site-main > .container > .container-content > .component-login > .user-update > .user-option > .text > span, .site-main > .container > .container-content > .component-login > .user-payment-new > .user-option > .text > span, .site-main > .container > .container-content > .component-login > .user-payment-update > .user-option > .text > span, .site-main > .container > .container-content > .component-user > .user-new > .user-option > .text > span, .site-main > .container > .container-content > .component-user > .user-update > .user-option > .text > span, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .text > span, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-new > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .text > span {
   color: red;
 }
-.site-main > .container > .container-content > .component-user > .user-new > .user-option > .input, .site-main > .container > .container-content > .component-user > .user-update > .user-option > .input, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .input, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-new > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .input {
+.site-main > .container > .container-content > .component-login > .user-new > .user-option > .input, .site-main > .container > .container-content > .component-login > .user-update > .user-option > .input, .site-main > .container > .container-content > .component-login > .user-payment-new > .user-option > .input, .site-main > .container > .container-content > .component-login > .user-payment-update > .user-option > .input, .site-main > .container > .container-content > .component-user > .user-new > .user-option > .input, .site-main > .container > .container-content > .component-user > .user-update > .user-option > .input, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .input, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-new > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .input {
   height: 50px;
   overflow: hidden;
   flex-grow: 1;
   display: flex;
   align-items: center;
 }
-.site-main > .container > .container-content > .component-user > .user-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-user > .user-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-user > .user-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-user > .user-update > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .input > input[type=password] {
+.site-main > .container > .container-content > .component-login > .user-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-login > .user-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-login > .user-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-login > .user-update > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-login > .user-payment-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-login > .user-payment-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-login > .user-payment-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-login > .user-payment-update > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-user > .user-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-user > .user-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-user > .user-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-user > .user-update > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .input > input[type=password] {
   height: 100%;
   padding: 0 0 0 20px;
   outline: none;
@@ -11306,7 +11299,7 @@ label {
   border: 1px solid silver;
   border-radius: 5px;
 }
-.site-main > .container > .container-content > .component-user > .user-new > .user-option > .input > select, .site-main > .container > .container-content > .component-user > .user-update > .user-option > .input > select, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .input > select, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-new > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .input > select {
+.site-main > .container > .container-content > .component-login > .user-new > .user-option > .input > select, .site-main > .container > .container-content > .component-login > .user-update > .user-option > .input > select, .site-main > .container > .container-content > .component-login > .user-payment-new > .user-option > .input > select, .site-main > .container > .container-content > .component-login > .user-payment-update > .user-option > .input > select, .site-main > .container > .container-content > .component-user > .user-new > .user-option > .input > select, .site-main > .container > .container-content > .component-user > .user-update > .user-option > .input > select, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .input > select, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-new > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .input > select {
   height: 100%;
   padding: 0 0 0 20px;
   outline: none;
@@ -11314,11 +11307,11 @@ label {
   border: 1px solid silver;
   border-radius: 5px;
 }
-.site-main > .container > .container-content > .component-user > .user-new > .user-button, .site-main > .container > .container-content > .component-user > .user-update > .user-button, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-button, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-button, .site-main > .container > .container-content > .component-users > .user-new > .user-button, .site-main > .container > .container-content > .component-users > .user-update > .user-button, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-button, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-button {
+.site-main > .container > .container-content > .component-login > .user-new > .user-button, .site-main > .container > .container-content > .component-login > .user-update > .user-button, .site-main > .container > .container-content > .component-login > .user-payment-new > .user-button, .site-main > .container > .container-content > .component-login > .user-payment-update > .user-button, .site-main > .container > .container-content > .component-user > .user-new > .user-button, .site-main > .container > .container-content > .component-user > .user-update > .user-button, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-button, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-button, .site-main > .container > .container-content > .component-users > .user-new > .user-button, .site-main > .container > .container-content > .component-users > .user-update > .user-button, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-button, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-button {
   display: flex;
   justify-content: flex-end;
 }
-.site-main > .container > .container-content > .component-user > .user-new > .user-button > div, .site-main > .container > .container-content > .component-user > .user-update > .user-button > div, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-button > div, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-button > div, .site-main > .container > .container-content > .component-users > .user-new > .user-button > div, .site-main > .container > .container-content > .component-users > .user-update > .user-button > div, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-button > div, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-button > div {
+.site-main > .container > .container-content > .component-login > .user-new > .user-button > div, .site-main > .container > .container-content > .component-login > .user-update > .user-button > div, .site-main > .container > .container-content > .component-login > .user-payment-new > .user-button > div, .site-main > .container > .container-content > .component-login > .user-payment-update > .user-button > div, .site-main > .container > .container-content > .component-user > .user-new > .user-button > div, .site-main > .container > .container-content > .component-user > .user-update > .user-button > div, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-button > div, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-button > div, .site-main > .container > .container-content > .component-users > .user-new > .user-button > div, .site-main > .container > .container-content > .component-users > .user-update > .user-button > div, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-button > div, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-button > div {
   height: 50px;
   background-color: #0d6efd;
   border-radius: 5px;
@@ -11329,7 +11322,7 @@ label {
   padding: 0 10px;
   cursor: pointer;
 }
-.site-main > .container > .container-content > .component-user > .user-new > .user-button > div:hover, .site-main > .container > .container-content > .component-user > .user-update > .user-button > div:hover, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-button > div:hover, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-new > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-update > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-button > div:hover {
+.site-main > .container > .container-content > .component-login > .user-new > .user-button > div:hover, .site-main > .container > .container-content > .component-login > .user-update > .user-button > div:hover, .site-main > .container > .container-content > .component-login > .user-payment-new > .user-button > div:hover, .site-main > .container > .container-content > .component-login > .user-payment-update > .user-button > div:hover, .site-main > .container > .container-content > .component-user > .user-new > .user-button > div:hover, .site-main > .container > .container-content > .component-user > .user-update > .user-button > div:hover, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-button > div:hover, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-new > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-update > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-button > div:hover {
   background-color: #0257d5;
 }
 .site-main > .container > .container-content > .component-user-roles > .title {
