@@ -11134,16 +11134,16 @@ label {
   color: #0d6efd;
   border: 1px solid #0d6efd;
 }
-.site-main > .container > .container-content > .component-users > .title {
+.site-main > .container > .container-content > .component-user > .title, .site-main > .container > .container-content > .component-users > .title {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.site-main > .container > .container-content > .component-users > .title > h2, .site-main > .container > .container-content > .component-users > .title > .h2 {
+.site-main > .container > .container-content > .component-user > .title > h2, .site-main > .container > .container-content > .component-user > .title > .h2, .site-main > .container > .container-content > .component-users > .title > h2, .site-main > .container > .container-content > .component-users > .title > .h2 {
   font-weight: 700;
   padding: 20px 0;
 }
-.site-main > .container > .container-content > .component-users > .title > .button-add {
+.site-main > .container > .container-content > .component-user > .title > .button-add, .site-main > .container > .container-content > .component-users > .title > .button-add {
   height: 50px;
   background-color: #0d6efd;
   border-radius: 5px;
@@ -11154,24 +11154,24 @@ label {
   padding: 0 10px;
   cursor: pointer;
 }
-.site-main > .container > .container-content > .component-users > .title > .button-add:hover {
+.site-main > .container > .container-content > .component-user > .title > .button-add:hover, .site-main > .container > .container-content > .component-users > .title > .button-add:hover {
   background-color: #0257d5;
 }
-.site-main > .container > .container-content > .component-users > .users-list, .site-main > .container > .container-content > .component-users > .user-payments-list {
+.site-main > .container > .container-content > .component-user > .users-list, .site-main > .container > .container-content > .component-user > .user-payments-list, .site-main > .container > .container-content > .component-users > .users-list, .site-main > .container > .container-content > .component-users > .user-payments-list {
   background-color: white;
   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
   border-radius: 5px;
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav {
+.site-main > .container > .container-content > .component-user > .users-list > .nav, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav, .site-main > .container > .container-content > .component-users > .users-list > .nav, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav {
   display: flex;
   height: 50px;
   border-top: 1px solid silver;
   cursor: pointer;
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav:hover, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav:hover {
+.site-main > .container > .container-content > .component-user > .users-list > .nav:hover, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav:hover, .site-main > .container > .container-content > .component-users > .users-list > .nav:hover, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav:hover {
   background-color: #d3d3f0;
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav > .number, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .number {
+.site-main > .container > .container-content > .component-user > .users-list > .nav > .number, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .number, .site-main > .container > .container-content > .component-users > .users-list > .nav > .number, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .number {
   height: 100%;
   width: 100%;
   max-width: 50px;
@@ -11179,51 +11179,51 @@ label {
   justify-content: center;
   align-items: center;
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav > .name, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .name {
+.site-main > .container > .container-content > .component-user > .users-list > .nav > .name, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .name, .site-main > .container > .container-content > .component-users > .users-list > .nav > .name, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .name {
   height: 100%;
   width: 100%;
   max-width: 300px;
   display: flex;
   align-items: center;
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav > .email, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .email {
+.site-main > .container > .container-content > .component-user > .users-list > .nav > .email, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .email, .site-main > .container > .container-content > .component-users > .users-list > .nav > .email, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .email {
   height: 100%;
   width: 100%;
   max-width: 300px;
   display: flex;
   align-items: center;
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav > .role, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .role {
+.site-main > .container > .container-content > .component-user > .users-list > .nav > .role, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .role, .site-main > .container > .container-content > .component-users > .users-list > .nav > .role, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .role {
   height: 100%;
   display: flex;
   align-items: center;
   flex-grow: 1;
   line-height: 100%;
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav > .payment_number, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .payment_number {
+.site-main > .container > .container-content > .component-user > .users-list > .nav > .payment_number, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .payment_number, .site-main > .container > .container-content > .component-users > .users-list > .nav > .payment_number, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .payment_number {
   height: 100%;
   display: flex;
   align-items: center;
   flex-grow: 1;
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav > .text-small, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .text-small {
+.site-main > .container > .container-content > .component-user > .users-list > .nav > .text-small, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .text-small, .site-main > .container > .container-content > .component-users > .users-list > .nav > .text-small, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .text-small {
   font-size: 0.9rem;
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav > .total, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .total {
+.site-main > .container > .container-content > .component-user > .users-list > .nav > .total, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .total, .site-main > .container > .container-content > .component-users > .users-list > .nav > .total, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .total {
   height: 100%;
   width: 100%;
   max-width: 150px;
   display: flex;
   align-items: center;
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav > .status, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .status {
+.site-main > .container > .container-content > .component-user > .users-list > .nav > .status, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .status, .site-main > .container > .container-content > .component-users > .users-list > .nav > .status, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .status {
   height: 100%;
   width: 100%;
   max-width: 300px;
   display: flex;
   align-items: center;
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav > .created-at, .site-main > .container > .container-content > .component-users > .users-list > .nav > .updated-at, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .created-at, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .updated-at {
+.site-main > .container > .container-content > .component-user > .users-list > .nav > .created-at, .site-main > .container > .container-content > .component-user > .users-list > .nav > .updated-at, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .created-at, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .updated-at, .site-main > .container > .container-content > .component-users > .users-list > .nav > .created-at, .site-main > .container > .container-content > .component-users > .users-list > .nav > .updated-at, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .created-at, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .updated-at {
   height: 100%;
   width: 100%;
   max-width: 150px;
@@ -11232,7 +11232,7 @@ label {
   justify-content: center;
   overflow: hidden;
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons {
+.site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons {
   height: 100%;
   width: 100%;
   max-width: 150px;
@@ -11241,7 +11241,7 @@ label {
   align-items: center;
   gap: 10px;
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > div, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > div {
+.site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons > div, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons > div, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > div, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > div {
   height: 25px;
   min-width: 25px;
   background-size: contain;
@@ -11249,29 +11249,29 @@ label {
   background-repeat: no-repeat;
   cursor: pointer;
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > div:hover, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > div:hover {
+.site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons > div:hover, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons > div:hover, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > div:hover, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > div:hover {
   transform: scale(1.2);
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > .icon-save, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > .icon-save {
+.site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons > .icon-save, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons > .icon-save, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > .icon-save, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > .icon-save {
   background-image: url(/images/floppy-disk-regular.svg?34121a550ea73cfaa1eb371961db00fc);
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > .icon-delete, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > .icon-delete {
+.site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons > .icon-delete, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons > .icon-delete, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > .icon-delete, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > .icon-delete {
   background-image: url(/images/trash-can-regular.svg?84dcff211c5fd262e2ca1bef7eb76121);
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > .icon-eye, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > .icon-eye {
+.site-main > .container > .container-content > .component-user > .users-list > .nav > .buttons > .icon-eye, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav > .buttons > .icon-eye, .site-main > .container > .container-content > .component-users > .users-list > .nav > .buttons > .icon-eye, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav > .buttons > .icon-eye {
   background-image: url(/images/eye-regular.svg?8e200cae6bab22b036cf129419239879);
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav-title, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title {
+.site-main > .container > .container-content > .component-user > .users-list > .nav-title, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title, .site-main > .container > .container-content > .component-users > .users-list > .nav-title, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title {
   border-top: none;
   cursor: unset;
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav-title:hover, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title:hover {
+.site-main > .container > .container-content > .component-user > .users-list > .nav-title:hover, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title:hover, .site-main > .container > .container-content > .component-users > .users-list > .nav-title:hover, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title:hover {
   background-color: white;
 }
-.site-main > .container > .container-content > .component-users > .users-list > .nav-title > .number, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .name, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .email, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .role, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .number, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .name, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .email, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .role {
+.site-main > .container > .container-content > .component-user > .users-list > .nav-title > .number, .site-main > .container > .container-content > .component-user > .users-list > .nav-title > .name, .site-main > .container > .container-content > .component-user > .users-list > .nav-title > .email, .site-main > .container > .container-content > .component-user > .users-list > .nav-title > .role, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title > .number, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title > .name, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title > .email, .site-main > .container > .container-content > .component-user > .user-payments-list > .nav-title > .role, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .number, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .name, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .email, .site-main > .container > .container-content > .component-users > .users-list > .nav-title > .role, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .number, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .name, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .email, .site-main > .container > .container-content > .component-users > .user-payments-list > .nav-title > .role {
   font-weight: 600;
 }
-.site-main > .container > .container-content > .component-users > .user-new, .site-main > .container > .container-content > .component-users > .user-update, .site-main > .container > .container-content > .component-users > .user-payment-new, .site-main > .container > .container-content > .component-users > .user-payment-update {
+.site-main > .container > .container-content > .component-user > .user-new, .site-main > .container > .container-content > .component-user > .user-update, .site-main > .container > .container-content > .component-user > .user-payment-new, .site-main > .container > .container-content > .component-user > .user-payment-update, .site-main > .container > .container-content > .component-users > .user-new, .site-main > .container > .container-content > .component-users > .user-update, .site-main > .container > .container-content > .component-users > .user-payment-new, .site-main > .container > .container-content > .component-users > .user-payment-update {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -11280,25 +11280,25 @@ label {
   border-radius: 5px;
   padding: 50px;
 }
-.site-main > .container > .container-content > .component-users > .user-new > .user-option, .site-main > .container > .container-content > .component-users > .user-update > .user-option, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option {
+.site-main > .container > .container-content > .component-user > .user-new > .user-option, .site-main > .container > .container-content > .component-user > .user-update > .user-option, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option, .site-main > .container > .container-content > .component-users > .user-new > .user-option, .site-main > .container > .container-content > .component-users > .user-update > .user-option, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option {
   display: flex;
   align-items: center;
 }
-.site-main > .container > .container-content > .component-users > .user-new > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .text {
+.site-main > .container > .container-content > .component-user > .user-new > .user-option > .text, .site-main > .container > .container-content > .component-user > .user-update > .user-option > .text, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .text, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-new > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .text, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .text {
   width: 30%;
   display: flex;
 }
-.site-main > .container > .container-content > .component-users > .user-new > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .text > span {
+.site-main > .container > .container-content > .component-user > .user-new > .user-option > .text > span, .site-main > .container > .container-content > .component-user > .user-update > .user-option > .text > span, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .text > span, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-new > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .text > span, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .text > span {
   color: red;
 }
-.site-main > .container > .container-content > .component-users > .user-new > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .input {
+.site-main > .container > .container-content > .component-user > .user-new > .user-option > .input, .site-main > .container > .container-content > .component-user > .user-update > .user-option > .input, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .input, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-new > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .input {
   height: 50px;
   overflow: hidden;
   flex-grow: 1;
   display: flex;
   align-items: center;
 }
-.site-main > .container > .container-content > .component-users > .user-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .input > input[type=password] {
+.site-main > .container > .container-content > .component-user > .user-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-user > .user-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-user > .user-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-user > .user-update > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input > input[type=password], .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .input > input[type=text], .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .input > input[type=password] {
   height: 100%;
   padding: 0 0 0 20px;
   outline: none;
@@ -11306,7 +11306,7 @@ label {
   border: 1px solid silver;
   border-radius: 5px;
 }
-.site-main > .container > .container-content > .component-users > .user-new > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .input > select {
+.site-main > .container > .container-content > .component-user > .user-new > .user-option > .input > select, .site-main > .container > .container-content > .component-user > .user-update > .user-option > .input > select, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-option > .input > select, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-new > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-update > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-option > .input > select, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-option > .input > select {
   height: 100%;
   padding: 0 0 0 20px;
   outline: none;
@@ -11314,11 +11314,11 @@ label {
   border: 1px solid silver;
   border-radius: 5px;
 }
-.site-main > .container > .container-content > .component-users > .user-new > .user-button, .site-main > .container > .container-content > .component-users > .user-update > .user-button, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-button, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-button {
+.site-main > .container > .container-content > .component-user > .user-new > .user-button, .site-main > .container > .container-content > .component-user > .user-update > .user-button, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-button, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-button, .site-main > .container > .container-content > .component-users > .user-new > .user-button, .site-main > .container > .container-content > .component-users > .user-update > .user-button, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-button, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-button {
   display: flex;
   justify-content: flex-end;
 }
-.site-main > .container > .container-content > .component-users > .user-new > .user-button > div, .site-main > .container > .container-content > .component-users > .user-update > .user-button > div, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-button > div, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-button > div {
+.site-main > .container > .container-content > .component-user > .user-new > .user-button > div, .site-main > .container > .container-content > .component-user > .user-update > .user-button > div, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-button > div, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-button > div, .site-main > .container > .container-content > .component-users > .user-new > .user-button > div, .site-main > .container > .container-content > .component-users > .user-update > .user-button > div, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-button > div, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-button > div {
   height: 50px;
   background-color: #0d6efd;
   border-radius: 5px;
@@ -11329,7 +11329,7 @@ label {
   padding: 0 10px;
   cursor: pointer;
 }
-.site-main > .container > .container-content > .component-users > .user-new > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-update > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-button > div:hover {
+.site-main > .container > .container-content > .component-user > .user-new > .user-button > div:hover, .site-main > .container > .container-content > .component-user > .user-update > .user-button > div:hover, .site-main > .container > .container-content > .component-user > .user-payment-new > .user-button > div:hover, .site-main > .container > .container-content > .component-user > .user-payment-update > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-new > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-update > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-payment-new > .user-button > div:hover, .site-main > .container > .container-content > .component-users > .user-payment-update > .user-button > div:hover {
   background-color: #0257d5;
 }
 .site-main > .container > .container-content > .component-user-roles > .title {
